@@ -1,0 +1,60 @@
+.nav-container {
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 96px 0 96px;
+
+    .nav-selection {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .language-button {
+            border: 1px solid #3DCFB6;
+            border-radius: 100px;
+            padding: 2px 3px;
+
+            & button:hover {
+                scale: (1.05);
+                transition: all 125ms ease-in-out;
+            }
+        }
+
+        .links {
+            display: flex;
+            gap: 24px;
+        }
+    }
+
+    .logo {
+        display: flex;
+        gap: 8px;
+
+        .flex-direction {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-name {
+            display: flex;
+            gap: 4px;
+            font-size: 20px;
+        }
+
+        span {
+            margin: -4px;
+        }
+
+        .rotation{
+            rotate: 270deg;
+        }
+    }
+
+
+
+
+
+
+}

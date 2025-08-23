@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: #1C1C1C;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
