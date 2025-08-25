@@ -47,14 +47,31 @@
             margin: -4px;
         }
 
-        .rotation{
+        .rotation {
             rotate: 270deg;
         }
     }
+}
 
+.point-effect {
+    position: relative;
+}
 
+.point-effect::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    
+    background-color: #3DCFB6;
+    transition: all 125ms;
+}
 
-
-
-
+.point-effect:hover::after {
+    width: 5px;
+    height: 5px;
 }

@@ -1,6 +1,128 @@
-.landing-page {
+.landing-page-container {
     height: 100vh;
     width: 100vw;
     max-width: 100%;
-    background-color: grey;
+    background-color: #1C1C1C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 96px;
+    gap: 12px;
+
+    h1 {
+        font-size: 128px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 40px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .check-contact-container {
+        display: flex;
+        gap: 48px;
+
+        a {
+            height: 48px;
+            width: 143px;
+            border: solid 1px white;
+            border-radius: 100px;
+            font-size: 18px;
+            font-weight: 400;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: all 125ms ease-in-out;
+
+            &:hover {
+                border: solid 1px #3DCFB6;
+                color: #3DCFB6;
+            }
+        }
+    }
+}
+
+
+
+.arrow-container {
+    height: 312px;
+    width: 30px;
+    margin-top: 588px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+
+    .arrow-border {
+        width: 30px;
+        height: 48px;
+        border: solid 1px #3DCFB6;
+        border-radius: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrow {
+        display: inline-block;
+        font-size: 16px;
+        animation: bounce 1s infinite;
+        cursor: default;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(8px);
+        }
+    }
+}
+
+.git-linkin-container {
+    height: 480px;
+    width: 32px;
+    margin-top: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    .vertical-email {
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        transform: rotate(180deg);
+    }
+}
+
+.line {
+    width: 0;
+    height: 240px;
+    border: solid 1px #3DCFB6
 }
