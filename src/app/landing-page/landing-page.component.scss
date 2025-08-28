@@ -2,7 +2,10 @@
     height: 100vh;
     width: 100vw;
     max-width: 100%;
-    background-color: #1C1C1C;
+    background-image: url('./../../assets/img/Background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     display: flex;
     align-items: center;
@@ -36,34 +39,70 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
 
-    .check-contact-container {
+.check-contact-container {
+    display: flex;
+    gap: 48px;
+
+    .hover-slide {
+        border: 1px solid white;
+        border-radius: 100px;
+        height: 48px;
+        width: 172px;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+
         display: flex;
-        gap: 48px;
+        align-items: center;
+        justify-content: center;
 
-        a {
-            height: 48px;
-            width: 143px;
-            border: solid 1px white;
-            border-radius: 100px;
-            font-size: 18px;
-            font-weight: 400;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
+        &:hover {
+            border: 1px solid #3DCFB6;
             transition: all 125ms ease-in-out;
+        }
 
-            &:hover {
-                border: solid 1px #3DCFB6;
-                color: #3DCFB6;
-            }
+        span {
+            display: inline-block;
+            white-space: nowrap;
+
+        }
+
+        &:hover span {
+            animation: scrollCarousel 3.6s linear infinite;
+            color: #3DCFB6;
         }
     }
 }
 
+@keyframes scrollCarousel {
 
+    0% {
+        transform: translateX(0);
+    }
+
+    49% {
+        transform: translateX(-230%);
+
+    }
+
+    50% {
+        transform: translateX(300%);
+        opacity: 0;
+    }
+
+    51% {
+        transform: translateX(230%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
 
 .arrow-container {
     height: 312px;
@@ -107,7 +146,7 @@
 
 .git-linkin-container {
     height: 480px;
-    width: 32px;
+    width: 80px;
     margin-top: 420px;
     display: flex;
     flex-direction: column;
@@ -118,6 +157,46 @@
         writing-mode: vertical-rl;
         text-orientation: sideways;
         transform: rotate(180deg);
+        cursor: default;
+
+        &:hover {
+            color: #3DCFB6;
+        }
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 32px;
+        height: 76px;
+        gap: 14px;
+
+        .icon {
+            display: inline-block;
+            background-repeat: no-repeat;
+            height: 32px;
+            width: 50px;
+            cursor: default;
+        }
+    }
+
+
+
+    .github {
+        background-image: url("./../../assets/img/GitHub.svg");
+    }
+
+    .github:hover {
+        background-image: url("./../../assets/img/GitHub Hover.svg");
+    }
+
+    .linkedin {
+        background-image: url("./../../assets/img/Linkedin.svg");
+    }
+
+    .linkedin:hover {
+        background-image: url("./../../assets/img/Linkedin\ Hovevr.svg");
     }
 }
 
@@ -125,4 +204,49 @@
     width: 0;
     height: 240px;
     border: solid 1px #3DCFB6
+}
+
+.permanent-slide-container {
+    position: fixed;
+    bottom: 70px;
+    height: 62px;
+    width: 110%;
+    background-color: #FFFFFF1F;
+    rotate: -3deg;
+    backdrop-filter: blur(5.3px);
+    overflow: hidden;
+
+    .permanent-slide-animation-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        .slide-track {
+            display: flex;
+            gap: 56px;
+            animation: slide 20s linear infinite;
+            /* Dauer = Geschwindigkeit */
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 120%;
+            white-space: nowrap;
+            /* verhindert Zeilenumbruch */
+        }
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+        /* verschiebt die erste Hälfte raus */
+    }
 }
