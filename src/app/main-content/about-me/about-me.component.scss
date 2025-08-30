@@ -1,0 +1,60 @@
+.about-me-box {
+    height: 1000px;
+    width: 100vw;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-container {
+    position: relative;
+    display: flex;
+    height: 708px;
+    width: 100%;
+    margin: 0 112px;
+
+    .me-img-container {
+        height: 568px;
+        width: 568px;
+        background-image: url('./../../../assets/img/Capa.png');
+        background-repeat: no-repeat;
+
+    }
+
+    .me-img {
+        position: absolute;
+        left: 40px;
+        top: -40px;
+        height: 568px;
+        width: 568px;
+    }
+
+    .about-me-text-container {
+        position: absolute;
+        right: 0;
+        top: 98px;
+        height: 588px;
+        width: 568px;
+
+        >h2 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .text-box {
+            height: 540px;
+            width: 568px;
+            background-color: #3DCFB61A;
+            border: 1px solid #3DCFB6;
+            border-radius: 30px;
+            padding: 32px;
+
+            h1 {
+                font-size: 64px;
+                font-weight: 700;
+            }
+        }
+    }
+}

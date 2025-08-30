@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100vw;
     max-width: 100%;
-    background-image: url('./../../assets/img/Background.png');
+    background-image: url('./../../../assets/img/Background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,6 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .landing-page {
@@ -184,19 +186,19 @@
 
 
     .github {
-        background-image: url("./../../assets/img/GitHub.svg");
+        background-image: url("./../../../assets/img/GitHub.svg");
     }
 
     .github:hover {
-        background-image: url("./../../assets/img/GitHub Hover.svg");
+        background-image: url("./../../../assets/img/GitHub Hover.svg");
     }
 
     .linkedin {
-        background-image: url("./../../assets/img/Linkedin.svg");
+        background-image: url("./../../../assets/img/Linkedin.svg");
     }
 
     .linkedin:hover {
-        background-image: url("./../../assets/img/Linkedin\ Hovevr.svg");
+        background-image: url("./../../../assets/img/Linkedin\ Hovevr.svg");
     }
 }
 
@@ -207,7 +209,7 @@
 }
 
 .permanent-slide-container {
-    position: fixed;
+    position: absolute;
     bottom: 70px;
     height: 62px;
     width: 110%;
@@ -227,7 +229,6 @@
             display: flex;
             gap: 56px;
             animation: slide 20s linear infinite;
-            /* Dauer = Geschwindigkeit */
         }
 
         span {
@@ -235,7 +236,6 @@
             font-size: 32px;
             line-height: 120%;
             white-space: nowrap;
-            /* verhindert Zeilenumbruch */
         }
     }
 }
@@ -247,6 +247,5 @@
 
     to {
         transform: translateX(-50%);
-        /* verschiebt die erste Hälfte raus */
     }
 }
