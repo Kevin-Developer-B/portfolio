@@ -1,0 +1,75 @@
+.skill-set-box {
+    height: 695px;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.skill-box {
+    padding: 96px;
+
+    h2 {
+        color: #3DCFB6;
+    }
+}
+
+.justify-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-container {
+    height: 503px;
+    width: 520px;
+    background-color: #3DCFB61A;
+    border-radius: 30px;
+    border: 1px solid #3DCFB6;
+    padding: 32px;
+    gap: 40px;
+
+    h1 {
+        color: #3DCFB6;
+        font-size: 64px;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+    .capability-first-text {
+        text-align: justify;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 120%;
+        margin-bottom: 32px;
+    }
+
+    .capability-second-text {
+        width: 331px;
+        margin-bottom: 40px;
+        
+        >h3 {
+            display: block;
+            text-align: justify;
+            text-align-last: justify;
+            font-size: 24px;
+            font-weight: 700;
+
+            >span {
+                color: #3DCFB6;
+            }
+        }
+    }
+
+    button {
+        height: 48px;
+        width: 122px;
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+    }
+}
+
+.skill-images-container {
+    height: 428px;
+    width: 632px;
+    background-color: #FFFFFF;
+}
