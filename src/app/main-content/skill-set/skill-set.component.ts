@@ -8,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+  showInterrest = false;
+
+  constructor() {}
+
+  onMouseEnter() {
+    this.showInterrest = true;
+  }
+
+  onMouseLeave() {
+    this.showInterrest = false;
+  }
 
 }

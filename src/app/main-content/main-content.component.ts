@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
+import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 
 @Component({
   selector: 'app-main-content',
@@ -11,7 +12,8 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
     CommonModule,
     LandingPageComponent,
     AboutMeComponent,
-    SkillSetComponent],
+    SkillSetComponent,
+    FeaturedProjectsComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })

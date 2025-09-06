@@ -1,0 +1,72 @@
+<section class="featured-projects-box">
+    <div class="around-padding">
+        <div>
+            <div>
+                <h3>Portfolio</h3>
+                <h1>Featured Projects</h1>
+                <span class="project-text">
+                    <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+                </span>
+            </div>
+            <div class="projects-container">
+                <span class="horizontal-line"></span>
+                <div class="project" (click)="openOverlay('join')">
+                    <div>
+                        <h2>Join</h2>
+                        <img src="./../../../assets/img/arrow_outward.svg" alt="">
+                    </div>
+                    <div>
+                        JavaScript <span class="vertical-line"></span> HTML <span class="vertical-line"></span> CSS
+                    </div>
+                    <img class="project-img-mini-join" src="./../../../assets/img/Join.svg" alt="">
+                </div>
+                <span class="horizontal-line"></span>
+                <div class="project" (click)="openOverlay('elpolloloco')">
+                    <div>
+                        <h2>El Pollo Loco</h2>
+                        <img src="./../../../assets/img/arrow_outward.svg" alt="">
+                    </div>
+                    <div>
+                        HTML <span class="vertical-line"></span> CSS <span class="vertical-line"></span> JavaScript
+                    </div>
+                    <img class="project-img-mini-elpolloloco" src="./../../../assets/img/El-Pollo-Logo.svg" alt="">
+                </div>
+                <span class="horizontal-line"></span>
+                <div class="project" (click)="openOverlay('dabubble')">
+                    <div>
+                        <h2>DA Bubble</h2>
+                        <img src="./../../../assets/img/arrow_outward.svg" alt="">
+                    </div>
+                    <div>
+                        Angular <span class="vertical-line"></span> Firebase <span class="vertical-line"></span>
+                        TypeScript
+                    </div>
+                    <img class="project-img-mini-dabubble" src="./../../../assets/img/DA-Bubble.svg" alt="">
+                </div>
+                <span class="horizontal-line"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="overlay" *ngIf="overlayVisible" (click)="closeOverlay()">
+    <div class="overlay-content" (click)="$event.stopPropagation()">
+        <ng-container [ngSwitch]="activeProject">
+            <app-project-join *ngSwitchCase="'join'"></app-project-join>
+            <app-project-elpolloloco *ngSwitchCase="'elpolloloco'"></app-project-elpolloloco>
+            <app-project-dabubble *ngSwitchCase="'dabubble'"></app-project-dabubble>
+        </ng-container>
+    </div>
+</div>
+
+<!-- <div class="overlay" *ngIf="overlayVisible" (click)="closeOverlay()">
+  <div class="overlay-content" (click)="$event.stopPropagation()">
+    <ng-container [ngSwitch]="activeProject">
+      <app-project-join *ngSwitchCase="'join'"></app-project-join>
+      <app-project-elpolloloco *ngSwitchCase="'elpolloloco'"></app-project-elpolloloco>
+      <app-project-dabubble *ngSwitchCase="'dabubble'"></app-project-dabubble>
+    </ng-container>
+
+    <button (click)="closeOverlay()">Close</button>
+  </div>
+</div> -->
