@@ -35,19 +35,34 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <button>
+            <div class="ckeck-container">
+                <button class="ckeck-button" style="width: 130px;">
                     <p>GitHub</p>
                     <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
                 </button>
-                <button>
+                <button class="ckeck-button" style="width: 142px;">
                     <p>Live Test</p>
                     <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
                 </button>
             </div>
         </div>
-        <div>
+        <div class="close-image-container">
+            <button (click)="onCloseClick()">
+                <svg class="close-img" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16" role="img"
+                    aria-label="Schließen">
+                    <title>Schließen</title>
+                    <g stroke=""  stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M4.5 4.5L11.5 11.5" />
+                        <path d="M11.5 4.5L4.5 11.5" />
+                    </g>
+                </svg>
+            </button>
             <img class="image" src="./../../../../assets/img/join-overlay.svg" alt="">
+            <button class="next-project-container">
+                <p>Next project</p>
+                <img src="./../../../../assets/img/arrow_right.svg" alt="">
+            </button>
         </div>
     </div>
 </section>

@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-project-join',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './join.component.html',
   styleUrls: ['./join.component.scss']
 })
 export class JoinComponent {
+
+  @Output() close = new EventEmitter<void>();
+
+  onCloseClick() {
+    this.close.emit();
+  }
 
 }
