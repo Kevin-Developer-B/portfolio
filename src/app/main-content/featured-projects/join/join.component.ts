@@ -13,9 +13,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class JoinComponent {
 
   @Output() close = new EventEmitter<void>();
+  @Output() next = new EventEmitter<void>();
 
   onCloseClick() {
     this.close.emit();
+  }
+
+  onNextClick() {
+    this.next.emit();
   }
 
 }

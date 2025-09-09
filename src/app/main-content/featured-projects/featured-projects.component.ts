@@ -24,11 +24,24 @@ export class FeaturedProjectsComponent {
   openOverlay(projectName: string) {
     this.activeProject = projectName;
     this.overlayVisible = true;
+    document.documentElement.classList.add('no-scroll'); 
   }
 
   closeOverlay() {
     this.overlayVisible = false;
     this.activeProject = null;
+    document.documentElement.classList.remove('no-scroll'); 
   }
+
+  projects = ['join', 'elpolloloco', 'dabubble'];
+
+  showNextProject() {
+    if (this.activeProject) {
+      const currentIndex = this.projects.indexOf(this.activeProject);
+      const nextIndex = (currentIndex + 1) % this.projects.length; // loop back to start
+      this.activeProject = this.projects[nextIndex];
+    }
+  }
+
 
 }

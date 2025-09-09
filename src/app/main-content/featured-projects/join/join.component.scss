@@ -43,7 +43,7 @@
         color: #3DCFB6;
     }
 
-    p {
+    .explain-text {
         height: 66px;
         width: 480px;
         font-size: 18px;
@@ -56,11 +56,10 @@
     width: 480px;
     height: 24px;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     gap: 16px;
 
-    >div {
-        width: 68px;
+    .individual-application {
         display: flex;
         align-items: center;
         gap: 4px;
@@ -70,9 +69,8 @@
             height: 24px;
         }
 
-        p {
+        .application-name {
             height: 19px;
-            width: 76px;
             font-size: 16px;
             font-weight: 400;
         }

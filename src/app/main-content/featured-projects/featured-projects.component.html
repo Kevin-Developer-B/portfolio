@@ -52,9 +52,9 @@
 <div class="overlay" *ngIf="overlayVisible" (click)="closeOverlay()">
     <div class="overlay-content" (click)="$event.stopPropagation()">
         <ng-container [ngSwitch]="activeProject">
-            <app-project-join *ngSwitchCase="'join'" (close)="closeOverlay()"></app-project-join>
-            <app-project-elpolloloco *ngSwitchCase="'elpolloloco'"></app-project-elpolloloco>
-            <app-project-dabubble *ngSwitchCase="'dabubble'"></app-project-dabubble>
+            <app-project-join *ngSwitchCase="'join'" (close)="closeOverlay()" (next)="showNextProject()"></app-project-join>
+            <app-project-elpolloloco *ngSwitchCase="'elpolloloco'" (close)="closeOverlay()" (next)="showNextProject()"></app-project-elpolloloco>
+            <app-project-dabubble *ngSwitchCase="'dabubble'" (close)="closeOverlay()" (next)="showNextProject()"></app-project-dabubble>
         </ng-container>
     </div>
 </div>
