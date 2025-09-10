@@ -4,6 +4,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
 
 @Component({
   selector: 'app-main-content',
@@ -13,7 +14,9 @@ import { FeaturedProjectsComponent } from './featured-projects/featured-projects
     LandingPageComponent,
     AboutMeComponent,
     SkillSetComponent,
-    FeaturedProjectsComponent],
+    FeaturedProjectsComponent,
+    EvaluationComponent
+  ],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
