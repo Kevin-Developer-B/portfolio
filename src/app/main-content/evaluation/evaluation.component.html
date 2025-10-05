@@ -2,19 +2,29 @@
     <span class="evaluation-headline">
         <h2>What my colleagues say about me</h2>
     </span>
-    <div class="slidebar-wrapper">
-        <div class="slidebar-container">
-            <div class="slide-card">text</div>
-            <div class="slide-card">text</div>
-            <div class="slide-card">text</div>
+
+    <section class="carousel">
+        <div #carouselViewport class="carousel-viewport">
+            <ul #carouselList class="carousel-list">
+                <li class="carousel-item" *ngFor="let card of cards">
+                    <div class="card">
+                        <h3>{{ card.title }}</h3>
+                        <p>{{ card.text }}</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div>
-            <button>
-                <img src="./../../../assets/img/arrow_back.svg" alt="">
-            </button>
-            <button>
-                <img src="./../../../assets/img/arrow_forward.svg" alt="">
-            </button>
+    </section>
+    <div class="carousel-controls">
+        <button class="prev" (click)="prev()">
+            <img src="./../../../assets/img/arrow_back.svg" alt="">
+        </button>
+        <div class="carousel-dots">
+            <span *ngFor="let card of cards; let i = index" class="dot" [class.active]="i === activeIndex"></span>
         </div>
+        <button class="next" (click)="next()">
+            <img src="./../../../assets/img/arrow_forward.svg" alt="">
+        </button>
     </div>
+
 </section>
