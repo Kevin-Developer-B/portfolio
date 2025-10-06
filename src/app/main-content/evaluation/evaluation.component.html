@@ -4,12 +4,18 @@
     </span>
 
     <section class="carousel">
+        <img class="quotation-marks" src="./../../../assets/img/quotation_mark.png" alt="">
         <div #carouselViewport class="carousel-viewport">
             <ul #carouselList class="carousel-list">
-                <li class="carousel-item" *ngFor="let card of cards">
+                <li class="carousel-item" *ngFor="let card of cards; let i = index" [class.active]="i === activeIndex">
                     <div class="card">
-                        <h3>{{ card.title }}</h3>
-                        <p>{{ card.text }}</p>
+                        <div class="card-text">
+                            <p>{{ card.comment }}</p>
+                            <div class="writer-container">
+                                <span class="line"></span>
+                                <h4>{{ card.writer }}</h4>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -17,13 +23,13 @@
     </section>
     <div class="carousel-controls">
         <button class="prev" (click)="prev()">
-            <img src="./../../../assets/img/arrow_back.svg" alt="">
+            <img class="arrow" src="./../../../assets/img/arrow_back.svg" alt="">
         </button>
         <div class="carousel-dots">
-            <span *ngFor="let card of cards; let i = index" class="dot" [class.active]="i === activeIndex"></span>
+            <span *ngFor="let card of cards; let i = index" class="dot" [class.active]="getDotIndex(i)"></span>
         </div>
         <button class="next" (click)="next()">
-            <img src="./../../../assets/img/arrow_forward.svg" alt="">
+            <img class="arrow" src="./../../../assets/img/arrow_forward.svg" alt="">
         </button>
     </div>
 

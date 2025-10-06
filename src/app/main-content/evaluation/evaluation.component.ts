@@ -14,22 +14,22 @@ export class EvaluationComponent implements AfterViewInit {
 
 
   cards = [
-    { title: 'Karte 1', text: 'Beschreibung 1' },
-    { title: 'Karte 2', text: 'Beschreibung 2' },
-    { title: 'Karte 3', text: 'Beschreibung 3' }
+    {  comment: "Our project beneficted enormously from Simon efficient way of working", writer: "T. Schulz - Frontend Feveloper"},
+    {  comment: "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.", writer: "H. Janisch - Team Partner"},
+    {  comment: "I dad the good fortune of working with Lukas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with and I'd happily work with him again given the chance.", writer: "A. Fischer - Team Partner"}
   ];
 
   itemWidth = 40;
   startOffset = 0;
   isAnimating = false;
-  activeIndex = 0;
+  activeIndex = 1;
 
   constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
     const firstItem = this.carouselList.nativeElement.querySelector('.carousel-item') as HTMLElement;
     if (firstItem) {
-      const gap = 60;
+      const gap = 100;
       this.itemWidth = firstItem.offsetWidth + gap;
 
       const containerWidth = this.carouselViewport.nativeElement.offsetWidth;
@@ -52,7 +52,7 @@ export class EvaluationComponent implements AfterViewInit {
     this.renderer.appendChild(list, clone);
 
     requestAnimationFrame(() => {
-      list.style.transition = 'transform 0.5s ease';
+      list.style.transition = 'transform 0.45s ease';
       list.style.transform = `translateX(-${this.startOffset + this.itemWidth}px)`;
     });
 
@@ -60,9 +60,15 @@ export class EvaluationComponent implements AfterViewInit {
       this.renderer.removeChild(list, first);
       list.style.transition = 'none';
       list.style.transform = `translateX(-${this.startOffset}px)`;
-      this.isAnimating = false;
+
       this.activeIndex = (this.activeIndex + 1) % this.cards.length;
-    }, 500);
+
+      const items = list.querySelectorAll('.carousel-item');
+      items.forEach(el => el.classList.remove('active'));
+      if (items[1]) items[1].classList.add('active');
+
+      this.isAnimating = false;
+    }, 350);
   }
 
   prev(): void {
@@ -85,9 +91,19 @@ export class EvaluationComponent implements AfterViewInit {
 
     setTimeout(() => {
       this.renderer.removeChild(list, last);
+
+      this.activeIndex = (this.activeIndex - 1 + this.cards.length) % this.cards.length;
+
+      const items = list.querySelectorAll('.carousel-item');
+      items.forEach(el => el.classList.remove('active'));
+      if (items[1]) items[1].classList.add('active');
+
       this.isAnimating = false;
-      this.activeIndex =
-        (this.activeIndex - 1 + this.cards.length) % this.cards.length;
-    }, 500);
+    }, 300);
+  }
+
+  getDotIndex(index: number): boolean {
+    const mappedIndex = (this.activeIndex - 1 + this.cards.length) % this.cards.length;
+    return index === mappedIndex;
   }
 }

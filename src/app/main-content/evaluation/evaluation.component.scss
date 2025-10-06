@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .evaluation-headline {
@@ -29,10 +30,21 @@
 
 .carousel {
   position: relative;
-  width: 90%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  overflow: hidden;
+  height: 274px;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  overflow-x: clip;
+
+  .quotation-marks {
+    position: absolute;
+    left: 500px;
+    top: -40px;
+    height: 80px;
+    width: 80px;
+    filter: brightness(0) invert(1);
+    z-index: 1;
+  }
 
   .carousel-viewport {
     overflow: visible;
@@ -40,7 +52,7 @@
 
   .carousel-list {
     display: flex;
-    gap: 60px;
+    gap: 100px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -48,34 +60,71 @@
     will-change: transform;
 
     .carousel-item {
-      flex: 0 0 300px;
+      flex: 0 0 550px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      transform: scale(1);
+    }
+
+    .carousel-item.active {
+      transform: scale(1.15);
+      z-index: 2;
+      background: #14806e81;
+      border-radius: 30px;
     }
 
     .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #4f9c8f4d;
+      height: 190px;
+      border-radius: 30px;
+      border: 1px solid #3DCFB6;
       text-align: center;
-    }
+      color: white;
+      padding: 45px 35px;
 
-    .card h3 {
-      margin: 0.5rem 0;
+      .card-text {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     .card p {
-      padding: 0 1rem 1rem;
-      font-size: 0.9rem;
-      color: #555;
+      text-align: start;
+      font-size: 19.5px;
+    }
+
+    .writer-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+    }
+
+    .line {
+      flex: 1;
+      border: #a5a5a5 1px solid;
+
+    }
+
+    h4 {
+      white-space: nowrap;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
     }
   }
 }
 
 .carousel-controls {
+  height: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
-  margin-top: 1rem;
+  margin-top: 40px;
 
   .carousel-dots {
     display: flex;
@@ -85,8 +134,8 @@
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: #ccc;
   transition: background-color 0.3s;
@@ -95,4 +144,30 @@
 
 .dot.active {
   background-color: #3DCFB6;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  .arrow {
+    height: 19px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover .arrow {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(70%) sepia(100%) saturate(624%) hue-rotate(117deg) brightness(93%) contrast(90%);
+  }
+
+  &.prev:hover .arrow {
+    transform: translateX(-4px);
+  }
+
+  &.next:hover .arrow {
+    transform: translateX(4px);
+  }
 }
