@@ -5,6 +5,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
+import { ContactFormComponent } from '../contact-form/contact-form.component';
 
 @Component({
   selector: 'app-main-content',
@@ -15,7 +16,8 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
     AboutMeComponent,
     SkillSetComponent,
     FeaturedProjectsComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    ContactFormComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']

@@ -1,1 +1,40 @@
-<p>contact-form works!</p>
+<section class="contact-me-box">
+    <div class="padding">
+        <div class="contact-me-container">
+            <div class="work-text-container">
+                <h3>Contact me</h3>
+                <h1>Let's work <br> together</h1>
+                <h2>Got a problem to solve?</h2>
+                <p>Encourage people to contact you and describe what role you are interested in.<br>
+                    
+                    Show that you will add
+                    value to their projects through your work.
+                    <br>
+                    <br>
+                    Need a Frontend developer? Let’s talk!
+                </p>
+            </div>
+
+            <div class="form-container">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+                    <label for="name">Name</label>
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.."
+                        required>
+
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail"
+                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+
+                    <label for="massage">Subject</label>
+                    <input [(ngModel)]="contactData.message" id="massage" name="massage" placeholder="Write something"
+                        required>
+
+                    <input type="submit" value="Say Hello ;)">
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

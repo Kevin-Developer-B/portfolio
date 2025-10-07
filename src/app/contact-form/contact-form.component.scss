@@ -1,0 +1,55 @@
+.contact-me-box {
+    height: 541px;
+    width: 100%;
+    margin: 80px 0;
+    
+    .padding {
+        height: 100%;
+        padding: 20px 96px;
+    }
+}
+
+.contact-me-container {
+    display: flex;
+    justify-content: space-between;
+
+    .work-text-container {
+        height: 337px;
+        width: 568px;
+    }
+}
+
+.form-container {
+    height: 550px;
+    width: 616px;
+    display: flex;
+    flex-direction: column;
+    background: #ccc;
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: transparent;
+  color: white;
+  padding: 12px 24px;
+  border: 1px solid white;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 125ms ease-in-out;
+
+  &:hover {
+    border: 1px solid turquoise;
+    color: aqua;
+  }
+}
