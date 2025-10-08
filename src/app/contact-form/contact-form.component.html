@@ -2,35 +2,56 @@
     <div class="padding">
         <div class="contact-me-container">
             <div class="work-text-container">
-                <h3>Contact me</h3>
-                <h1>Let's work <br> together</h1>
-                <h2>Got a problem to solve?</h2>
+                <h3 class="turquoise">Contact me</h3>
+                <h1 class="turquoise">Let's work <br> together</h1>
+                <h3 class="turquoise special">Got a problem to solve?</h3>
                 <p>Encourage people to contact you and describe what role you are interested in.<br>
-                    
+
                     Show that you will add
                     value to their projects through your work.
                     <br>
                     <br>
-                    Need a Frontend developer? Let’s talk!
+                    Need a Frontend developer? <span class="turquoise">Let’s talk!</span>
                 </p>
             </div>
 
             <div class="form-container">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <div class="text-area-container">
+                        <span class="normel-line"></span>
+                        <label for="name">What's your name?
+                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
+                                placeholder="Your name goes here" required>
+                        </label>
+                        <span class="line"></span>
+                    </div>
+                    <div class="text-area-container">
+                        <span class="line"></span>
+                        <label for="email">What's your email?
+                            <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                                placeholder="youremail@email.com" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        </label>
+                        <span class="line"></span>
+                    </div>
+                    <div class="text-area-container">
+                        <span class="line"></span>
+                        <label for="massage">How can I help you?
+                            <input [(ngModel)]="contactData.message" type="text" id="massage" name="massage"
+                                placeholder="Hello Lukas, I am interested in..." required>
+                        </label>
+                        <span class="line"></span>
+                    </div>
+                    <div class="check-container">
+                        <div class="privacy-policy-container">
+                            <img src="./../../assets/img/check_box_outline_blank.svg" alt="">
+                            <p>I've read the <span>privacy policy </span>and agree to the processing of my data as
+                                outlined.</p>
+                        </div>
 
-                    <label for="name">Name</label>
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.."
-                        required>
+                        <input type="submit" value="Say Hello ;)">
+                    </div>
 
-                    <label for="email">Email</label>
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail"
-                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-
-                    <label for="massage">Subject</label>
-                    <input [(ngModel)]="contactData.message" id="massage" name="massage" placeholder="Write something"
-                        required>
-
-                    <input type="submit" value="Say Hello ;)">
 
                 </form>
             </div>
