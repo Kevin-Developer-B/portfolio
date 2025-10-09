@@ -168,6 +168,60 @@ input[type=text]:focus {
     letter-spacing: 1.2px;
     font-size: 15px;
     font-weight: 400;
+
+    .checkbox {
+      height: 18px;
+      width: 18px;
+      background-image: url('../../assets/img/check_box_outline_blank.svg');
+      object-fit: cover;
+
+      &:hover {
+        background-image: url('../../assets/img/Default\ hover.svg');
+        object-fit: cover;
+        background-position: center;
+      }
+
+      &.checked {
+        background-image: url('../../assets/img/check_box.svg');
+        object-fit: cover;
+        background-position: center;
+
+        &:hover {
+          background-image: url('../../assets/img/Checked hover.svg');
+        }
+      }
+
+
+    }
+
+    span {
+      color: var(--textcolor);
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .underline-effect {
+      position: relative;
+    }
+
+    .underline-effect::after {
+      content: "";
+      position: absolute;
+      left: 47%;
+      bottom: -4px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+
+      background-color: #3DCFB6;
+    }
+
+    .underline-effect:hover::after {
+      width: 115px;
+      height: 1px;
+    }
   }
 }
 

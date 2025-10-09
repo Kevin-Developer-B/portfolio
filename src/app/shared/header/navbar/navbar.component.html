@@ -1,8 +1,11 @@
 <div class="nav-container">
     <div class="nav-selection">
-        <div class="language-button">
-            <button class="active">DE</button>
-            <button>EN</button>
+        <div class="language-switch">
+            <button class="lang-btn" [class.active]="currentLang === 'en'" [disabled]="currentLang === 'en'"
+                (click)="switchLanguage('en')"></button>
+
+            <button class="lang-btn" [class.active]="currentLang === 'de'" [disabled]="currentLang === 'de'"
+                (click)="switchLanguage('de')"></button>
         </div>
         <div class="links">
             <a class="point-effect" href="#">About me</a>
@@ -10,17 +13,5 @@
             <a class="point-effect" href="#">Projects</a>
         </div>
     </div>
-    <div class="logo">
-        <div class="abbreviation flex-direction">
-            <span class="rotation">K</span>
-            <span>B</span>
-        </div>
-        <div class="full-name flex-direction">
-            <span>Kevin</span>
-            <span>Breiter</span>
-        </div>
-
-
-
-    </div>
+    <div class="logo"></div>
 </div>

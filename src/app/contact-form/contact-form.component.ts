@@ -18,11 +18,17 @@ export class ContactFormComponent {
     message: "",
   }
 
+  isChecked = false;
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
       console.log(this.contactData);
     }
     
+  }
+
+  checkbox() {
+    this.isChecked = !this.isChecked;
   }
 
 }

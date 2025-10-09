@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { MainContentComponent } from './main-content/main-content.component';
   imports: [
     CommonModule,
     RouterOutlet,
+    HeaderComponent,
     MainContentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

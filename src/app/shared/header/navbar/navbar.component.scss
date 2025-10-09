@@ -11,16 +11,7 @@
         align-items: center;
         gap: 24px;
 
-        .language-button {
-            border: 1px solid #3DCFB6;
-            border-radius: 100px;
-            padding: 2px 3px;
-
-            & button:hover {
-                scale: (1.05);
-                transition: all 125ms ease-in-out;
-            }
-        }
+        
 
         .links {
             display: flex;
@@ -29,26 +20,19 @@
     }
 
     .logo {
-        display: flex;
-        gap: 8px;
+        height: 48px;
+        width: 132px;
+        background-image: url('../../../../assets/img/Name_Logo_Default.svg');
+        object-fit: cover;
+        background-position: center;
+        transition: 125ms ease-in-out;
 
-        .flex-direction {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .full-name {
-            display: flex;
-            gap: 4px;
-            font-size: 20px;
-        }
-
-        span {
-            margin: -4px;
-        }
-
-        .rotation {
-            rotate: 270deg;
+        &:hover {
+            height: 48px;
+            width: 132px;
+            background-image: url('../../../../assets/img/Name_Logo_Hover.svg');
+            object-fit: cover;
+            background-position: center;
         }
     }
 }
@@ -66,7 +50,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    
+
     background-color: #3DCFB6;
     transition: all 125ms;
 }
