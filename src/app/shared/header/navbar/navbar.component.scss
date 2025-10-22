@@ -11,7 +11,124 @@
         align-items: center;
         gap: 24px;
 
-        
+        .language-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-container>span {
+            position: absolute;
+            top: 5px;
+            width: 50%;
+            pointer-events: none;
+            cursor: default;
+            text-align: center;
+            font-size: var(--font-size-16);
+        }
+
+        .language-container>span.active {
+            pointer-events: auto;
+            cursor: default;
+        }
+
+        input.check-toggle-round-flat:checked~.off {
+            color: #fff;
+        }
+
+        input.check-toggle-round-flat:checked~.on {
+            color: #3dcfb786;
+        }
+
+        input.check-toggle-round-flat:checked~.on {
+            color: #3dcfb786;
+            font-weight: 400;
+        }
+
+        input.check-toggle-round-flat:checked~.off {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .language-container>span.on {
+            left: 0;
+            color: #fff;
+            font-weight: 700;
+            transition: 125ms ease-in-out;
+        }
+
+        .language-container>span.off {
+            right: 0;
+            color: #3dcfb786;
+            font-weight: 400;
+            transition: 125ms ease-in-out;
+        }
+
+        input.check-toggle-round-flat:not(:checked)+label:hover~.off {
+            color: #3DCFB6;
+            transform: scaleX(1.03);
+        }
+
+        input.check-toggle-round-flat:checked+label:hover~.on {
+            color: #3DCFB6;
+            transform: scaleX(1.03);
+        }
+
+        .check-toggle {
+            position: absolute;
+            margin-left: -9999px;
+            visibility: hidden;
+        }
+
+        .check-toggle+label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+        }
+
+        input.check-toggle-round-flat+label {
+            width: 84px;
+            height: 28px;
+            background-color: #3DCFB6;
+            border-radius: 100px;
+            transition: 125ms ease-in-out;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+
+        input.check-toggle-round-flat+label:before,
+        input.check-toggle-round-flat+label:after {
+            display: block;
+            position: absolute;
+            content: "";
+        }
+
+        input.check-toggle-round-flat+label:before {
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            right: 2px;
+            background-color: #1C1C1C;
+            border-radius: 100px;
+        }
+
+        input.check-toggle-round-flat+label:after {
+            top: 0px;
+            left: 0px;
+            bottom: 4px;
+            width: 44px;
+            height: 28px;
+            background-color: #3DCFB6;
+            border-radius: 52px;
+            transition: margin 0.2s;
+        }
+
+        input.check-toggle-round-flat:checked+label:after {
+            margin-left: 40px;
+        }
 
         .links {
             display: flex;
@@ -33,6 +150,7 @@
             background-image: url('../../../../assets/img/Name_Logo_Hover.svg');
             object-fit: cover;
             background-position: center;
+            cursor: pointer;
         }
     }
 }

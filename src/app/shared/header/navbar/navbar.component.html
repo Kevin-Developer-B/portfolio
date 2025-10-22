@@ -1,16 +1,21 @@
 <div class="nav-container">
     <div class="nav-selection">
-        <div class="language-switch">
-            <button class="lang-btn" [class.active]="currentLang === 'en'" [disabled]="currentLang === 'en'"
-                (click)="switchLanguage('en')"></button>
+        <div class="language-container">
+            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
+                [checked]="currentLang === 'de'" (change)="toggleLanguage()" />
 
-            <button class="lang-btn" [class.active]="currentLang === 'de'" [disabled]="currentLang === 'de'"
-                (click)="switchLanguage('de')"></button>
+            <label for="language-toggle"></label>
+            <span class="on" [class.active]="currentLang === 'en'" (click)="setLanguage('en')">
+                EN
+            </span>
+            <span class="off" [class.active]="currentLang === 'de'" (click)="setLanguage('de')">
+                DE
+            </span>
         </div>
         <div class="links">
-            <a class="point-effect" href="#">About me</a>
-            <a class="point-effect" href="#">Skills</a>
-            <a class="point-effect" href="#">Projects</a>
+            <a class="point-effect" href="#">{{ 'about' | translate }}</a>
+            <a class="point-effect" href="#">{{ 'skills' | translate }}</a>
+            <a class="point-effect" href="#">{{ 'projects' | translate }}</a>
         </div>
     </div>
     <div class="logo"></div>

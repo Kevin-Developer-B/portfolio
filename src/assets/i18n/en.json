@@ -1,0 +1,58 @@
+{
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "fontend_developer": "Frontend Developer",
+        "check_my_work": "Check my work",
+        "contact_me": "Contact me",
+        "remote": "Available for remote work",
+        "based": "Based in Munich",
+        "work": "Open to work",
+
+        "Who": "Who I Am",
+        "about_me_section_text1": "Hey there. I m Lukas! Write some information about yourself that is IT related. Why are you passionate about coding?",
+        "about_me_section_text1.1": "What is your source of inspiration for improving your programming skills?",
+        "about_me_section_text2": "Where are you based? Would you be open to working remotely or potentially relocating?",
+        "about_me_section_text3": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continally improving your skills?",
+        "about_me_section_text4": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking. creativity, persistence and collaboration.",
+
+        "technologies": "Technologies",
+        "skill_set": "Skill Set",
+        "technologies_text1": "A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.",
+        "technologies_text2": "You need",
+        "technologies_text2.1": "another skill?",
+        "technologies_text3": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+        "lets_talk": "Let s Talk",
+        "growth": "Growth",
+        "mindset": "mindset",
+
+        "featured_projects": "Featured Projects",
+        "featured_projects_text1": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+
+        "join_project_about_text1": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+
+        "project_about": "What is this project about?",
+        "next": "Next project",
+
+        "colleagues": "What my colleagues say about me",
+        "comment1": "Our project benefited enormously from Simon efficient way of working.",
+        "comment2": "Lukas has proven to be a reliable group partner. His technical skills and provactive approach were crucial to the success of our project.",
+        "comment3": "I had the good fortune of working with Lukas in a group Project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
+
+        "lets_work": "Let's work",
+        "together": "together",
+        "problem_to_solve": "Got a problem to solve?",
+        "contact_text1": "Encourage people to contact you and describe what role you are interested in.",
+        "contact_text2": "Show that you will add value to their projects through your work.",
+        "contact_text3": "Need a Frontend developer?",
+
+        "Whats_your_name": "What's your name?",
+        "Whats_your_email": "What's your email?",
+        "How_can_I_help_you": "How can I help you?",
+
+        "Ive_read_the": "I've read the",
+        "privacy_policy": "privacy policy",
+        "processing_of_my_data": "and agree to the processing of my data asoutlined.",
+
+        "say_hello": "Say Hello ;)"
+}

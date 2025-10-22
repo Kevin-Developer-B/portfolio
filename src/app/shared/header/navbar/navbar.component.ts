@@ -1,20 +1,36 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LanguageService, Lang } from '../../../language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  currentLang: Lang = 'en';
 
-  currentLang: 'en' | 'de' = 'en';
+  constructor(private languageService: LanguageService) { }
 
-  switchLanguage(lang: 'en' | 'de') {
-    if (lang !== this.currentLang) {
+  ngOnInit(): void {
+    this.currentLang = this.languageService.currentLang;
+    this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
+    });
+  }
+
+  toggleLanguage(): void {
+    const newLang: Lang = this.currentLang === 'en' ? 'de' : 'en';
+    this.languageService.setLanguage(newLang);
+  }
+
+  setLanguage(lang: 'en' | 'de') {
+    if (this.currentLang !== lang) {
+      this.currentLang = lang;
+      this.toggleLanguage();
     }
   }
 }

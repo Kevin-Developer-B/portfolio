@@ -1,0 +1,57 @@
+{
+        "about": "Über mich",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "fontend_developer": "Fontend-Entwickler",
+        "check_my_work": "Überprüfen Sie meine Arbeit",
+        "contact_me": "Kontaktieren Sie mich",
+        "remote": "Verfügbar für Remote-Arbeit",
+        "based": "Sitz in München",
+        "work": "Offen für die Arbeit",
+
+        "Who": "Wer ich bin",
+        "about_me_section_text1": "Hallo. Ich bin Lukas! Schreib uns doch ein paar Informationen über dich, die mit IT zu tun haben. Warum programmierst du so leidenschaftlich gern?",
+         "about_me_section_text1.1": "Was inspiriert dich, deine Programmierkenntnisse zu verbessern?",
+        "about_me_section_text2": "Wo sind Sie ansässig? Wären Sie bereit, von zu Hause aus zu arbeiten oder möglicherweise umzuziehen?",
+        "about_me_section_text3": "Zeigen Sie Aufgeschlossenheit. Sie begeistern sich für das Erlernen neuer Technologien und die kontinuierliche Weiterbildung Ihrer Fähigkeiten?",
+        "about_me_section_text4": "Beschreiben Sie kurz Ihren Lösungsansatz. Lernen Sie aus jeder Herausforderung, während Sie nach der effizientesten oder elegantesten Lösung suchen? Sie können einige Schlüsselwörter wie analytisches Denken, Kreativität, Ausdauer und Zusammenarbeit einbeziehen.",
+
+        "technologies": "Technologien",
+        "skill_set": "Fähigkeiten",
+        "technologies_text1": "Stellen Sie Ihre Fähigkeiten kurz vor. Heben Sie Ihre Erfahrung im Umgang mit verschiedenen Front-End-Technologien hervor und betonen Sie Ihre Bereitschaft, neue Technologien zu erlernen und sich anzupassen. Zeigen Sie, wie wichtig es für Sie ist, mit den rasanten Veränderungen in der Webentwicklung Schritt zu halten.",
+        "technologies_text2": "Sie benötigen eine",
+        "technologies_text2.1": "andere Fähigkeit?",
+        "technologies_text3": "Nehmen Sie gerne Kontakt mit mir auf. Ich freue mich darauf, meine bisherigen Kenntnisse zu erweitern.",
+        "lets_talk": "Lass uns reden",
+        "growth": "Wachstumsmentalität",
+        "mindset": "",
+
+        "featured_projects": "Ausgewählte Projekte",
+        "featured_projects_text1": "Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+
+
+        "join_project_about_text1": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.",
+
+        "project_about": "Worum geht es in diesem Projekt?",
+        "next": "Nächstes Projekt",
+
+        "colleagues": "Was meine Kollegen über mich sagen",
+        "comment1": "Unser Projekt hat enorm von Simons effizienter Arbeitsweise profitiert.",
+        "comment2": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
+        "comment3": "Ich hatte das Glück, mit Lukas in einem Gruppenprojekt der Developer Akademie zusammenzuarbeiten, das viel Aufwand erforderte. Er blieb stets ruhig, gelassen und konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist sehr kompetent, die Zusammenarbeit mit ihm ist unkompliziert und ich würde gerne wieder mit ihm zusammenarbeiten, wenn ich die Chance dazu hätte.",
+    
+        "lets_work": "Lasst uns zusammenarbeiten",
+        "together": "",
+        "problem_to_solve": "Müssen Sie ein Problem lösen?",
+        "contact_text1": "Ermutigen Sie die Leute, mit Ihnen Kontakt aufzunehmen und zu beschreiben, an welcher Rolle Sie interessiert sind.",
+        "contact_text2":"Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen.",
+        "contact_text3": "Benötigen Sie einen Frontend-Entwickler?",
+
+
+        "Ive_read_the": "Ich habe die",
+        "privacy_policy": "Datenschutzrichtlinie",
+        "processing_of_my_data": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+
+        "say_hello": "Sag Hallo ;)"
+    
+    }

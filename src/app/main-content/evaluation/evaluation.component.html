@@ -1,6 +1,6 @@
 <section class="evaluation-box">
     <span class="evaluation-headline">
-        <h2>What my colleagues say about me</h2>
+        <h2 data-i18n="colleagues">{{ 'colleagues' | translate }}</h2>
     </span>
 
     <section class="carousel">
@@ -10,7 +10,7 @@
                 <li class="carousel-item" *ngFor="let card of cards; let i = index" [class.active]="i === activeIndex">
                     <div class="card">
                         <div class="card-text">
-                            <p>{{ card.comment }}</p>
+                            <p data-i18n="comment">{{ card.comment }}</p>
                             <div class="writer-container">
                                 <span class="line"></span>
                                 <h4>{{ card.writer }}</h4>

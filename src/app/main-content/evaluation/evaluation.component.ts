@@ -1,44 +1,77 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import {Component,ViewChild,ElementRef,AfterViewInit,Renderer2,OnInit,OnDestroy} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService, Lang } from '../../language.service';
+import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-evaluation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './evaluation.component.html',
   styleUrls: ['./evaluation.component.scss']
 })
-export class EvaluationComponent implements AfterViewInit {
+export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('carouselList') carouselList!: ElementRef<HTMLUListElement>;
   @ViewChild('carouselViewport', { static: true }) carouselViewport!: ElementRef<HTMLDivElement>;
 
+  private langSub!: Subscription;
+  currentLang: Lang = 'en';
 
-  cards = [
-    {  comment: "Our project beneficted enormously from Simon efficient way of working", writer: "T. Schulz - Frontend Feveloper"},
-    {  comment: "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.", writer: "H. Janisch - Team Partner"},
-    {  comment: "I dad the good fortune of working with Lukas in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with and I'd happily work with him again given the chance.", writer: "A. Fischer - Team Partner"}
+  rawCards = [
+    { key: 'comment1', writer: 'T. Schulz - Frontend Developer' },
+    { key: 'comment2', writer: 'H. Janisch - Team Partner' },
+    { key: 'comment3', writer: 'A. Fischer - Team Partner' },
   ];
+
+  cards: { comment: string; writer: string }[] = [];
 
   itemWidth = 40;
   startOffset = 0;
   isAnimating = false;
   activeIndex = 1;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(
+    private renderer: Renderer2,
+    private languageService: LanguageService,
+    private translate: TranslateService
+  ) { }
+
+  ngOnInit(): void {
+    this.langSub = this.languageService.lang$.subscribe((lang: Lang) => {
+      this.currentLang = lang;
+      this.updateCards();
+    });
+    this.updateCards();
+  }
+
+  ngOnDestroy(): void {
+    this.langSub.unsubscribe();
+  }
+
+  private updateCards(): void {
+    this.cards = [];
+
+    this.rawCards.forEach(card => {
+      this.translate.get(card.key).subscribe((translated: string) => {
+        this.cards.push({ comment: translated, writer: card.writer });
+      });
+    });
+  }
 
   ngAfterViewInit(): void {
     const firstItem = this.carouselList.nativeElement.querySelector('.carousel-item') as HTMLElement;
-    if (firstItem) {
-      const gap = 100;
-      this.itemWidth = firstItem.offsetWidth + gap;
+    if (!firstItem) return;
 
-      const containerWidth = this.carouselViewport.nativeElement.offsetWidth;
-      const middleIndex = 1
+    const gap = 100;
+    this.itemWidth = firstItem.offsetWidth + gap;
 
-      this.startOffset = (this.itemWidth * middleIndex) - (containerWidth / 2) + (firstItem.offsetWidth / 2);
+    const containerWidth = this.carouselViewport.nativeElement.offsetWidth;
+    const middleIndex = 1;
 
-      this.carouselList.nativeElement.style.transform = `translateX(-${this.startOffset}px)`;
-    }
+    this.startOffset = (this.itemWidth * middleIndex) - (containerWidth / 2) + (firstItem.offsetWidth / 2);
+    this.carouselList.nativeElement.style.transform = `translateX(-${this.startOffset}px)`;
   }
 
   next(): void {
@@ -47,8 +80,8 @@ export class EvaluationComponent implements AfterViewInit {
 
     const list = this.carouselList.nativeElement;
     const first = list.firstElementChild as HTMLElement;
-
     const clone = first.cloneNode(true) as HTMLElement;
+
     this.renderer.appendChild(list, clone);
 
     requestAnimationFrame(() => {
@@ -77,8 +110,8 @@ export class EvaluationComponent implements AfterViewInit {
 
     const list = this.carouselList.nativeElement;
     const last = list.lastElementChild as HTMLElement;
-
     const clone = last.cloneNode(true) as HTMLElement;
+
     this.renderer.insertBefore(list, clone, list.firstChild);
 
     list.style.transition = 'none';

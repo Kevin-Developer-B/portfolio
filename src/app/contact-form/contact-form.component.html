@@ -2,24 +2,22 @@
     <div class="padding">
         <div class="contact-me-container">
             <div class="work-text-container">
-                <h3 class="turquoise">Contact me</h3>
-                <h1 class="turquoise">Let's work <br> together</h1>
-                <h3 class="turquoise special">Got a problem to solve?</h3>
-                <p>Encourage people to contact you and describe what role you are interested in.<br>
-
-                    Show that you will add
-                    value to their projects through your work.
-                    <br>
-                    <br>
-                    Need a Frontend developer? <span class="turquoise">Let’s talk!</span>
-                </p>
+                <h3 class="turquoise">{{ 'contact_me' | translate }}</h3>
+                <h1 class="turquoise">{{ 'lets_work' | translate }}</h1>
+                <p class="turquoise font-size64">{{ 'together' | translate }}</p>
+                <h3 class="turquoise special">{{ 'problem_to_solve' | translate }}</h3>
+                <p>{{ 'contact_text1' | translate }}</p>
+                <p>{{ 'contact_text2' | translate }}</p>
+                <span class="developer-container">
+                    <p>{{ 'contact_text3' | translate }}</p><span class="turquoise" data-i18n="lets_talk">{{ 'about' | translate }}!</span>
+                </span>
             </div>
 
             <div class="form-container">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                     <div class="text-area-container">
                         <span class="normel-line"></span>
-                        <label for="name">What's your name?
+                        <label for="name">{{ 'Whats_your_name' | translate }}
                             <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
                                 placeholder="Your name goes here" required>
                         </label>
@@ -27,7 +25,7 @@
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
-                        <label for="email">What's your email?
+                        <label for="email">{{ 'Whats_your_email' | translate }}
                             <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
                                 placeholder="youremail@email.com" required
                                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
@@ -36,7 +34,7 @@
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
-                        <label for="massage">How can I help you?
+                        <label for="massage">{{ 'How_can_I_help_you' | translate }}
                             <input [(ngModel)]="contactData.message" type="text" id="massage" name="massage"
                                 placeholder="Hello Lukas, I am interested in..." required>
                         </label>
@@ -44,13 +42,12 @@
                     </div>
                     <div class="check-container">
                         <div class="privacy-policy-container">
-                            <button class="checkbox" [class.checked]="isChecked" (click)="checkbox()" type="button"></button>
-                            <p>I've read the <span class="underline-effect">privacy policy </span>and agree to the
-                                processing of my data as
-                                outlined.</p>
+                            <button class="checkbox" [class.checked]="isChecked" (click)="checkbox()"
+                                type="button"></button>
+                            <p>{{ 'Ive_read_the' | translate }}<span class="underline-effect"> {{ 'privacy_policy' | translate }}</span> {{ 'processing_of_my_data' | translate }}</p>
                         </div>
 
-                        <input type="submit" value="Say Hello ;)">
+                        <input type="submit" value="{{ 'say_hello' | translate }}">
                     </div>
 
 

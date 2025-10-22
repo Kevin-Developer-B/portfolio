@@ -27,14 +27,19 @@
       font-size: var(--font-size-64);
       font-weight: var(--font-weight-700);
       margin: var(--margin-0);
-      margin-top: 20px;
-      margin-bottom: 40px;
+      margin: 0;
     }
 
     p {
       font-size: var(--font-size-16);
       font-weight: var(--font-weight-400);
-      margin-top: 16px;
+    }
+
+    .font-size64 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-top: -20px;
+      margin-bottom: 20px;
     }
 
     span {
@@ -44,6 +49,13 @@
     .special {
       letter-spacing: 1.5px;
       font-weight: var(--font-weight-700);
+      margin-bottom: 16px;
+    }
+
+    .developer-container {
+      display: flex;
+      gap: 5px;
+      margin-top: 16px;
     }
   }
 }

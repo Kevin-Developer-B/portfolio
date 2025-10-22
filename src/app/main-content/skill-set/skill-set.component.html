@@ -1,24 +1,22 @@
 <section class="skill-set-box">
     <div class="skill-box">
-        <h2>Technologies</h2>
+        <h2>{{ 'technologies' | translate }}</h2>
         <div class="justify-content">
             <div class="tech-container">
-                <h1>Skill Set</h1>
+                <h1>{{ 'skill_set' | translate }}</h1>
                 <div class="capability-first-text">
                     <span>
-                        A short introduction of your skills. Highlight your experience of using different front-end
-                        technologies and emphasise your openness to learning and adapting to new technologies. Show how
-                        important it is for you to keep up with the rapid changes in web development.
+                        {{ 'technologies_text1' | translate }}
                     </span>
                 </div>
                 <div class="capability-second-text">
-                    <h3>You need <span>another skill?</span></h3>
+                    <h3>{{ 'technologies_text2' | translate }}<span>{{ 'technologies_text2.1' | translate }}</span></h3>
                     <p>
-                        Feel free to contact me. I look forward to expanding on my previous knowledge.
+                        {{ 'technologies_text3' | translate }}
                     </p>
                 </div>
                 <button>
-                    <p>Let's Talk</p>
+                    <p>{{ 'lets_talk' | translate }}</p>
                 </button>
             </div>
             <div class="skill-images-container">
@@ -64,7 +62,8 @@
                 </div>
                 <div class="special-hover" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
                     <img src="./../../../assets/img/Property GrowthMindset.svg" alt="">
-                    <p>Growth <br> mindset</p>
+                    <p>{{ 'growth' | translate }}</p>
+                    <p>{{ 'mindset' | translate }}</p>
                 </div>
             </div>
             @if (showInterrest) {
