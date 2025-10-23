@@ -29,7 +29,12 @@
         .language-container>span.active {
             pointer-events: auto;
             cursor: default;
+
+            .language-container:hover input.check-toggle-round-flat+label {
+                background-color: #fff;
+            }
         }
+
 
         input.check-toggle-round-flat:checked~.off {
             color: #fff;

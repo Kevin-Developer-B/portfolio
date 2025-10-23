@@ -208,44 +208,54 @@
     border: solid 1px #3DCFB6
 }
 
-.permanent-slide-container {
+.carousel {
     position: absolute;
-    bottom: 70px;
+    top: 760px;
+    margin: auto;
     height: 62px;
-    width: 110%;
-    background-color: #FFFFFF1F;
-    rotate: -3deg;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    transform: rotate(-3deg);
     backdrop-filter: blur(5.3px);
-    overflow: hidden;
+    background: #FFFFFF1F;
 
-    .permanent-slide-animation-container {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-
-        .slide-track {
-            display: flex;
-            gap: 56px;
-            animation: slide 20s linear infinite;
-        }
-
-        span {
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 120%;
-            white-space: nowrap;
-        }
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
 
-@keyframes slide {
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 15s infinite linear;
+}
+
+.card {
+    flex: 0 0 5em;
+    color: #3DCFB6;
+    height: 38px;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    cursor: default;
+    white-space: nowrap;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.point {
+    color: #3DCFB6;
+    font-size: 16px;
+}
+
+@keyframes spin {
     from {
-        transform: translateX(0);
+        translate: 0;
     }
 
     to {
-        transform: translateX(-50%);
+        translate: -100%;
     }
 }
