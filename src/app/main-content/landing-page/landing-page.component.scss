@@ -53,57 +53,37 @@
         height: 48px;
         width: 172px;
         overflow: hidden;
-        display: inline-block;
         position: relative;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
-
+        background: transparent;
+        transition: border-color 0.25s ease-in-out;
 
         &:hover {
             border: 1px solid #3DCFB6;
-            transition: all 125ms ease-in-out;
         }
 
         span {
-            display: inline-block;
+            position: absolute;
             white-space: nowrap;
-
+            height: 48px;
+            width: 172px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        &:hover span {
-            animation: scrollCarousel 3.6s linear infinite;
+        .main-text {
+            color: white;
+        }
+
+        .slide-text {
             color: #3DCFB6;
+            opacity: 0;
+            transform: translateX(100%);
         }
     }
-}
-
-@keyframes scrollCarousel {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    49% {
-        transform: translateX(-230%);
-
-    }
-
-    50% {
-        transform: translateX(300%);
-        opacity: 0;
-    }
-
-    51% {
-        transform: translateX(230%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-
 }
 
 .arrow-container {
@@ -229,11 +209,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin 15s infinite linear;
+    animation: spin 7s infinite linear;
 }
 
 .card {
-    flex: 0 0 5em;
+    flex: 0 0 0em;
     color: #3DCFB6;
     height: 38px;
     font-size: 32px;
