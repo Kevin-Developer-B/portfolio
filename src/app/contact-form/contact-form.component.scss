@@ -237,19 +237,37 @@ input[type=text]:focus {
   }
 }
 
-
-
-input[type=submit] {
-  background-color: transparent;
-  color: white;
-  padding: 12px 24px;
-  border: 1px solid white;
+.hover-slide {
   border-radius: 100px;
-  cursor: pointer;
-  transition: 125ms ease-in-out;
+  height: 48px;
+  width: 172px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: border-color 0.25s ease-in-out;
 
-  &:hover {
-    border: 1px solid turquoise;
-    color: aqua;
+  span {
+    position: absolute;
+    white-space: nowrap;
+    height: 48px;
+    width: 172px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+  }
+
+  .main-text {
+    color: white;
+  }
+
+  .slide-text {
+    color: #3DCFB6;
+    opacity: 0;
+    transform: translateX(100%);
   }
 }

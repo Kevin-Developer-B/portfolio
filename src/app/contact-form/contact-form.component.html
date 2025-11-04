@@ -9,7 +9,8 @@
                 <p>{{ 'contact_text1' | translate }}</p>
                 <p>{{ 'contact_text2' | translate }}</p>
                 <span class="developer-container">
-                    <p>{{ 'contact_text3' | translate }}</p><span class="turquoise" data-i18n="lets_talk">{{ 'about' | translate }}!</span>
+                    <p>{{ 'contact_text3' | translate }}</p><span class="turquoise" data-i18n="lets_talk">{{ 'about' |
+                        translate }}!</span>
                 </span>
             </div>
 
@@ -42,15 +43,17 @@
                     </div>
                     <div class="check-container">
                         <div class="privacy-policy-container">
-                            <button class="checkbox" [class.checked]="isChecked" (click)="checkbox()"
+                            <button class="checkbox" [class.checked]="isChecked" (click)="toggleCheckbox()"
                                 type="button"></button>
-                            <p>{{ 'Ive_read_the' | translate }}<span class="underline-effect"> {{ 'privacy_policy' | translate }}</span> {{ 'processing_of_my_data' | translate }}</p>
+                            <p>{{ 'Ive_read_the' | translate }}<span class="underline-effect"> {{ 'privacy_policy' |
+                                    translate }}</span> {{ 'processing_of_my_data' | translate }}</p>
                         </div>
 
-                        <input type="submit" value="{{ 'say_hello' | translate }}">
+                        <button class="hover-slide" hoverSlide type="submit" [disabled]="!isChecked">
+                            <span class="main-text">{{ 'say_hello' | translate }}</span>
+                            <span class="slide-text">{{ 'say_hello' | translate }}</span>
+                        </button>
                     </div>
-
-
                 </form>
             </div>
 

@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService, Lang } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { HoverSlideDirective } from '../../shared/hover-slide.directive';
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, HoverSlideDirective],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
