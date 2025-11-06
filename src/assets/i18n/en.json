@@ -29,7 +29,9 @@
         "featured_projects": "Featured Projects",
         "featured_projects_text1": "Explore a selection of my work here - Interact with projects to see my skills in action.",
 
-        "join_project_about_text1": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+        "da-bubble_project_about_text1": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+        "el-pollo-loco_project_about_text1": "Jump, run and throw game based on object-oriented approach. Help Pepe tofind coins and tabasco salsa to fight against the crazy hen.",
+        "join_project_about_text1": "Task manager inspired by the Kanban System. Create and organize tasks usingdrag and dropfunctions, assign users and categories.",
 
         "project_about": "What is this project about?",
         "next": "Next project",

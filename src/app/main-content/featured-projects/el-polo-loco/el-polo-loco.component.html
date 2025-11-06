@@ -7,10 +7,8 @@
             </span>
             <div class="explain-container">
                 <span>
-                    <h3>What is this project about?</h3>
-                    <p class="explain-text">Jump, run and throw game based on object-oriented approach. Help Pepe to
-                        find coins and tabasco
-                        salsa to fight against the crazy hen.</p>
+                    <h3>{{ 'project_about' | translate }}</h3>
+                    <p class="explain-text">{{ 'el-pollo-loco_project_about_text1' | translate }} </p>
                 </span>
                 <div class="applications">
                     <div class="individual-application">
@@ -51,7 +49,7 @@
             </button>
             <img class="image" src="./../../../../assets/img/el_pollo_loco-overlay.svg" alt="">
             <button class="next-project-container" (click)="onNextClick()">
-                <p>Next project</p>
+                <p>{{ 'next' | translate }}</p>
                 <img src="./../../../../assets/img/arrow_right.svg" alt="">
             </button>
         </div>

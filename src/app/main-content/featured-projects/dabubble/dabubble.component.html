@@ -7,9 +7,8 @@
             </span>
             <div class="explain-container">
                 <span>
-                    <h3 data-i18n="project_about">What is this project about?</h3>
-                    <p class="explain-text" data-i18n="join_project_about_text1">This App is a Slack Clone App. It revolutionizes team communication and collaboration with its
-                        intuitive interface, real-time messaging, and robust channel organization. </p>
+                    <h3>{{ 'project_about' | translate }}</h3>
+                    <p class="explain-text">{{ 'da-bubble_project_about_text1' | translate }} </p>
                 </span>
                 <div class="applications">
                     <div class="individual-application">
@@ -50,7 +49,7 @@
             </button>
             <img class="image" src="./../../../../assets/img/daBubble-overlay.svg" alt="">
             <button class="next-project-container" (click)="onNextClick()">
-                <p data-i18n="next">Next project</p>
+                <p>{{ 'next' | translate }}</p>
                 <img src="./../../../../assets/img/arrow_right.svg" alt="">
             </button>
         </div>

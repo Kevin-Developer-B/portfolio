@@ -30,7 +30,9 @@
         "featured_projects_text1": "Entdecken Sie hier eine Auswahl meiner Arbeiten – interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.",
 
 
-        "join_project_about_text1": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.",
+        "da-bubble_project_about_text1": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.",
+        "el-pollo-loco_project_about_text1": "Springen, rennen und werfen – ein objektorientiertes Spiel. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um die verrückte Henne zu besiegen.",
+        "join_project_about_text1": "Aufgabenmanager, inspiriert vom Kanban-System. Aufgaben per Drag & Drop erstellen und organisieren, Benutzer und Kategorien zuweisen.",
 
         "project_about": "Worum geht es in diesem Projekt?",
         "next": "Nächstes Projekt",

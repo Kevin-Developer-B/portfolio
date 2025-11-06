@@ -16,9 +16,7 @@ export class LandingPageComponent {
 
   currentLang: Lang = 'en';
 
-  constructor(
-    private languageService: LanguageService,
-  ) { }
+  constructor(private languageService: LanguageService,) { }
 
   ngOnInit(): void {
     this.currentLang = this.languageService.currentLang;

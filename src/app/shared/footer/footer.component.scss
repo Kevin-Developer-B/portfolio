@@ -42,3 +42,43 @@
         font-weight: 400;
     }
 }
+
+.box2 {
+    height: 126px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: end;
+
+    a {
+        cursor: default;
+        transition: 125ms ease-in-out;
+
+        &:hover {
+            color: #3DCFB6;
+        }
+    }
+}
+
+.point-effect {
+    position: relative;
+}
+
+.point-effect::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: 7px;
+    transform: translateX(-0%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+
+    background-color: #3DCFB6;
+    transition: all 125ms;
+}
+
+.point-effect:hover::after {
+    width: 5px;
+    height: 5px;
+}

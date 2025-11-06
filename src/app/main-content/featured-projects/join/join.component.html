@@ -7,11 +7,8 @@
             </span>
             <div class="explain-container">
                 <span>
-                    <h3>What is this project about?</h3>
-                    <p class="explain-text">Task manager inspired by the Kanban System. Create and organize tasks using
-                        drag and drop
-                        functions,
-                        assign users and categories. </p>
+                    <h3>{{ 'project_about' | translate }}</h3>
+                    <p class="explain-text">{{ 'join_project_about_text1' | translate }} </p>
                 </span>
                 <div class="applications">
                     <div class="individual-application">
@@ -60,7 +57,7 @@
             </button>
             <img class="image" src="./../../../../assets/img/join-overlay.svg" alt="">
             <button class="next-project-container" (click)="onNextClick()">
-                <p>Next project</p>
+                <p>{{ 'next' | translate }}</p>
                 <img src="./../../../../assets/img/arrow_right.svg" alt="">
             </button>
         </div>
