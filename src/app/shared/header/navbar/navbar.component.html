@@ -12,10 +12,10 @@
                 DE
             </span>
         </div>
-        <div class="links">
-            <a class="point-effect" href="#">{{ 'about' | translate }}</a>
-            <a class="point-effect" href="#">{{ 'skills' | translate }}</a>
-            <a class="point-effect" href="#">{{ 'projects' | translate }}</a>
+        <div class="links" id="navLinks">
+            <a class="point-effect" href="#About-me" [class.active]="activeIndex === 1" (click)="currentActive(1)">{{ 'about' | translate }}</a>
+            <a class="point-effect" href="#Skills" [class.active]="activeIndex === 2" (click)="currentActive(2)">{{ 'skills' | translate }}</a>
+            <a class="point-effect" href="#Projects" [class.active]="activeIndex === 3" (click)="currentActive(3)">{{ 'projects' | translate }}</a>
         </div>
     </div>
     <div class="logo"></div>

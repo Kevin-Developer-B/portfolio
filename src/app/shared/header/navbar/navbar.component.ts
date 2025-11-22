@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
   currentLang: Lang = 'en';
+  activeIndex: number | null = null;
 
   constructor(private languageService: LanguageService) { }
 
@@ -32,5 +33,9 @@ export class NavbarComponent implements OnInit {
       this.currentLang = lang;
       this.toggleLanguage();
     }
+  }
+
+  currentActive(idx: number): void {
+    this.activeIndex = idx;
   }
 }

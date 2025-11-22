@@ -173,7 +173,6 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-
     background-color: #3DCFB6;
     transition: all 125ms;
 }
@@ -181,4 +180,13 @@
 .point-effect:hover::after {
     width: 5px;
     height: 5px;
+}
+
+.point-effect.active::after {
+    width: 5px;
+    height: 5px;
+}
+
+a.active {
+    color: #3DCFB6;
 }

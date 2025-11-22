@@ -6,7 +6,6 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
-import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-main-content',
@@ -18,8 +17,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
     SkillSetComponent,
     FeaturedProjectsComponent,
     EvaluationComponent,
-    ContactFormComponent,
-    FooterComponent
+    ContactFormComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
