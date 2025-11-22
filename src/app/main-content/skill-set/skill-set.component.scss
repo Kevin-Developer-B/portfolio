@@ -114,8 +114,13 @@
     position: absolute;
     right: 190px;
     bottom: -1490px;
-    transition: opacity 0.2s ease-in-out;
     pointer-events: none;
+    opacity: 0;
+    transition: 125ms ease-in-out;
+
+    &.show {
+        opacity: 1;
+    }
 }
 
 .hover-slide {
