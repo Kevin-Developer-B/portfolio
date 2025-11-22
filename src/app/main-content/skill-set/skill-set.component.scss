@@ -113,8 +113,9 @@
 .interrest-group-container {
     position: absolute;
     right: 190px;
-    bottom: -1500px;
+    bottom: -1490px;
     transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
 }
 
 .hover-slide {
