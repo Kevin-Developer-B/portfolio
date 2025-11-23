@@ -32,7 +32,7 @@ export class HoverSlideDirective implements AfterViewInit, OnDestroy {
                 // ❌ Deaktivierter Zustand
                 this.renderer.setStyle(mainText, 'transform', 'translateX(0)');
                 this.renderer.setStyle(mainText, 'color', 'grey');
-                this.renderer.setStyle(mainText, 'cursor', 'default');
+                this.renderer.setStyle(mainText, 'cursor', 'pointer');
                 this.renderer.setStyle(slideText, 'opacity', '0');
                 this.renderer.setStyle(slideText, 'color', 'grey');
                 this.renderer.setStyle(slideText, 'transform', 'translateX(100%)');
@@ -40,7 +40,7 @@ export class HoverSlideDirective implements AfterViewInit, OnDestroy {
                 this.renderer.setStyle(button, 'cursor', 'default');
                 this.renderer.setStyle(button, 'background-color', 'transparent');
                 this.renderer.setStyle(button, 'border', '1px solid grey');
-                return; // keine Animation registrieren
+                return;
             }
 
             // ✅ Aktivierter Zustand

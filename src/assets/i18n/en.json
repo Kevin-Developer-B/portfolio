@@ -49,8 +49,11 @@
         "contact_text3": "Need a Frontend developer?",
 
         "Whats_your_name": "What's your name?",
+        "Your_name_goes_here": "Your name goes here",
         "Whats_your_email": "What's your email?",
+        "youremail@email.com": "youremail@email.com",
         "How_can_I_help_you": "How can I help you?",
+        "Hello_Lukas,_I_am_interested_in...": "Hello Lukas, I am interested in...",
 
         "Ive_read_the": "I've read the",
         "privacy_policy": "privacy policy",

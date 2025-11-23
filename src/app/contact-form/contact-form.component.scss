@@ -68,16 +68,22 @@
 
   .text-area-container {
     position: relative;
-    width: 100%;
 
     input::placeholder {
-      color: Version 2/White 80%;
-      transition: color 0.3s ease;
+      transition: color 125ms ease;
     }
 
-    &:hover input::placeholder,
-    &:focus-within input::placeholder {
+    &:hover input::placeholder {
       color: #FFFFFFCC;
+    }
+
+    &:focus-within input::placeholder {
+      opacity: 0;
+    }
+
+    .error:placeholder-shown {
+      opacity: 1;
+      content: "hallo";
     }
 
     .normel-line {
@@ -202,8 +208,6 @@ input[type=text]:focus {
           background-image: url('../../assets/img/Checked hover.svg');
         }
       }
-
-
     }
 
     span {

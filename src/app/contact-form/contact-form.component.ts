@@ -16,6 +16,9 @@ export class ContactFormComponent implements OnInit {
 
   currentLang: Lang = 'en';
   isChecked = false;
+  normalPlaceholder = 'Your_name_goes_here';
+  errorPlaceholder = 'Name_is_required!';
+  isInvalid = false;
 
   constructor(private languageService: LanguageService) { }
 
@@ -32,12 +35,26 @@ export class ContactFormComponent implements OnInit {
     message: "",
   }
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+  onSubmit(form: NgForm) {
+    // Fehler für Name setzen
+    this.isInvalid = form.controls['name'].invalid;
+
+    // Wenn das Formular ungültig ist → Abbruch
+    if (form.invalid) {
+      return;
     }
 
+    // Checkbox prüfen (falls nötig)
+    if (!this.isChecked) {
+      console.log('Checkbox muss aktiviert sein');
+      return;
+    }
+
+    // Formular korrekt → Daten verarbeiten
+    console.log(this.contactData);
   }
+
+
 
   toggleCheckbox() {
     this.isChecked = !this.isChecked;

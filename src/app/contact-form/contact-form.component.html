@@ -15,21 +15,28 @@
             </div>
 
             <div class="form-container">
-                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
                     <div class="text-area-container">
                         <span class="normel-line"></span>
                         <label for="name">{{ 'Whats_your_name' | translate }}
                             <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                                placeholder="Your name goes here" required>
+                                required
+                                #nameField="ngModel"
+                                [placeholder]="(isInvalid ? errorPlaceholder : normalPlaceholder) | translate">
                         </label>
+                        <!-- <label for="name">{{ 'Whats_your_name' | translate }}
+                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
+                                placeholder="{{ 'Your_name_goes_here' | translate }}" required>
+                        </label> -->
                         <span class="line"></span>
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
                         <label for="email">{{ 'Whats_your_email' | translate }}
                             <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                                placeholder="youremail@email.com" required
-                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                                placeholder="{{ 'youremail@email.com' | translate }}" required
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                                title="Bitte geben Sie eine gültige E-Mail ein.">
                         </label>
                         <span class="line"></span>
                     </div>
@@ -37,7 +44,7 @@
                         <span class="line"></span>
                         <label for="massage">{{ 'How_can_I_help_you' | translate }}
                             <input [(ngModel)]="contactData.message" type="text" id="massage" name="massage"
-                                placeholder="Hello Lukas, I am interested in..." required>
+                                placeholder="{{ 'Hello_Lukas,_I_am_interested_in...' | translate }}" required>
                         </label>
                         <span class="line"></span>
                     </div>
