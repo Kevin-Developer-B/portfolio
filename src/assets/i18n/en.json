@@ -50,14 +50,19 @@
 
         "Whats_your_name": "What's your name?",
         "Your_name_goes_here": "Your name goes here",
+        "error_name_message": "Oops! it seens your name is missing",
         "Whats_your_email": "What's your email?",
         "youremail@email.com": "youremail@email.com",
+        "error_email_message": "Hoppla! your email is required",
         "How_can_I_help_you": "How can I help you?",
+        "error_message_message": "What do you need to developer?",
         "Hello_Lukas,_I_am_interested_in...": "Hello Lukas, I am interested in...",
 
         "Ive_read_the": "I've read the",
         "privacy_policy": "privacy policy",
         "processing_of_my_data": "and agree to the processing of my data asoutlined.",
+
+        "Please_accept_the_privacy_policy.": "Please accept the privacy policy.",
 
         "say_hello": "Say Hello ;)"
 }

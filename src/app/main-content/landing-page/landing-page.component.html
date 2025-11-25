@@ -10,14 +10,14 @@
             <h3>{{ 'fontend_developer' | translate }}</h3>
             <h1>Lukas Müller</h1>
             <div class="check-contact-container">
-                <button class="hover-slide" hoverSlide>
+                <a href="#Projects" class="hover-slide" hoverSlide>
                     <span class="main-text">{{ 'check_my_work' | translate }}</span>
                     <span class="slide-text">{{ 'check_my_work' | translate }}</span>
-                </button>
-                <button style="width: 143px;" class="hover-slide" hoverSlide>
+                </a>
+                <a href="#contact-form" style="width: 143px;" class="hover-slide" hoverSlide>
                     <span class="main-text">{{ 'contact_me' | translate }}</span>
                     <span class="slide-text">{{ 'contact_me' | translate }}</span>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -31,36 +31,11 @@
         </div>
 
     </div>
-    <div class="carousel">
-        <div class="group">
-            <div class="card">{{ 'remote' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'fontend_developer' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'based' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'work' | translate }}</div>
-            <div class="point">&#8226;</div>
-        </div>
-        <div class="group">
-            <div class="card">{{ 'remote' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'fontend_developer' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'based' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'work' | translate }}</div>
-            <div class="point">&#8226;</div>
-        </div>
-        <div class="group">
-            <div class="card">{{ 'remote' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'fontend_developer' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'based' | translate }}</div>
-            <div class="point">&#8226;</div>
-            <div class="card">{{ 'work' | translate }}</div>
-            <div class="point">&#8226;</div>
+    <div class="slider">
+        <div class="track" #trackEl>
+            <div class="slide" *ngFor="let item of slides">{{ item | translate }}</div>
+            <div class="slide" *ngFor="let item of slides">{{ item | translate }}</div>
+            <div class="slide" *ngFor="let item of slides">{{ item | translate }}</div>
         </div>
     </div>
 </section>

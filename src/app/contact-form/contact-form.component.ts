@@ -13,12 +13,17 @@ import { HoverSlideDirective } from '../shared/hover-slide.directive';
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent implements OnInit {
-
   currentLang: Lang = 'en';
   isChecked = false;
-  normalPlaceholder = 'Your_name_goes_here';
-  errorPlaceholder = 'Name_is_required!';
+  policyError = false;
   isInvalid = false;
+  normalNamePlaceholder = 'Your_name_goes_here';
+  errorNamePlaceholder = 'error_name_message';
+  normalEmailPlaceholder = 'youremail@email.com';
+  errorEmailPlaceholder = 'error_email_message';
+  normalMassagePlaceholder = 'How_can_I_help_you';
+  errorMassagePlaceholder = 'error_message_message';
+
 
   constructor(private languageService: LanguageService) { }
 
@@ -32,32 +37,32 @@ export class ContactFormComponent implements OnInit {
   contactData = {
     name: "",
     email: "",
-    message: "",
+    massage: "",
   }
 
   onSubmit(form: NgForm) {
-    // Fehler für Name setzen
-    this.isInvalid = form.controls['name'].invalid;
+    this.isInvalid =
+      form.controls['name']?.invalid ||
+      form.controls['email']?.invalid ||
+      form.controls['massage']?.invalid;
 
-    // Wenn das Formular ungültig ist → Abbruch
     if (form.invalid) {
       return;
     }
 
-    // Checkbox prüfen (falls nötig)
     if (!this.isChecked) {
-      console.log('Checkbox muss aktiviert sein');
       return;
     }
-
-    // Formular korrekt → Daten verarbeiten
-    console.log(this.contactData);
   }
 
-
+  showPolicyError() {
+    if (!this.isChecked) {
+      this.policyError = true;
+    }
+  }
 
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
+    this.policyError = false;
   }
-
 }

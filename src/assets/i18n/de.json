@@ -51,14 +51,19 @@
 
         "Whats_your_name": "Wie heißen Sie?",
         "Your_name_goes_here": "Hier steht Ihr Name",
+        "error_name_message": "Hoppla! Ihr Name fehlt.",
         "Whats_your_email": "Wie lautet Ihre E-Mail?",
         "youremail@email.com": "Ihreemail@email.com",
+        "error_email_message": "Hoppla! Ihre E-Mail-Adresse wird benötigt.",
         "How_can_I_help_you": "Wie kann ich Ihnen helfen?",
+        "error_message_message": "Was benötigen Sie als Entwickler?",
         "Hello_Lukas,_I_am_interested_in...": "Hallo Lukas, ich interessiere mich für...",
 
         "Ive_read_the": "Ich habe die",
         "privacy_policy": "Datenschutzrichtlinie",
         "processing_of_my_data": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+
+        "Please_accept_the_privacy_policy.": "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
 
         "say_hello": "Sag Hallo ;)"
     

@@ -1,9 +1,9 @@
+import { Component, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
 import { HeaderComponent } from '../../shared/header/header.component';
-import { LanguageService, Lang } from '../../language.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HoverSlideDirective } from '../../shared/hover-slide.directive';
+import { LanguageService, Lang } from '../../language.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,17 +12,32 @@ import { HoverSlideDirective } from '../../shared/hover-slide.directive';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements AfterViewInit {
+
+  @ViewChild('trackEl', { static: false }) trackEl!: ElementRef;
 
   currentLang: Lang = 'en';
+  slides = ['remote', 'fontend_developer', 'based', 'work'];
 
-  constructor(private languageService: LanguageService,) { }
+  constructor(
+    private languageService: LanguageService,
+    private renderer: Renderer2,
+    private translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.currentLang = this.languageService.currentLang;
-
     this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
+    });
+  }
+
+  ngAfterViewInit() {
+    // Warte auf Render der initialen Übersetzungen
+    setTimeout(() => {
+      if (this.trackEl && this.trackEl.nativeElement) {
+        this.renderer.addClass(this.trackEl.nativeElement, 'scrolling');
+      }
     });
   }
 }

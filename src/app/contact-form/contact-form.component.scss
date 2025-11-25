@@ -81,9 +81,8 @@
       opacity: 0;
     }
 
-    .error:placeholder-shown {
-      opacity: 1;
-      content: "hallo";
+    .error-massage::placeholder {
+      color: #e64343;
     }
 
     .normel-line {
@@ -225,8 +224,8 @@ input[type=text]:focus {
     .underline-effect::after {
       content: "";
       position: absolute;
-      left: 47%;
-      bottom: -4px;
+      left: 50%;
+      bottom: -2px;
       transform: translateX(-50%);
       width: 0;
       height: 0;
@@ -238,6 +237,35 @@ input[type=text]:focus {
       width: 115px;
       height: 1px;
     }
+  }
+
+  .policy-error-massage {
+    width: 100%;
+    position: relative;
+
+    span {
+      // display: none;
+      position: absolute;
+      top: -15px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #e64343;
+    }
+  }
+
+  .submit-wrapper {
+    position: relative;
+    width: fit-content;
+  }
+
+  .fake-submit {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    z-index: 1;
   }
 }
 

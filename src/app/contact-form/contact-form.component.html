@@ -19,32 +19,31 @@
                     <div class="text-area-container">
                         <span class="normel-line"></span>
                         <label for="name">{{ 'Whats_your_name' | translate }}
-                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                                required
+                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" required
                                 #nameField="ngModel"
-                                [placeholder]="(isInvalid ? errorPlaceholder : normalPlaceholder) | translate">
+                                [placeholder]="(isInvalid ? errorNamePlaceholder : normalNamePlaceholder) | translate"
+                                [class.error-massage]="isInvalid && nameField.invalid">
                         </label>
-                        <!-- <label for="name">{{ 'Whats_your_name' | translate }}
-                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                                placeholder="{{ 'Your_name_goes_here' | translate }}" required>
-                        </label> -->
                         <span class="line"></span>
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
                         <label for="email">{{ 'Whats_your_email' | translate }}
                             <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                                placeholder="{{ 'youremail@email.com' | translate }}" required
-                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                                title="Bitte geben Sie eine gültige E-Mail ein.">
+                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+                                #emailField="ngModel"
+                                [placeholder]="(isInvalid ? errorEmailPlaceholder : normalEmailPlaceholder) | translate"
+                                [class.error-massage]="isInvalid && emailField.invalid">
                         </label>
                         <span class="line"></span>
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
                         <label for="massage">{{ 'How_can_I_help_you' | translate }}
-                            <input [(ngModel)]="contactData.message" type="text" id="massage" name="massage"
-                                placeholder="{{ 'Hello_Lukas,_I_am_interested_in...' | translate }}" required>
+                            <input [(ngModel)]="contactData.massage" type="text" id="massage" name="massage" required
+                                #massageField="ngModel"
+                                [placeholder]="(isInvalid ? errorMassagePlaceholder : normalMassagePlaceholder) | translate"
+                                [class.error-massage]="isInvalid && massageField.invalid">
                         </label>
                         <span class="line"></span>
                     </div>
@@ -55,11 +54,18 @@
                             <p>{{ 'Ive_read_the' | translate }}<span class="underline-effect"> {{ 'privacy_policy' |
                                     translate }}</span> {{ 'processing_of_my_data' | translate }}</p>
                         </div>
-
-                        <button class="hover-slide" hoverSlide type="submit" [disabled]="!isChecked">
-                            <span class="main-text">{{ 'say_hello' | translate }}</span>
-                            <span class="slide-text">{{ 'say_hello' | translate }}</span>
-                        </button>
+                        <div class="policy-error-massage" *ngIf="policyError">
+                            <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
+                        </div>
+                        <div class="submit-wrapper">
+                            <button type="button" class="fake-submit" *ngIf="!isChecked" (click)="showPolicyError()">
+                                <span>{{ 'say_hello' | translate }}</span>
+                            </button>
+                            <button class="hover-slide" hoverSlide type="submit" [disabled]="!isChecked">
+                                <span class="main-text">{{ 'say_hello' | translate }}</span>
+                                <span class="slide-text">{{ 'say_hello' | translate }}</span>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
