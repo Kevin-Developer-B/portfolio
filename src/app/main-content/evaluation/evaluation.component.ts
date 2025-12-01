@@ -1,4 +1,4 @@
-import {Component,ViewChild,ElementRef,AfterViewInit,Renderer2,OnInit,OnDestroy} from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService, Lang } from '../../language.service';
 import { Subscription } from 'rxjs';
@@ -12,131 +12,155 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './evaluation.component.html',
   styleUrls: ['./evaluation.component.scss']
 })
-export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
-  @ViewChild('carouselList') carouselList!: ElementRef<HTMLUListElement>;
-  @ViewChild('carouselViewport', { static: true }) carouselViewport!: ElementRef<HTMLDivElement>;
+export class EvaluationComponent implements AfterViewInit {
 
-  private langSub!: Subscription;
-  currentLang: Lang = 'en';
+  @ViewChild('sliderTrack') sliderTrack!: ElementRef;
+  @ViewChild('nextBtn') nextBtn!: ElementRef;
+  @ViewChild('prevBtn') prevBtn!: ElementRef;
+  @ViewChild('paginationDots') paginationDots!: ElementRef;
 
-  rawCards = [
-    { key: 'comment1', writer: 'T. Schulz - Frontend Developer' },
-    { key: 'comment2', writer: 'H. Janisch - Team Partner' },
-    { key: 'comment3', writer: 'A. Fischer - Team Partner' },
-  ];
+  cards!: HTMLElement[];
+  clonedCards!: HTMLElement[];
+  gap = 80;
 
-  cards: { comment: string; writer: string }[] = [];
+  index = 0;
+  centerOffset = 0;
+  cardWidth = 0;
+  totalCards = 0;
+  isTransitioning = false;
 
-  itemWidth = 40;
-  startOffset = 0;
-  isAnimating = false;
-  activeIndex = 1;
-
-  constructor(
-    private renderer: Renderer2,
-    private languageService: LanguageService,
-    private translate: TranslateService
-  ) { }
-
-  ngOnInit(): void {
-    this.langSub = this.languageService.lang$.subscribe((lang: Lang) => {
-      this.currentLang = lang;
-      this.updateCards();
-    });
-    this.updateCards();
-  }
-
-  ngOnDestroy(): void {
-    this.langSub.unsubscribe();
-  }
-
-  private updateCards(): void {
-    this.cards = [];
-
-    this.rawCards.forEach(card => {
-      this.translate.get(card.key).subscribe((translated: string) => {
-        this.cards.push({ comment: translated, writer: card.writer });
-      });
-    });
-  }
+  constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
-    const firstItem = this.carouselList.nativeElement.querySelector('.carousel-item') as HTMLElement;
-    if (!firstItem) return;
+    const track = this.sliderTrack.nativeElement;
 
-    const gap = 100;
-    this.itemWidth = firstItem.offsetWidth + gap;
+    // Original-Karten einlesen
+    const originalCards = Array.from(track.querySelectorAll('.card')) as HTMLElement[];
+    this.totalCards = originalCards.length;
 
-    const containerWidth = this.carouselViewport.nativeElement.offsetWidth;
-    const middleIndex = 1;
+    // Loop: Karten klonen
+    this.clonedCards = [
+      ...originalCards.map(c => c.cloneNode(true) as HTMLElement),
+      ...originalCards,
+      ...originalCards.map(c => c.cloneNode(true) as HTMLElement)
+    ];
 
-    this.startOffset = (this.itemWidth * middleIndex) - (containerWidth / 2) + (firstItem.offsetWidth / 2);
-    this.carouselList.nativeElement.style.transform = `translateX(-${this.startOffset}px)`;
-  }
+    // Track neu aufbauen
+    track.innerHTML = '';
+    this.clonedCards.forEach(card => track.appendChild(card));
 
-  next(): void {
-    if (this.isAnimating) return;
-    this.isAnimating = true;
+    // Nach dem Rendern Breite auslesen
+    setTimeout(() => {
+      this.cardWidth = this.clonedCards[0].offsetWidth;
 
-    const list = this.carouselList.nativeElement;
-    const first = list.firstElementChild as HTMLElement;
-    const clone = first.cloneNode(true) as HTMLElement;
+      // --- NEU: Karte 1 wirklich in der Mitte zentrieren ---
+      const slideSize = this.cardWidth + this.gap;
 
-    this.renderer.appendChild(list, clone);
+      // Breite des Slider-Containers
+      const containerWidth = this.sliderTrack.nativeElement.parentElement.offsetWidth;
 
-    requestAnimationFrame(() => {
-      list.style.transition = 'transform 0.45s ease';
-      list.style.transform = `translateX(-${this.startOffset + this.itemWidth}px)`;
+      // Offset damit die Mitte von Karte 1 im Mittelpunkt des Containers liegt
+      this.centerOffset = (slideSize - containerWidth) / 1.85;
+
+      // Startposition auf die erste echte Karte
+      this.index = this.totalCards;
+
+      // Update mit deaktivierter Transition
+      this.updateSlider(true);
+
+      // Pagination bauen & aktualisieren
+      this.buildPaginationDots();
+      this.updateActiveDot();
     });
 
-    setTimeout(() => {
-      this.renderer.removeChild(list, first);
-      list.style.transition = 'none';
-      list.style.transform = `translateX(-${this.startOffset}px)`;
+    // Buttons
+    this.renderer.listen(this.nextBtn.nativeElement, 'click', () => this.moveNext());
+    this.renderer.listen(this.prevBtn.nativeElement, 'click', () => this.movePrev());
 
-      this.activeIndex = (this.activeIndex + 1) % this.cards.length;
-
-      const items = list.querySelectorAll('.carousel-item');
-      items.forEach(el => el.classList.remove('active'));
-      if (items[1]) items[1].classList.add('active');
-
-      this.isAnimating = false;
-    }, 350);
+    // Transition-Ende für Loop-Korrektur
+    this.renderer.listen(track, 'transitionend', () => this.handleTransitionEnd());
   }
 
-  prev(): void {
-    if (this.isAnimating) return;
-    this.isAnimating = true;
+  // --- SLIDER BEWEGEN ---
+  moveNext() {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+    this.index++;
+    this.updateSlider(false);
+  }
 
-    const list = this.carouselList.nativeElement;
-    const last = list.lastElementChild as HTMLElement;
-    const clone = last.cloneNode(true) as HTMLElement;
+  movePrev() {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+    this.index--;
+    this.updateSlider(false);
+  }
 
-    this.renderer.insertBefore(list, clone, list.firstChild);
+  updateSlider(disableTransition: boolean) {
+    const track = this.sliderTrack.nativeElement;
 
-    list.style.transition = 'none';
-    list.style.transform = `translateX(-${this.startOffset + this.itemWidth}px)`;
+    if (disableTransition) {
+      this.renderer.setStyle(track, 'transition', 'none');
+    } else {
+      this.renderer.setStyle(track, 'transition', 'transform 0.95s ease');
+    }
+    const slideSize = this.cardWidth + this.gap;
+    const moveX = this.index * slideSize + this.centerOffset;
+    this.renderer.setStyle(track, 'transform', `translateX(-${moveX}px)`);
+    this.updateActiveDot();
+    this.updateActiveCardHighlight();
+  }
 
-    requestAnimationFrame(() => {
-      list.style.transition = 'transform 0.5s ease';
-      list.style.transform = `translateX(-${this.startOffset}px)`;
+  updateActiveCardHighlight() {
+    if (!this.clonedCards) return;
+    const currentSlideIndex = (this.index - this.totalCards + this.totalCards) % this.totalCards;
+    this.clonedCards.forEach((card, i) => {
+      const realIndex = i % this.totalCards;
+      if (realIndex === currentSlideIndex) {
+        this.renderer.addClass(card, 'active-card');
+      } else {
+        this.renderer.removeClass(card, 'active-card');
+      }
     });
-
-    setTimeout(() => {
-      this.renderer.removeChild(list, last);
-
-      this.activeIndex = (this.activeIndex - 1 + this.cards.length) % this.cards.length;
-
-      const items = list.querySelectorAll('.carousel-item');
-      items.forEach(el => el.classList.remove('active'));
-      if (items[1]) items[1].classList.add('active');
-
-      this.isAnimating = false;
-    }, 300);
   }
 
-  getDotIndex(index: number): boolean {
-    const mappedIndex = (this.activeIndex - 1 + this.cards.length) % this.cards.length;
-    return index === mappedIndex;
+  handleTransitionEnd() {
+    this.isTransitioning = false;
+    if (this.index >= this.totalCards * 2) {
+      this.index = this.totalCards;
+      this.updateSlider(true);
+    }
+    if (this.index < this.totalCards) {
+      this.index = this.totalCards * 2 - 1;
+      this.updateSlider(true);
+    }
+    this.updateActiveDot();
+    this.updateActiveCardHighlight();
+  }
+
+  buildPaginationDots() {
+    const dotContainer = this.paginationDots.nativeElement;
+    for (let i = 0; i < this.totalCards; i++) {
+      const dot = this.renderer.createElement('div');
+      this.renderer.addClass(dot, 'pagination-dot');
+      this.renderer.listen(dot, 'click', () => {
+        this.index = this.totalCards + i;
+        this.updateSlider(false);
+      });
+      this.renderer.appendChild(dotContainer, dot);
+    }
+  }
+
+  updateActiveDot() {
+    if (!this.paginationDots) return;
+    const currentSlide = (this.index - this.totalCards + this.totalCards) % this.totalCards;
+    const dots = this.paginationDots.nativeElement.querySelectorAll('.pagination-dot');
+    dots.forEach((dot: HTMLElement, i: number) => {
+      if (i === currentSlide) {
+        this.renderer.addClass(dot, 'active');
+      } else {
+        this.renderer.removeClass(dot, 'active');
+      }
+    });
   }
 }

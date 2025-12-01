@@ -1,36 +1,27 @@
 <section class="evaluation-box">
     <span class="evaluation-headline">
-        <h2 data-i18n="colleagues">{{ 'colleagues' | translate }}</h2>
+        <h2>{{ 'colleagues' | translate }}</h2>
     </span>
 
-    <section class="carousel">
-        <img class="quotation-marks" src="./../../../assets/img/quotation_mark.png" alt="">
-        <div #carouselViewport class="carousel-viewport">
-            <ul #carouselList class="carousel-list">
-                <li class="carousel-item" *ngFor="let card of cards; let i = index" [class.active]="i === activeIndex">
-                    <div class="card">
-                        <div class="card-text">
-                            <p data-i18n="comment">{{ card.comment }}</p>
-                            <div class="writer-container">
-                                <span class="line"></span>
-                                <h4>{{ card.writer }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+    <div class="slider-wrapper">
+        <div class="slider-container">
+            <div class="slider-track" #sliderTrack>
+                <div class="card">
+                    <p class="card-text">{{ 'comment2' | translate }}</p>
+                </div>
+                <div class="card">
+                    <p class="card-text">{{ 'comment3' | translate }}</p>
+                </div>
+                <div class="card">
+                    <p class="card-text">{{ 'comment1' | translate }}</p>
+                </div>
+            </div>
         </div>
-    </section>
-    <div class="carousel-controls">
-        <button class="prev" (click)="prev()">
-            <img class="arrow" src="./../../../assets/img/arrow_back.svg" alt="">
-        </button>
-        <div class="carousel-dots">
-            <span *ngFor="let card of cards; let i = index" class="dot" [class.active]="getDotIndex(i)"></span>
-        </div>
-        <button class="next" (click)="next()">
-            <img class="arrow" src="./../../../assets/img/arrow_forward.svg" alt="">
-        </button>
+    </div>
+    <div class="slider-buttons">
+        <button class="btn prev" #prevBtn></button>
+        <div class="pagination" #paginationDots></div>
+        <button class="btn next" #nextBtn></button>
     </div>
 
 </section>
