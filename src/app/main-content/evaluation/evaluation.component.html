@@ -6,14 +6,8 @@
     <div class="slider-wrapper">
         <div class="slider-container">
             <div class="slider-track" #sliderTrack>
-                <div class="card">
-                    <p class="card-text">{{ 'comment2' | translate }}</p>
-                </div>
-                <div class="card">
-                    <p class="card-text">{{ 'comment3' | translate }}</p>
-                </div>
-                <div class="card">
-                    <p class="card-text">{{ 'comment1' | translate }}</p>
+                <div class="card" *ngFor="let c of comments">
+                    <p class="card-text">{{ c | translate }}</p>
                 </div>
             </div>
         </div>

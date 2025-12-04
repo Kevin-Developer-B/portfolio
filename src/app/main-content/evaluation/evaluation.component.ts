@@ -4,6 +4,7 @@ import { LanguageService, Lang } from '../../language.service';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-evaluation',
@@ -27,58 +28,108 @@ export class EvaluationComponent implements AfterViewInit {
   centerOffset = 0;
   cardWidth = 0;
   totalCards = 0;
+  visibleSlides = 3;
+  maxDots = 3;
   isTransitioning = false;
+  comments: string[] = [];
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private translate: TranslateService, private http: HttpClient) { }
 
-  ngAfterViewInit(): void {
-    const track = this.sliderTrack.nativeElement;
+  ngOnInit() {
+    this.loadCommentKeys(this.translate.currentLang);
 
-    // Original-Karten einlesen
-    const originalCards = Array.from(track.querySelectorAll('.card')) as HTMLElement[];
-    this.totalCards = originalCards.length;
+    this.translate.onLangChange.subscribe(event => {
+      this.loadCommentKeys(event.lang);
+    });
+  }
 
-    // Loop: Karten klonen
-    this.clonedCards = [
-      ...originalCards.map(c => c.cloneNode(true) as HTMLElement),
-      ...originalCards,
-      ...originalCards.map(c => c.cloneNode(true) as HTMLElement)
-    ];
+  ngAfterViewInit(): void { }
 
-    // Track neu aufbauen
-    track.innerHTML = '';
-    this.clonedCards.forEach(card => track.appendChild(card));
-
-    // Nach dem Rendern Breite auslesen
+  initSlider() {
+    this.clonedCards = [];
     setTimeout(() => {
-      this.cardWidth = this.clonedCards[0].offsetWidth;
+      const track = this.sliderTrack.nativeElement;
 
-      // --- NEU: Karte 1 wirklich in der Mitte zentrieren ---
+      // 1. Originalkarten aus Angular suchen
+      const originalCards = Array.from(track.querySelectorAll('.card')) as HTMLElement[];
+      this.totalCards = originalCards.length;
+
+      if (this.totalCards === 0) return; // Sicherheit
+
+      this.totalCards = this.comments.length;
+
+      this.clonedCards = [
+        ...this.comments.map(key => this.createCard(key)), // Klone vor Originalen
+        ...this.comments.map(key => this.createCard(key)), // Originalkarten
+        ...this.comments.map(key => this.createCard(key))  // Klone nach Originalen
+      ];
+
+
+      track.innerHTML = ''; // Alten Inhalt löschen
+      this.clonedCards.forEach(card => track.appendChild(card));
+
+      // 3. Breiten berechnen (nachdem DOM fertig ist)
+      const firstCard = track.querySelector('.card') as HTMLElement;
+      this.cardWidth = firstCard.offsetWidth;
+
       const slideSize = this.cardWidth + this.gap;
+      const containerWidth = track.parentElement.offsetWidth;
 
-      // Breite des Slider-Containers
-      const containerWidth = this.sliderTrack.nativeElement.parentElement.offsetWidth;
-
-      // Offset damit die Mitte von Karte 1 im Mittelpunkt des Containers liegt
       this.centerOffset = (slideSize - containerWidth) / 1.85;
 
-      // Startposition auf die erste echte Karte
+      // Startposition
       this.index = this.totalCards;
-
-      // Update mit deaktivierter Transition
       this.updateSlider(true);
 
-      // Pagination bauen & aktualisieren
+      // 4. Dots bauen + aktivieren
       this.buildPaginationDots();
       this.updateActiveDot();
+
+      // Buttons + Listener
+      this.renderer.listen(this.nextBtn.nativeElement, 'click', () => this.moveNext());
+      this.renderer.listen(this.prevBtn.nativeElement, 'click', () => this.movePrev());
+      this.renderer.listen(track, 'transitionend', () => this.handleTransitionEnd());
     });
+  }
 
-    // Buttons
-    this.renderer.listen(this.nextBtn.nativeElement, 'click', () => this.moveNext());
-    this.renderer.listen(this.prevBtn.nativeElement, 'click', () => this.movePrev());
+  // createCardFromOriginal(original: HTMLElement): HTMLElement {
+  //   const card = this.renderer.createElement('div');
+  //   this.renderer.addClass(card, 'card');
 
-    // Transition-Ende für Loop-Korrektur
-    this.renderer.listen(track, 'transitionend', () => this.handleTransitionEnd());
+  //   const p = this.renderer.createElement('p');
+  //   this.renderer.addClass(p, 'card-text');
+  //   p.textContent = original.querySelector('.card-text')?.textContent || '';
+
+  //   this.renderer.appendChild(card, p);
+  //   return card;
+  // }
+
+
+  createCard(key: string): HTMLElement {
+    const card = this.renderer.createElement('div');
+    this.renderer.addClass(card, 'card');
+
+    const p = this.renderer.createElement('p');
+    this.renderer.addClass(p, 'card-text');
+    p.textContent = this.translate.instant(key);
+
+    this.renderer.appendChild(card, p);
+    return card;
+  }
+
+  loadCommentKeys(lang: string) {
+    const path = `assets/i18n/${lang}.json`;
+
+    this.http.get<any>(path).subscribe(json => {
+      this.comments = Object.keys(json)
+        .filter(key => key.startsWith('comment'))
+        .sort();
+
+      // ❗ Slider erst starten, NACHDEM Angular das *ngFor gerendert hat
+      setTimeout(() => {
+        this.initSlider();
+      });
+    });
   }
 
   // --- SLIDER BEWEGEN ---
@@ -126,24 +177,35 @@ export class EvaluationComponent implements AfterViewInit {
 
   handleTransitionEnd() {
     this.isTransitioning = false;
+
+    // Vorwärts über letzte Originalkarte hinaus → setze Index zurück auf Original
     if (this.index >= this.totalCards * 2) {
       this.index = this.totalCards;
       this.updateSlider(true);
     }
+
+    // Rückwärts vor erste Originalkarte → setze Index zurück auf Original
     if (this.index < this.totalCards) {
       this.index = this.totalCards * 2 - 1;
       this.updateSlider(true);
     }
+
     this.updateActiveDot();
     this.updateActiveCardHighlight();
   }
 
+
   buildPaginationDots() {
     const dotContainer = this.paginationDots.nativeElement;
-    for (let i = 0; i < this.totalCards; i++) {
+    dotContainer.innerHTML = ''; // vorherige Dots löschen
+
+    const dotsToShow = Math.min(this.maxDots, this.totalCards); // max 3 oder weniger
+
+    for (let i = 0; i < dotsToShow; i++) {
       const dot = this.renderer.createElement('div');
       this.renderer.addClass(dot, 'pagination-dot');
       this.renderer.listen(dot, 'click', () => {
+        // berechne den Index so, dass der Dot auf die richtige Karte springt
         this.index = this.totalCards + i;
         this.updateSlider(false);
       });
@@ -151,16 +213,23 @@ export class EvaluationComponent implements AfterViewInit {
     }
   }
 
+
   updateActiveDot() {
     if (!this.paginationDots) return;
-    const currentSlide = (this.index - this.totalCards + this.totalCards) % this.totalCards;
+
     const dots = this.paginationDots.nativeElement.querySelectorAll('.pagination-dot');
+    if (!dots.length) return;
+
+    // berechne den Dot anhand der aktuellen Karte
+    const dotIndex = ((this.index - this.totalCards + this.totalCards) % this.totalCards) % this.maxDots;
+
     dots.forEach((dot: HTMLElement, i: number) => {
-      if (i === currentSlide) {
+      if (i === dotIndex) {
         this.renderer.addClass(dot, 'active');
       } else {
         this.renderer.removeClass(dot, 'active');
       }
     });
   }
+
 }
