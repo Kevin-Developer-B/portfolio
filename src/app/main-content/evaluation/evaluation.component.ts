@@ -31,7 +31,7 @@ export class EvaluationComponent implements AfterViewInit {
   visibleSlides = 3;
   maxDots = 3;
   isTransitioning = false;
-  comments: string[] = [];
+  comments: { text: string, author: string }[] = [];
 
   constructor(private renderer: Renderer2, private translate: TranslateService, private http: HttpClient) { }
 
@@ -49,90 +49,61 @@ export class EvaluationComponent implements AfterViewInit {
     this.clonedCards = [];
     setTimeout(() => {
       const track = this.sliderTrack.nativeElement;
-
-      // 1. Originalkarten aus Angular suchen
       const originalCards = Array.from(track.querySelectorAll('.card')) as HTMLElement[];
       this.totalCards = originalCards.length;
-
-      if (this.totalCards === 0) return; // Sicherheit
-
+      if (this.totalCards === 0) return;
       this.totalCards = this.comments.length;
-
       this.clonedCards = [
-        ...this.comments.map(key => this.createCard(key)), // Klone vor Originalen
-        ...this.comments.map(key => this.createCard(key)), // Originalkarten
-        ...this.comments.map(key => this.createCard(key))  // Klone nach Originalen
+        ...this.comments.map(key => this.createCard(key)),
+        ...this.comments.map(key => this.createCard(key)),
+        ...this.comments.map(key => this.createCard(key))
       ];
-
-
-      track.innerHTML = ''; // Alten Inhalt löschen
+      track.innerHTML = '';
       this.clonedCards.forEach(card => track.appendChild(card));
-
-      // 3. Breiten berechnen (nachdem DOM fertig ist)
       const firstCard = track.querySelector('.card') as HTMLElement;
       this.cardWidth = firstCard.offsetWidth;
-
       const slideSize = this.cardWidth + this.gap;
       const containerWidth = track.parentElement.offsetWidth;
-
       this.centerOffset = (slideSize - containerWidth) / 1.85;
-
-      // Startposition
       this.index = this.totalCards;
       this.updateSlider(true);
-
-      // 4. Dots bauen + aktivieren
       this.buildPaginationDots();
       this.updateActiveDot();
-
-      // Buttons + Listener
       this.renderer.listen(this.nextBtn.nativeElement, 'click', () => this.moveNext());
       this.renderer.listen(this.prevBtn.nativeElement, 'click', () => this.movePrev());
       this.renderer.listen(track, 'transitionend', () => this.handleTransitionEnd());
     });
   }
 
-  // createCardFromOriginal(original: HTMLElement): HTMLElement {
-  //   const card = this.renderer.createElement('div');
-  //   this.renderer.addClass(card, 'card');
-
-  //   const p = this.renderer.createElement('p');
-  //   this.renderer.addClass(p, 'card-text');
-  //   p.textContent = original.querySelector('.card-text')?.textContent || '';
-
-  //   this.renderer.appendChild(card, p);
-  //   return card;
-  // }
-
-
-  createCard(key: string): HTMLElement {
+  createCard(comment: { text: string, author: string }): HTMLElement {
     const card = this.renderer.createElement('div');
-    this.renderer.addClass(card, 'card');
-
+    this.renderer.addClass(card, 'card')
     const p = this.renderer.createElement('p');
     this.renderer.addClass(p, 'card-text');
-    p.textContent = this.translate.instant(key);
-
+    p.textContent = comment.text;
+    const author = this.renderer.createElement('span');
+    this.renderer.addClass(author, 'card-author');
+    author.textContent = `${comment.author}`;
     this.renderer.appendChild(card, p);
+    this.renderer.appendChild(card, author);
     return card;
   }
 
   loadCommentKeys(lang: string) {
     const path = `assets/i18n/${lang}.json`;
-
     this.http.get<any>(path).subscribe(json => {
-      this.comments = Object.keys(json)
-        .filter(key => key.startsWith('comment'))
-        .sort();
-
-      // ❗ Slider erst starten, NACHDEM Angular das *ngFor gerendert hat
+      const commentSection = json['comments'] ?? {};
+      this.comments = Object.keys(commentSection)
+        .map(key => ({
+          text: commentSection[key].text,
+          author: commentSection[key].author
+        }));
       setTimeout(() => {
         this.initSlider();
       });
     });
   }
 
-  // --- SLIDER BEWEGEN ---
   moveNext() {
     if (this.isTransitioning) return;
     this.isTransitioning = true;
@@ -178,13 +149,11 @@ export class EvaluationComponent implements AfterViewInit {
   handleTransitionEnd() {
     this.isTransitioning = false;
 
-    // Vorwärts über letzte Originalkarte hinaus → setze Index zurück auf Original
     if (this.index >= this.totalCards * 2) {
       this.index = this.totalCards;
       this.updateSlider(true);
     }
 
-    // Rückwärts vor erste Originalkarte → setze Index zurück auf Original
     if (this.index < this.totalCards) {
       this.index = this.totalCards * 2 - 1;
       this.updateSlider(true);
@@ -194,18 +163,16 @@ export class EvaluationComponent implements AfterViewInit {
     this.updateActiveCardHighlight();
   }
 
-
   buildPaginationDots() {
     const dotContainer = this.paginationDots.nativeElement;
-    dotContainer.innerHTML = ''; // vorherige Dots löschen
+    dotContainer.innerHTML = '';
 
-    const dotsToShow = Math.min(this.maxDots, this.totalCards); // max 3 oder weniger
+    const dotsToShow = Math.min(this.maxDots, this.totalCards);
 
     for (let i = 0; i < dotsToShow; i++) {
       const dot = this.renderer.createElement('div');
       this.renderer.addClass(dot, 'pagination-dot');
       this.renderer.listen(dot, 'click', () => {
-        // berechne den Index so, dass der Dot auf die richtige Karte springt
         this.index = this.totalCards + i;
         this.updateSlider(false);
       });
@@ -213,14 +180,12 @@ export class EvaluationComponent implements AfterViewInit {
     }
   }
 
-
   updateActiveDot() {
     if (!this.paginationDots) return;
 
     const dots = this.paginationDots.nativeElement.querySelectorAll('.pagination-dot');
     if (!dots.length) return;
 
-    // berechne den Dot anhand der aktuellen Karte
     const dotIndex = ((this.index - this.totalCards + this.totalCards) % this.totalCards) % this.maxDots;
 
     dots.forEach((dot: HTMLElement, i: number) => {
@@ -231,5 +196,4 @@ export class EvaluationComponent implements AfterViewInit {
       }
     });
   }
-
 }

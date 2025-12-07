@@ -3,8 +3,8 @@
         "skills": "Fähigkeiten",
         "projects": "Projekte",
         "fontend_developer": "Fontend-Entwickler",
-        "check_my_work": "Überprüfen Sie meine Arbeit",
-        "contact_me": "Kontaktieren Sie mich",
+        "check_my_work": "Übersicht meine Arbeit",
+        "contact_me": "Kontaktiere Mich",
         "remote": "Verfügbar für Remote-Arbeit",
         "based": "Sitz in München",
         "work": "Offen für die Arbeit",
@@ -38,9 +38,20 @@
         "next": "Nächstes Projekt",
 
         "colleagues": "Was meine Kollegen über mich sagen",
-        "comment1": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
-        "comment2": "Ich hatte das Glück, mit Lukas in einem Gruppenprojekt der Developer Akademie zusammenzuarbeiten, das viel Aufwand erforderte. Er blieb stets ruhig, gelassen und konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist sehr kompetent, die Zusammenarbeit mit ihm ist unkompliziert und ich würde gerne wieder mit ihm zusammenarbeiten, wenn ich die Chance dazu hätte.",
-        "comment3": "Unser Projekt hat enorm von Simons effizienter Arbeitsweise profitiert.",
+        "comments": {
+                "comment1": {
+                        "text": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
+                        "author": "H.Janisch - Team Partner" 
+                },
+                "comment2": {
+                        "text": "Ich hatte das Glück, mit Lukas in einem Gruppenprojekt der Developer Akademie zusammenzuarbeiten, das viel Aufwand erforderte. Er blieb stets ruhig, gelassen und konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist sehr kompetent, die Zusammenarbeit mit ihm ist unkompliziert und ich würde gerne wieder mit ihm zusammenarbeiten, wenn ich die Chance dazu hätte.",
+                        "author": "A.Fischer - Team Partner"
+                },
+                "comment3": {
+                        "text": "Unser Projekt hat enorm von Simons effizienter Arbeitsweise profitiert.",
+                        "author": "T.Schulz - Frontend-Entwickler"
+                }
+        },
 
         "lets_work": "Lasst uns zusammenarbeiten",
         "together": "",
