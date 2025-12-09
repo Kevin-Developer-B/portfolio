@@ -76,6 +76,28 @@
 
         "Please_accept_the_privacy_policy.": "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
 
-        "say_hello": "Sag Hallo ;)"
-    
+        "say_hello": "Sag Hallo ;)",
+
+        "Legal Notice": "Rechtlicher Hinweis",
+        "Imprint": "Impressum",
+        "Student_Names_List": "Liste der Studentennamen",
+        "adress_operator": "Adresse des JOIN-Operators – z. B. einer der Studierenden",
+        "postcode": "Postleitzahl und Ort",
+        "exploring": "Das Board erkunden",
+        "acceptance": "Annahme der Bedingungen",
+        "acceptance_text": "Durch den Zugriff auf und die Nutzung von <span class='white-color'>Portfolio</span> (Produkt) erklären Sie sich mit den folgenden Nutzungsbedingungen sowie allen diesbezüglichen Richtlinien und Änderungen einverstanden, die Ihnen gegebenenfalls mitgeteilt werden. Wir, die aufgeführten Studierenden, behalten uns das Recht vor, die Nutzungsbedingungen jederzeit und ohne vorherige Ankündigung zu aktualisieren oder zu ändern.",
+        "ownsership": "Umfang und Eigentumsrechte des Produkts",
+        "ownsership-text1": "Das <span class='white-color'>Portfolio</span> wurde im Rahmen eines studentischen Gruppenprojekts in einem Webentwicklungs-Bootcamp der <span class='white-color'>Developer Akademie GmbH</span> entwickelt. Es dient ausschließlich Bildungszwecken und ist nicht für den umfassenden privaten und geschäftlichen Gebrauch bestimmt. Daher können wir weder die ständige Verfügbarkeit, Zuverlässigkeit, Genauigkeit noch sonstige Qualitätsmerkmale dieses Produkts garantieren.",
+        "ownsership-text2": "Das Design von <span class='white-color'>Portfolio</span> ist Eigentum der Developer Akademie GmbH. Unerlaubte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Reproduktion des Designs ist strengstens untersagt.",
+        "Proprietary rights": "Eigentumsrechte",
+        "Proprietary rights_text1": "Abgesehen vom Design, das Eigentum der <span class='white-color'>Developer Akademie GmbH</span> ist, behalten wir, die aufgeführten Studenten, alle Eigentumsrechte an <span class='white-color'>Portfolio</span>, einschließlich aller zugehörigen urheberrechtlich geschützten Materialien, Marken und sonstigen geschützten Informationen.",
+        "product": "Verwendung des Produkts",
+        "product_text": "<span class='white-color'>Portfolio</span> darf ausschließlich für rechtmäßige Zwecke und in Übereinstimmung mit allen geltenden Gesetzen und Bestimmungen genutzt werden. Jegliche Nutzung von <span class='white-color'>Portfolio</span> für illegale Aktivitäten oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung anderer Personen ist strengstens untersagt. Sie tragen die alleinige Verantwortung für Ihre Interaktionen mit anderen Nutzern von <span class='white-color'>Portfolio</span>.",
+        "disclamer": "Gewährleistungsausschluss und Haftungsbeschränkung",
+        "disclamer_text": "Das <span class='white-color'>Portfolio</span> wird ohne jegliche Gewährleistung, weder ausdrücklich noch stillschweigend, bereitgestellt. Dies schließt insbesondere die Gewährleistung der Handelsüblichkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter aus. Weder wir, die aufgeführten Studierenden noch die <span class='white-color'>Developer Akademie</span> haften in irgendeinem Fall für direkte, indirekte, zufällige, besondere, Folgeschäden oder Strafschadenersatz, einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Verlust des Firmenwerts, Nutzungsausfall, Datenverlust oder sonstige immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder der Leistung des <span class='white-color'>Portfolio</span> entstehen oder damit in Zusammenhang stehen.",
+        "Indemnity": "Entschädigung",
+        "Indemnity_text": "Sie verpflichten sich, uns, die aufgeführten Studenten, die <span class='white-color'>Developer Akademie </span> sowie unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Mitarbeiter von jeglichen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrer Nutzung von <span class='white-color'>Portfolio</span> und/oder Ihrem Verstoß gegen diesen Rechtshinweis ergeben oder damit in Zusammenhang stehen.",
+        "questions": "Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter [Kontakt-E-Mail].",
+        "date": "Datum: 26. Juli 2025"
+
     }

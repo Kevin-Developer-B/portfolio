@@ -78,5 +78,35 @@
 
         "Please_accept_the_privacy_policy.": "Please accept the privacy policy.",
 
-        "say_hello": "Say Hello ;)"
+        "say_hello": "Say Hello ;)",
+
+        "Legal Notice": "Legal Notice",
+        "Imprint": "Imprint",
+        "Student_Names_List": "Student Names List",
+        "adress_operator": "Address of the JOIN operator - e.g. one of the students",
+        "postcode": "Postcode and city",
+        "exploring": "Exploring the Board",
+        "acceptance": "Acceptance of terms",
+        "acceptance_text": "By accessing and using <span class='white-color'>Portfolio</span> (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
+        "ownsership": "Scope and ownership of the product",
+        "ownsership-text1": "<span class='white-color'>Portfolio</span> has been developed as part of a student group project in a web development bootcamp at the <span class='white-color'>Developer Akademie GmbH</span>. It has an educational purpose and is not intended for extensive personal & business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product",
+        "ownsership-text2": "The design of <span class='white-color'>Portfolio</span> is owned by the <span class='white-color'>Developer Akademie GmbH</span>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.",
+        "Proprietary rights": "Proprietary rights",
+        "Proprietary rights_text1": "Aside from the design owned by <span class='white-color'>Developer Akademie GmbH</span>, we, the listed students, retain all proprietary rights in <span class='white-color'>Portfolio</span>, including any associated copyrighted material, trademarks, and other proprietary information.",
+        "product": "Use of the product",
+        "product_text": "<span class='white-color'>Portfolio</span> is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of <span class='white-color'>Portfolio</span> for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of <span class='white-color'>Portfolio</span>.",
+        "disclamer": "Disclaimer of warranties and limitation of liability",
+        "disclamer_text": "<span class='white-color'>Portfolio</span> is provided 'as is' without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the <span class='white-color'>Developer Akademie</span>, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of <span class='white-color'>Portfolio</span>.",
+        "Indemnity": "Indemnity",
+        "Indemnity_text": "You agree to indemnify, defend and hold harmless us, the listed students, the <span class='white-color'>Developer Akademie</span>, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <span class='white-color'>Portfolio</span> and/or your breach of this Legal Notice.",
+        "questions": "For any questions or notices, please contact us at [Contact Email]",
+        "date": "Date: July 26, 2025"
+
+
+
+
+
+
+
+
 }

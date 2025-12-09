@@ -16,10 +16,7 @@ export class AboutMeComponent implements OnInit {
   constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
-    // aktueller Wert vom Service
     this.currentLang = this.languageService.currentLang;
-
-    // abonnieren für Live-Updates, falls Sprache anderswo geändert wird
     this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
     });
