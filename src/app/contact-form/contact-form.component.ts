@@ -21,7 +21,7 @@ export class ContactFormComponent implements OnInit {
   errorNamePlaceholder = 'error_name_message';
   normalEmailPlaceholder = 'youremail@email.com';
   errorEmailPlaceholder = 'error_email_message';
-  normalMassagePlaceholder = 'How_can_I_help_you';
+  normalMassagePlaceholder = 'Hello_Lukas,_I_am_interested_in...';
   errorMassagePlaceholder = 'error_message_message';
 
 

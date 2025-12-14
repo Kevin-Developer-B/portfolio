@@ -8,7 +8,7 @@
 
 .evaluation-headline {
   height: 42px;
-  width: 530px;
+  width: 600px;
   margin-bottom: 40px;
 
   h2 {
@@ -19,6 +19,7 @@
     display: block;
     width: 100%;
     text-align: justify;
+    font-family: "Fira Code";
   }
 }
 
@@ -34,7 +35,6 @@
   text-align: center;
   position: relative;
 
-  /* LINKER FADE */
   &::before {
     content: "";
     position: absolute;
@@ -47,7 +47,6 @@
     z-index: 1;
   }
 
-  /* RECHTER FADE */
   &::after {
     content: "";
     position: absolute;
@@ -85,7 +84,7 @@
 
 .card {
   flex: 0 0 650px;
-  background: #3dcfb771;
+  background: #3DCFB61A;
   border-radius: 35px;
   display: flex;
   flex-direction: column;
@@ -99,6 +98,7 @@
 
   .card-text {
     width: 100%;
+    letter-spacing: 0.3px;
     display: block;
   }
 
@@ -122,7 +122,8 @@
 
 .card.active-card {
   transform: scale(1.1);
-  background: #3dcfb78e;
+  background: #3dcfb765;
+  transition: all 0.8s ease-in;
 }
 
 .slider-buttons {

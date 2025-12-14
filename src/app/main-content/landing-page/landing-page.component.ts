@@ -4,20 +4,20 @@ import { HeaderComponent } from '../../shared/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HoverSlideDirective } from '../../shared/hover-slide.directive';
 import { LanguageService, Lang } from '../../language.service';
+import { NavbarComponent } from '../../shared/header/navbar/navbar.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, TranslateModule, HoverSlideDirective],
+  imports: [CommonModule, HeaderComponent, NavbarComponent, TranslateModule, HoverSlideDirective],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements AfterViewInit {
-
   @ViewChild('trackEl', { static: false }) trackEl!: ElementRef;
-
   currentLang: Lang = 'en';
   slides = ['remote', 'fontend_developer', 'based', 'work'];
+
 
   constructor(
     private languageService: LanguageService,
@@ -33,7 +33,6 @@ export class LandingPageComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Warte auf Render der initialen Übersetzungen
     setTimeout(() => {
       if (this.trackEl && this.trackEl.nativeElement) {
         this.renderer.addClass(this.trackEl.nativeElement, 'scrolling');

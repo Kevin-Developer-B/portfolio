@@ -22,6 +22,7 @@
       font-weight: var(--font-weight-500);
       margin: var(--margin-0);
       letter-spacing: 1.5px;
+      font-family: "Fira Code";
     }
 
     h1 {
@@ -30,10 +31,12 @@
       margin: var(--margin-0);
       margin: 0;
       letter-spacing: 6px;
+      font-family: "Fira Code";
     }
 
     h2 {
       letter-spacing: 4.5px;
+      font-family: "Fira Code";
     }
 
     p {
@@ -50,6 +53,7 @@
 
     span {
       font-weight: var(--font-weight-700);
+      cursor: default;
     }
 
     .special {
@@ -147,6 +151,7 @@ label {
   flex-direction: column;
   gap: 16px;
   padding: 32px;
+  font-family: "Fira Code";
 }
 
 input[type=text],
@@ -188,7 +193,7 @@ input[type=text]:focus {
     align-items: center;
     justify-content: start;
     gap: 8px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0px;
     font-size: 15px;
     font-weight: 400;
 
@@ -225,6 +230,7 @@ input[type=text]:focus {
 
     .underline-effect {
       position: relative;
+      font-family: "Fira Code";
     }
 
     .underline-effect::after {
@@ -250,7 +256,6 @@ input[type=text]:focus {
     position: relative;
 
     span {
-      // display: none;
       position: absolute;
       top: -15px;
       font-size: 12px;

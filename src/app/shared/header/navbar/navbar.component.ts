@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LanguageService, Lang } from '../../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -38,4 +38,34 @@ export class NavbarComponent implements OnInit {
   currentActive(idx: number): void {
     this.activeIndex = idx;
   }
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  onNavClick(event: Event, targetId: string, index: number) {
+    event.preventDefault(); 
+    this.currentActive(index);
+    this.closeMenu();
+    setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 100);
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
 }

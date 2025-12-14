@@ -1,3 +1,4 @@
+// Desktop
 .nav-container {
     height: 98px;
     display: flex;
@@ -10,134 +11,139 @@
         display: flex;
         align-items: center;
         gap: 24px;
+    }
 
-        .language-container {
-            position: relative;
-            display: inline-block;
+    .language-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .language-container>span {
+        position: absolute;
+        top: 5px;
+        width: 50%;
+        pointer-events: none;
+        cursor: default;
+        text-align: center;
+        font-size: var(--font-size-16);
+        font-family: "Fira Code";
+    }
+
+    .language-container>span.active {
+        pointer-events: auto;
+        cursor: default;
+
+        .language-container:hover input.check-toggle-round-flat+label {
+            background-color: #fff;
         }
+    }
 
-        .language-container>span {
-            position: absolute;
-            top: 5px;
-            width: 50%;
-            pointer-events: none;
-            cursor: default;
-            text-align: center;
-            font-size: var(--font-size-16);
+
+    input.check-toggle-round-flat:checked~.off {
+        color: #fff;
+    }
+
+    input.check-toggle-round-flat:checked~.on {
+        color: #3dcfb786;
+    }
+
+    input.check-toggle-round-flat:checked~.on {
+        color: #3dcfb786;
+        font-weight: 400;
+    }
+
+    input.check-toggle-round-flat:checked~.off {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .language-container>span.on {
+        left: 0;
+        color: #fff;
+        font-weight: 700;
+        transition: 125ms ease-in-out;
+    }
+
+    .language-container>span.off {
+        right: 0;
+        color: #3dcfb786;
+        font-weight: 400;
+        transition: 125ms ease-in-out;
+    }
+
+    input.check-toggle-round-flat:not(:checked)+label:hover~.off {
+        color: #3DCFB6;
+        transform: scaleX(1.03);
+    }
+
+    input.check-toggle-round-flat:checked+label:hover~.on {
+        color: #3DCFB6;
+        transform: scaleX(1.03);
+    }
+
+    .check-toggle {
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden;
+    }
+
+    .check-toggle+label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+    }
+
+    input.check-toggle-round-flat+label {
+        width: 84px;
+        height: 28px;
+        background-color: #3DCFB6;
+        border-radius: 100px;
+        transition: 125ms ease-in-out;
+
+        &:hover {
+            background-color: #fff;
         }
-
-        .language-container>span.active {
-            pointer-events: auto;
-            cursor: default;
-
-            .language-container:hover input.check-toggle-round-flat+label {
-                background-color: #fff;
-            }
-        }
+    }
 
 
-        input.check-toggle-round-flat:checked~.off {
-            color: #fff;
-        }
+    input.check-toggle-round-flat+label:before,
+    input.check-toggle-round-flat+label:after {
+        display: block;
+        position: absolute;
+        content: "";
+    }
 
-        input.check-toggle-round-flat:checked~.on {
-            color: #3dcfb786;
-        }
+    input.check-toggle-round-flat+label:before {
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        background-color: #1C1C1C;
+        border-radius: 100px;
+    }
 
-        input.check-toggle-round-flat:checked~.on {
-            color: #3dcfb786;
-            font-weight: 400;
-        }
+    input.check-toggle-round-flat+label:after {
+        top: 0px;
+        left: 0px;
+        bottom: 4px;
+        width: 44px;
+        height: 28px;
+        background-color: #3DCFB6;
+        border-radius: 52px;
+        transition: margin 0.2s;
+    }
 
-        input.check-toggle-round-flat:checked~.off {
-            color: #fff;
-            font-weight: 700;
-        }
+    input.check-toggle-round-flat:checked+label:after {
+        margin-left: 40px;
+    }
 
-        .language-container>span.on {
-            left: 0;
-            color: #fff;
-            font-weight: 700;
-            transition: 125ms ease-in-out;
-        }
+    .links {
+        display: flex;
+        gap: 24px;
 
-        .language-container>span.off {
-            right: 0;
-            color: #3dcfb786;
-            font-weight: 400;
-            transition: 125ms ease-in-out;
-        }
-
-        input.check-toggle-round-flat:not(:checked)+label:hover~.off {
-            color: #3DCFB6;
-            transform: scaleX(1.03);
-        }
-
-        input.check-toggle-round-flat:checked+label:hover~.on {
-            color: #3DCFB6;
-            transform: scaleX(1.03);
-        }
-
-        .check-toggle {
-            position: absolute;
-            margin-left: -9999px;
-            visibility: hidden;
-        }
-
-        .check-toggle+label {
-            display: block;
-            position: relative;
-            cursor: pointer;
-            outline: none;
-        }
-
-        input.check-toggle-round-flat+label {
-            width: 84px;
-            height: 28px;
-            background-color: #3DCFB6;
-            border-radius: 100px;
-            transition: 125ms ease-in-out;
-
-            &:hover {
-                background-color: #fff;
-            }
-        }
-
-
-        input.check-toggle-round-flat+label:before,
-        input.check-toggle-round-flat+label:after {
-            display: block;
-            position: absolute;
-            content: "";
-        }
-
-        input.check-toggle-round-flat+label:before {
-            top: 2px;
-            left: 2px;
-            bottom: 2px;
-            right: 2px;
-            background-color: #1C1C1C;
-            border-radius: 100px;
-        }
-
-        input.check-toggle-round-flat+label:after {
-            top: 0px;
-            left: 0px;
-            bottom: 4px;
-            width: 44px;
-            height: 28px;
-            background-color: #3DCFB6;
-            border-radius: 52px;
-            transition: margin 0.2s;
-        }
-
-        input.check-toggle-round-flat:checked+label:after {
-            margin-left: 40px;
-        }
-
-        .links {
-            display: flex;
-            gap: 24px;
+        a {
+            font-family: "Fira Code";
         }
     }
 
@@ -189,4 +195,90 @@
 
 a.active {
     color: #3DCFB6;
+}
+
+
+// Handy
+.mobile-logo {
+    display: none;
+    background-image: url('../../../../assets/img/img_phone/Logo_normal.svg');
+    height: 48px;
+    width: 35px;
+
+    &:hover {
+        background-image: url('../../../../assets/img/img_phone/Logo_hover.svg');
+        height: 48px;
+        width: 35px;
+    }
+}
+
+.burger-menu {
+    display: none;
+    background-image: url('../../../../assets/img/img_phone/burger_menu_normal.svg');
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+}
+
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba($color: #000000, $alpha: 0.5);
+
+    .mobile-nav-links-container {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 238px;
+        height: 252px;
+        padding: 40px 77px;
+        box-sizing: border-box;
+        border-radius: 30px;
+        border: solid 1px #3DCFB6;
+        background-image: linear-gradient(to top right, #1C1C1C, #08463B);
+
+        .mobile-links-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                font-size: 18px;
+                letter-spacing: -3px;
+                font-family: "Fira Code";
+            }
+
+            .language-container span {
+                font-family: "Fira Code";
+            }
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+    .nav-container {
+        .nav-selection {
+            display: none;
+        }
+    }
+
+    .burger-menu {
+        display: block;
+    }
 }

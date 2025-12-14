@@ -35,6 +35,7 @@
         font-weight: 700;
         margin: 0;
         margin-bottom: 40px;
+        font-family: "Fira Code";
     }
 
     .capability-first-text {
@@ -47,20 +48,22 @@
     }
 
     .capability-second-text {
-        width: 331px;
+        width: 350px;
         margin-bottom: 40px;
 
         >h3 {
-            width: 290px;
+            width: 370px;
             display: block;
             text-align: justify;
             text-align-last: justify;
             font-size: 24px;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
+            font-family: "Fira Code";
 
             >span {
                 color: #3DCFB6;
+                font-family: "Fira Code";
             }
         }
     }
@@ -94,6 +97,7 @@
             font-weight: 400;
             line-height: 120%;
             cursor: default;
+            font-family: "Fira Code";
         }
 
         &:hover img {
