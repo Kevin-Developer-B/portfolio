@@ -161,10 +161,18 @@
             height: 32px;
             width: 50px;
             cursor: default;
+
+            &.email {
+                display: none;
+                background-image: url("./../../../assets/img/img_phone/mail.svg");
+
+
+                &:hover {
+                    background-image: url("./../../../assets/img/img_phone/mail_hover.svg");
+                }
+            }
         }
     }
-
-
 
     .github {
         background-image: url("./../../../assets/img/GitHub.svg");
@@ -240,5 +248,26 @@
 
     to {
         transform: translateX(-33.5%);
+    }
+}
+
+@media(max-width: 1000px) {
+    .git-linkin-container {
+        height: 256px;
+        margin-top: 588px;
+
+        .vertical-email {
+            display: none;
+        }
+
+        .icon-container {
+            height: 120px;
+
+            .icon {
+                &.email {
+                    display: flex;
+                }
+            }
+        }
     }
 }
