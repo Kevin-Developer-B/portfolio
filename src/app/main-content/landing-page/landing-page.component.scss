@@ -22,26 +22,26 @@
     margin: 0 96px;
     gap: 12px;
 
-    h1 {
-        font-size: 128px;
-        font-weight: 700;
-        padding: 0;
-        margin: 0;
-    }
+    .name-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 
-    h3 {
-        font-size: 40px;
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-        font-family: "Fira Code";
-    }
-}
+        h1 {
+            font-size: 128px;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+        }
 
-.name-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+        h3 {
+            font-size: 40px;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+            font-family: "Fira Code";
+        }
+    }
 }
 
 .check-contact-container {
@@ -76,6 +76,7 @@
         }
 
         .main-text {
+            opacity: 1;
             color: white;
         }
 
@@ -83,6 +84,10 @@
             color: #3DCFB6;
             opacity: 0;
             transform: translateX(100%);
+        }
+
+        .mobile-slider {
+            display: none;
         }
     }
 }
@@ -112,6 +117,10 @@
         font-size: 16px;
         animation: bounce 1s infinite;
         cursor: default;
+    }
+
+    .overlay-open {
+        animation-play-state: paused;
     }
 
     @keyframes bounce {
@@ -213,10 +222,11 @@
 .track {
     display: inline-flex;
     animation: none;
+    animation: scroll 8s linear infinite;
 }
 
-.track.scrolling {
-    animation: scroll 8s linear infinite;
+.track.Overlay-open {
+    animation-play-state: paused;
 }
 
 .slide {
@@ -252,6 +262,35 @@
 }
 
 @media(max-width: 1000px) {
+
+    .landing-page {
+        margin: 0 16px;
+
+        .name-container {
+            h1 {
+                font-size: 62px;
+                margin-bottom: 32px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .check-contact-container {
+        .hover-slide {
+            .main-text {
+                opacity: 0;
+            }
+
+            .mobile-slider {
+                display: flex;
+                color: #3DCFB6;
+            }
+        }
+    }
+
     .git-linkin-container {
         height: 256px;
         margin-top: 588px;

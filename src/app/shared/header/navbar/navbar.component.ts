@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LanguageService, Lang } from '../../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { MenuStateService } from '../../../services/menu-state-service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,8 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   currentLang: Lang = 'en';
   activeIndex: number | null = null;
+  isMenuOpen = false;
 
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private menuState: MenuStateService) { }
 
   ngOnInit(): void {
     this.currentLang = this.languageService.currentLang;
@@ -39,20 +41,8 @@ export class NavbarComponent implements OnInit {
     this.activeIndex = idx;
   }
 
-  isMenuOpen = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-
-    if (this.isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }
-
   onNavClick(event: Event, targetId: string, index: number) {
-    event.preventDefault(); 
+    event.preventDefault();
     this.currentActive(index);
     this.closeMenu();
     setTimeout(() => {
@@ -63,8 +53,15 @@ export class NavbarComponent implements OnInit {
     }, 100);
   }
 
+  openMenu() {
+    this.isMenuOpen = true;
+    this.menuState.open();
+    document.body.style.overflow = 'hidden';
+  }
+
   closeMenu() {
     this.isMenuOpen = false;
+    this.menuState.close();
     document.body.style.overflow = '';
   }
 

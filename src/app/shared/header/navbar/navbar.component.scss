@@ -226,6 +226,15 @@ a.active {
     z-index: 1;
     background: rgba($color: #000000, $alpha: 0.5);
 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     .mobile-nav-links-container {
         position: absolute;
         top: 60px;

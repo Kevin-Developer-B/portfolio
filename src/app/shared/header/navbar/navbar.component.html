@@ -23,8 +23,8 @@
         </div>
     </div>
     <a href="#landingPage" class="logo"></a>
-    <button class="burger-menu" (click)="toggleMenu()"></button>
-    <div class="mobile-overlay" *ngIf="isMenuOpen" (click)="closeMenu()">
+    <button class="burger-menu" (click)="openMenu()"></button>
+    <div class="mobile-overlay" [class.open]="isMenuOpen" (click)="closeMenu()">
         <div class="mobile-nav-links-container" (click)="$event.stopPropagation()">
             <div class="mobile-links-container" id="navLinks">
                 <a class="point-effect" href="#About-me" [class.active]="activeIndex === 1"
