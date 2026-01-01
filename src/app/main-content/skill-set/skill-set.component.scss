@@ -1,28 +1,39 @@
 .skill-set-box {
     height: 695px;
-    width: 100vw;
-    max-width: 100%;
     background-image: url('./../../../assets/img/Skill\ set\ Background.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left, bottom;
+    box-sizing: border-box;
+    padding: 0 96px;
 }
 
-.skill-box {
-    padding: 96px;
-
-    h2 {
-        color: #3DCFB6;
-    }
+h2 {
+    color: #3DCFB6;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0;
+    letter-spacing: 0;
 }
 
 .justify-content {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
+
+    .tech-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .tech-container {
     width: 520px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     background-color: #3DCFB61A;
     border-radius: 30px;
     border: 1px solid #3DCFB6;
@@ -34,36 +45,47 @@
         font-size: 64px;
         font-weight: 700;
         margin: 0;
-        margin-bottom: 40px;
+        letter-spacing: -3px;
+        line-height: 100%;
         font-family: "Fira Code";
     }
 
-    .capability-first-text {
-        text-align: justify;
-        letter-spacing: 1.5px;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 120%;
-        margin-bottom: 32px;
-    }
+    .capability-texte {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
 
-    .capability-second-text {
-        width: 350px;
-        margin-bottom: 40px;
-
-        >h3 {
-            width: 370px;
-            display: block;
+        .capability-first-text {
             text-align: justify;
-            text-align-last: justify;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-            font-family: "Fira Code";
+            letter-spacing: 0.5px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 120%;
+        }
 
-            >span {
-                color: #3DCFB6;
+        .capability-second-text {
+            width: 331px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            >h3 {
+                width: 331px;
+                display: flex;
+                justify-content: space-between;
+                text-align: justify;
+                text-align-last: justify;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 120%;
+                letter-spacing: 0px;
                 font-family: "Fira Code";
+                margin: 0;
+
+                >span {
+                    color: #3DCFB6;
+                    font-family: "Fira Code";
+                }
             }
         }
     }
@@ -76,7 +98,8 @@
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: start;
-    gap: 40px;
+    gap: 72px;
+    margin-top: 45px;
 
     >div {
         display: flex;
@@ -106,26 +129,33 @@
     }
 
     .special-hover {
+        position: relative;
         transition: 125ms ease-in-out;
 
         &:hover {
             color: #3DCFB6;
         }
+
+        .interrest-group-container {
+            position: absolute;
+            left: -13px;
+            bottom: 100px;
+            pointer-events: none;
+            opacity: 0;
+
+            >img {
+                height: 129px;
+                width: 188px;
+            }
+
+            &.show {
+                opacity: 1;
+            }
+        }
     }
 }
 
-.interrest-group-container {
-    position: absolute;
-    right: 190px;
-    bottom: -1490px;
-    pointer-events: none;
-    opacity: 0;
-    transition: 125ms ease-in-out;
 
-    &.show {
-        opacity: 1;
-    }
-}
 
 .hover-slide {
     border: 1px solid white;
@@ -162,5 +192,143 @@
         color: #3DCFB6;
         opacity: 0;
         transform: translateX(100%);
+    }
+}
+
+@media(max-width: 1350px) {
+    .skill-set-box {
+        padding: 0 16px;
+    }
+}
+
+@media(max-width: 1250px) {
+    .skill-images-container {
+        gap: 32px;
+    }
+}
+
+@media(max-width: 1140px) {
+    .skill-set-box {
+        height: 1100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .justify-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .skill-images-container {
+        gap: 16px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 670px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    .tech-container {
+        width: 358px;
+        padding: 24px 32px;
+        gap: 32px;
+
+        h1 {
+            font-size: 56px;
+            line-height: 80%;
+            letter-spacing: -3px;
+            text-align: justify;
+        }
+
+        .capability-texte {
+            gap: 24px;
+
+            .capability-first-text {
+                letter-spacing: 0px;
+                font-size: 16px;
+            }
+
+            .capability-second-text {
+                width: 276px;
+
+                >h3 {
+                    width: 276px;
+                    font-size: 20px;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+
+    .skill-images-container {
+        height: 358px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 0;
+
+        >div {
+            width: 104px;
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            gap: 8px;
+        }
+    }
+}
+
+@media(max-width: 390px) {
+    .skill-set-box {
+        height: 1235px;
+    }
+
+    .tech-container {
+        width: 300px;
+        padding: 16px 24px;
+        gap: 24px;
+
+        h1 {
+            font-size: 48px;
+        }
+
+        .capability-texte {
+            gap: 16px;
+
+            .capability-first-text {
+                letter-spacing: 0px;
+                font-size: 16px;
+            }
+
+            .capability-second-text {
+                width: 222px;
+
+                >h3 {
+                    width: 222px;
+                    font-size: 16px;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+
+    .skill-images-container {
+        height: 358px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+
+        >div {
+            width: 104px;
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            gap: 8px;
+        }
     }
 }

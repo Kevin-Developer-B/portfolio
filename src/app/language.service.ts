@@ -12,11 +12,8 @@ export class LanguageService {
   lang$ = this.langSubject.asObservable();
 
   constructor(private translate: TranslateService) {
-    // verfügbare Sprachen setzen
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
-
-    // gespeicherte Sprache aus localStorage verwenden
     const saved = localStorage.getItem(this.STORAGE_KEY) as Lang;
     this.setLanguage(saved || 'en');
   }
