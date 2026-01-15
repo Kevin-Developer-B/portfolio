@@ -1,6 +1,33 @@
 <section>
-    <h1>{{ 'colleagues' | translate }}</h1>
-    <app-card-slider></app-card-slider>
+    <h1>What my colleagues say about me</h1>
+    <img class="quote" src="./../../../assets/img/quotes.svg" alt="">
+    <div #splideRoot class="splide shadow-slider"> 
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide" *ngFor="let item of testimonials">
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <div class="comment">
+                                <p>{{ item.text }}</p>
+                                <p class="author">
+                                    <span>{{ item.author }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <div class="btn-box">
+            <button class="btn left" (click)="goPrev()"></button>
+            <span *ngFor="let item of testimonials; let i = index" class="dot"
+                [class.active]="i === activeIndex"></span>
+            <button class="btn right" (click)="goNext()"></button>
+        </div>
+    </div>
 </section>
 
 
@@ -24,6 +51,30 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section>
+    <h1>{{ 'colleagues' | translate }}</h1>
+    <app-card-slider></app-card-slider>
+</section> -->
 
 
 <!-- <section class="evaluation-box">
@@ -54,4 +105,3 @@
     </div>
 
 </section> -->
-

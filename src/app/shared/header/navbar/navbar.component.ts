@@ -30,6 +30,10 @@ export class NavbarComponent implements OnInit {
     this.languageService.setLanguage(newLang);
   }
 
+  switchLang(lang: Lang) {
+    this.languageService.setLanguage(lang);
+  }
+
   setLanguage(lang: 'en' | 'de') {
     if (this.currentLang !== lang) {
       this.currentLang = lang;

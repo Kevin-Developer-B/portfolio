@@ -1,27 +1,79 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardSliderComponent } from './slider/card-slider/card-slider.component';
 import { LanguageService, Lang } from '../../language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import Splide from '@splidejs/splide';
+import en from './../../../assets/i18n/en.json';
+import de from './../../../assets/i18n/de.json';
 
 @Component({
   selector: 'app-evaluation',
   standalone: true,
-  imports: [CommonModule, CardSliderComponent, TranslateModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './evaluation.component.html',
   styleUrls: ['./evaluation.component.scss']
 })
 
-export class EvaluationComponent implements OnInit {
+export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
+  @ViewChild('splideRoot', { static: true })
+  splideRoot!: ElementRef<HTMLElement>;
+
   currentLang: Lang = 'en';
+  testimonials = en.comments;
+  private splide!: Splide;
+  activeIndex = 0;
 
   constructor(private languageService: LanguageService) { }
 
-  ngOnInit(): void {
-    this.currentLang = this.languageService.currentLang;
+  ngOnInit() {
     this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
+      this.testimonials = lang === 'en'
+        ? en.comments
+        : de.comments;
+
+      // wichtig für Splide nach DOM-Update
+      setTimeout(() => this.splide?.refresh());
     });
+  }
+
+  // testimonials = [
+  //   { text: 'comments.comment1.text', author: 'Author 1' },
+  //   { text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error minus saepe accusamus repellat itaque cupiditate ad debitis maiores, nam magni tenetur accusantium excepturi quaerat aliquid vero sunt eaque ipsum commodi.', author: 'Author 2' },
+  //   { text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error minus saepe accusamus repellat itaque cupiditate ad debitis maiores, nam magni tenetur accusantium excepturi quaerat aliquid vero sunt eaque ipsum commodi.', author: 'Author 3' },
+  // ];
+
+  ngAfterViewInit() {
+    this.splide = new Splide(this.splideRoot.nativeElement, {
+      type: 'loop',
+      focus: 'center',
+      perPage: 2,
+      gap: '20px',
+      arrows: false,
+      pagination: false,
+      breakpoints: {
+        1024: { perPage: 2 },
+        640: { perPage: 2 },
+      },
+    });
+
+    this.splide.on('moved', (index) => {
+      this.activeIndex = index;
+    });
+
+    this.splide.mount();
+  }
+
+  goPrev() {
+    this.splide.go('<');
+  }
+
+  goNext() {
+    this.splide.go('>');
+  }
+
+  ngOnDestroy() {
+    this.splide?.destroy();
   }
 }
 
@@ -49,13 +101,13 @@ export class EvaluationComponent implements OnInit {
 // import { TranslateService } from '@ngx-translate/core';
 // import { TranslateModule } from '@ngx-translate/core';
 // import { HttpClient } from '@angular/common/http';
-// import { CardSliderComponent } from './slider/card-slider/card-slider.component';
+// // import { CardSliderComponent } from './slider/card-slider/card-slider.component';
 
 
 // @Component({
 //   selector: 'app-evaluation',
 //   standalone: true,
-//   imports: [CommonModule, TranslateModule, CardSliderComponent],
+//   imports: [CommonModule, TranslateModule],
 //   templateUrl: './evaluation.component.html',
 //   styleUrls: ['./evaluation.component.scss']
 // })

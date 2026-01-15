@@ -6,10 +6,10 @@
                 [checked]="currentLang === 'de'" (change)="toggleLanguage()" />
 
             <label for="language-toggle"></label>
-            <span class="on" [class.active]="currentLang === 'en'" (click)="setLanguage('en')">
+            <span class="on" [class.active]="currentLang === 'en'" (click)="setLanguage('en'); switchLang('en')">
                 EN
             </span>
-            <span class="off" [class.active]="currentLang === 'de'" (click)="setLanguage('de')">
+            <span class="off" [class.active]="currentLang === 'de'" (click)="setLanguage('de'); switchLang('de')">
                 DE
             </span>
         </div>

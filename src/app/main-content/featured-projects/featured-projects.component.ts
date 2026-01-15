@@ -48,7 +48,7 @@ export class FeaturedProjectsComponent implements OnInit {
   showNextProject() {
     if (this.activeProject) {
       const currentIndex = this.projects.indexOf(this.activeProject);
-      const nextIndex = (currentIndex + 1) % this.projects.length; // loop back to start
+      const nextIndex = (currentIndex + 1) % this.projects.length;
       this.activeProject = this.projects[nextIndex];
     }
   }

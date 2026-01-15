@@ -37,20 +37,20 @@
         "next": "Nächstes Projekt",
 
         "colleagues": "Was meine Kollegen über mich sagen",
-        "comments": {
-                "comment1": {
+        "comments": [
+                {
                         "text": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
                         "author": "H.Janisch - Team Partner" 
                 },
-                "comment2": {
+                {
                         "text": "Ich hatte das Glück, mit Lukas in einem Gruppenprojekt der Developer Akademie zusammenzuarbeiten, das viel Aufwand erforderte. Er blieb stets ruhig, gelassen und konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist sehr kompetent, die Zusammenarbeit mit ihm ist unkompliziert und ich würde gerne wieder mit ihm zusammenarbeiten, wenn ich die Chance dazu hätte.",
                         "author": "A.Fischer - Team Partner"
                 },
-                "comment3": {
+                {
                         "text": "Unser Projekt hat enorm von Simons effizienter Arbeitsweise profitiert.",
                         "author": "T.Schulz - Frontend-Entwickler"
                 }
-        },
+        ],
 
         "lets_work": "Lasst uns zusammenarbeiten",
         "together": "",
