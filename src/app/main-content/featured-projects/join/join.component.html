@@ -1,65 +1,63 @@
-<section>
-    <div class="box">
-        <div class="text-container">
-            <span class="number-name-container">
-                <h1>01</h1>
-                <h2>Join</h2>
+<div class="box">
+    <button class="close-img" (click)="onCloseClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16" role="img"
+            aria-label="Schließen">
+            <title>Schließen</title>
+            <g stroke="" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 4.5L11.5 11.5" />
+                <path d="M11.5 4.5L4.5 11.5" />
+            </g>
+        </svg>
+    </button>
+    <div class="text-container">
+        <span class="number-name-container">
+            <h1>01</h1>
+            <h2>Join</h2>
+        </span>
+        <div class="explain-container">
+            <span>
+                <h3>{{ 'project_about' | translate }}</h3>
+                <p class="explain-text">{{ 'join_project_about_text1' | translate }} </p>
             </span>
-            <div class="explain-container">
-                <span>
-                    <h3>{{ 'project_about' | translate }}</h3>
-                    <p class="explain-text">{{ 'join_project_about_text1' | translate }} </p>
-                </span>
-                <div class="applications">
-                    <div class="individual-application">
-                        <img src="./../../../../assets/img/css-overlay.svg" alt="">
-                        <p>CSS</p>
-                    </div>
-                    <div class="individual-application">
-                        <img src="./../../../../assets/img/html-overlay.svg" alt="">
-                        <p>HTML</p>
-                    </div>
-                    <div class="individual-application">
-                        <img src="./../../../../assets/img/firebase-overlay.svg" alt="">
-                        <p>Firebase</p>
-                    </div>
-                    <div class="individual-application">
-                        <img src="./../../../../assets/img/Angular-overlay.svg" alt="">
-                        <p>Angular</p>
-                    </div>
-                    <div class="individual-application">
-                        <img src="./../../../../assets/img/typeScript-overlay.svg" alt="">
-                        <p>TypeScript</p>
-                    </div>
+            <div class="applications">
+                <div class="individual-application">
+                    <img src="./../../../../assets/img/css-overlay.svg" alt="">
+                    <p>CSS</p>
+                </div>
+                <div class="individual-application">
+                    <img src="./../../../../assets/img/html-overlay.svg" alt="">
+                    <p>HTML</p>
+                </div>
+                <div class="individual-application">
+                    <img src="./../../../../assets/img/firebase-overlay.svg" alt="">
+                    <p>Firebase</p>
+                </div>
+                <div class="individual-application">
+                    <img src="./../../../../assets/img/Angular-overlay.svg" alt="">
+                    <p>Angular</p>
+                </div>
+                <div class="individual-application">
+                    <img src="./../../../../assets/img/typeScript-overlay.svg" alt="">
+                    <p>TypeScript</p>
                 </div>
             </div>
-            <div class="ckeck-container">
-                <button class="ckeck-button" style="width: 130px;">
-                    <p>GitHub</p>
-                    <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
-                </button>
-                <button class="ckeck-button" style="width: 142px;">
-                    <p>Live Test</p>
-                    <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
-                </button>
-            </div>
         </div>
-        <div class="close-image-container">
-            <button (click)="onCloseClick()">
-                <svg class="close-img" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"
-                    role="img" aria-label="Schließen">
-                    <title>Schließen</title>
-                    <g stroke="" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4.5 4.5L11.5 11.5" />
-                        <path d="M11.5 4.5L4.5 11.5" />
-                    </g>
-                </svg>
+        <div class="ckeck-container">
+            <button class="ckeck-button" style="width: 130px;">
+                <p>GitHub</p>
+                <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
             </button>
-            <img class="image" src="./../../../../assets/img/join-overlay.svg" alt="">
-            <button class="next-project-container" (click)="onNextClick()">
-                <p>{{ 'next' | translate }}</p>
-                <img src="./../../../../assets/img/arrow_forward_turquoise.svg" alt="">
+            <button class="ckeck-button" style="width: 142px;">
+                <p>Live Test</p>
+                <img src="./../../../../assets/img/arrow_outward-overlay.svg" alt="">
             </button>
         </div>
     </div>
-</section>
+    <div class="close-image-container">
+        <img class="image" src="./../../../../assets/img/join-overlay.svg" alt="">
+    </div>
+    <button class="next-project-container" (click)="onNextClick()">
+        <p>{{ 'next' | translate }}</p>
+        <img src="./../../../../assets/img/arrow_forward_turquoise.svg" alt="">
+    </button>
+</div>
