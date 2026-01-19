@@ -309,4 +309,26 @@
     }
 }
 
-@media(max-width: 600px) {}
+@media(max-width: 400px) {
+    .close-image-container {
+        .image {
+            width: 280px;
+        }
+    }
+
+    .explain-container {
+        .explain-text {
+            margin-top: 30px;
+        }
+    }
+
+    .applications {
+        width: 342px;
+        height: 52px;
+        display: grid;
+        grid-template-columns: repeat(3, 70px);
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 28px;
+    }
+}

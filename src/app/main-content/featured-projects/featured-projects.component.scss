@@ -201,26 +201,6 @@ h1 {
         .overlay-content {
             height: 844px;
             width: 366px;
-
-            .buttons {
-                margin: 1rem 0;
-                display: flex;
-                gap: 1rem;
-                justify-content: center;
-
-                .btn {
-                    background: #007BFF;
-                    color: white;
-                    padding: 0.5rem 1rem;
-                    border-radius: 8px;
-                    text-decoration: none;
-                    transition: background 0.2s;
-                }
-
-                .btn:hover {
-                    background: #0056b3;
-                }
-            }
         }
     }
 }
@@ -275,6 +255,15 @@ h1 {
                     font-size: 12px;
                 }
             }
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .overlay {
+        .overlay-content {
+            height: 844px;
+            width: 300px;
         }
     }
 }
