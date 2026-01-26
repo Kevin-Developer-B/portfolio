@@ -17,9 +17,10 @@ h1 {
 
 .quote {
     position: absolute;
-    right: 71%;
+    right: calc(100% - 29%);
     top: 80px;
     z-index: 1;
+    height: 64px;
 }
 
 .card {
@@ -34,7 +35,7 @@ h1 {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: start;
 
         p {
             color: #FFFFFF;
@@ -152,6 +153,112 @@ h1 {
 .shadow-slider::after {
     right: 0;
     background: linear-gradient(to left, #1c1c1cab, #1c1c1c44, #1C1C1C00);
+}
+
+@media(max-width: 1210px) {
+    .card {
+        .comment {
+            p {
+                color: #FFFFFF;
+                font-size: 14px;
+                font-family: 'Fira Code';
+                letter-spacing: 0.8px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1175px) {
+    .quote {
+        right: calc(100% - 30%);
+    }
+}
+
+@media(max-width: 960px) {
+    .quote {
+        top: 44px;
+        height: 48px;
+    }
+
+    .card {
+        height: 360px;
+
+        .comment {
+            justify-content: center;
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    .quote {
+        right: calc(100% - 16%);
+    }
+
+    .shadow-slider::before {
+        background: transparent;
+    }
+
+    .shadow-slider::after {
+        background: transparent;
+    }
+}
+
+@media(max-width: 600px) {
+    section {
+        height: 500px;
+    }
+}
+
+@media(max-width: 595px) {
+    .quote {
+        top: 80px;
+        right: calc(100% - 19%);
+    }
+}
+
+@media(max-width: 475px) {
+    .quote {
+        top: 80px;
+        right: calc(100% - 25%);
+    }
+}
+
+@media(max-width: 425px) {
+    section {
+        height: 500px;
+    }
+
+    .card {
+        height: 380px;
+
+        .comment {
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .card {
+        .comment {
+            p {
+                font-size: 11px;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 345px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .quote {
+        top: 70px;
+        right: calc(100% - 30%);
+    }
 }
 
 

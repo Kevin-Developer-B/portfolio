@@ -193,29 +193,46 @@ input[type=text]:focus {
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 8px;
     letter-spacing: 0px;
     font-size: 15px;
     font-weight: 400;
+    gap: 8px;
+    background-color: transparent;
+
+    p {
+      width: 560px;
+    }
 
     .checkbox {
       height: 18px;
       width: 18px;
+      padding: 0;
       background-image: url('../../assets/img/check_box_outline_blank.svg');
       object-fit: cover;
+      background-repeat: no-repeat;
 
       &:hover {
+        height: 18px;
+        width: 18px;
+        padding: 0;
         background-image: url('../../assets/img/Default\ hover.svg');
         object-fit: cover;
         background-position: center;
+        background-repeat: no-repeat;
       }
 
       &.checked {
+        height: 18px;
+        width: 18px;
+        padding: 0;
         background-image: url('../../assets/img/check_box.svg');
         object-fit: cover;
         background-position: center;
 
         &:hover {
+          height: 18px;
+          width: 18px;
+          padding: 0;
           background-image: url('../../assets/img/Checked hover.svg');
         }
       }
@@ -237,17 +254,16 @@ input[type=text]:focus {
     .underline-effect::after {
       content: "";
       position: absolute;
-      left: 50%;
+      left: 52%;
       bottom: -2px;
       transform: translateX(-50%);
-      width: 0;
       height: 0;
 
       background-color: #3DCFB6;
     }
 
     .underline-effect:hover::after {
-      width: 115px;
+      width: 100%;
       height: 1px;
     }
   }
@@ -313,5 +329,82 @@ input[type=text]:focus {
     color: #3DCFB6;
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+@media(max-width: 1090px) {
+  .contact-me-box {
+    .padding {
+      padding: 20px 16px;
+    }
+  }
+}
+
+@media(max-width: 960px) {
+  .contact-me-box {
+    height: 942px;
+  }
+
+  .contact-me-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 64px;
+
+    .work-text-container {
+      height: 337px;
+      width: 568px;
+
+      h3 {
+        font-size: var(--font-size-24);
+        font-weight: var(--font-weight-500);
+        margin: var(--margin-0);
+        letter-spacing: 1.5px;
+        font-family: "Fira Code";
+      }
+
+      h1 {
+        font-size: var(--font-size-64);
+        font-weight: var(--font-weight-700);
+        margin: var(--margin-0);
+        margin: 0;
+        letter-spacing: 6px;
+        font-family: "Fira Code";
+      }
+
+      h2 {
+        letter-spacing: 4.5px;
+        font-family: "Fira Code";
+      }
+
+      p {
+        font-size: var(--font-size-16);
+        font-weight: var(--font-weight-400);
+      }
+
+      .font-size64 {
+        font-size: 64px;
+        font-weight: 700;
+        margin-top: -20px;
+        margin-bottom: 20px;
+      }
+
+      span {
+        font-weight: var(--font-weight-700);
+        cursor: default;
+      }
+
+      .special {
+        letter-spacing: 1.5px;
+        font-weight: var(--font-weight-700);
+        margin-bottom: 16px;
+      }
+
+      .developer-container {
+        display: flex;
+        gap: 5px;
+        margin-top: 16px;
+      }
+    }
   }
 }

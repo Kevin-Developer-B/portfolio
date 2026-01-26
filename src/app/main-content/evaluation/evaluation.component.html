@@ -1,7 +1,7 @@
 <section>
     <h1>What my colleagues say about me</h1>
     <img class="quote" src="./../../../assets/img/quotes.svg" alt="">
-    <div #splideRoot class="splide shadow-slider"> 
+    <div #splideRoot class="splide shadow-slider">
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide" *ngFor="let item of testimonials">
@@ -9,10 +9,10 @@
                         <div class="card">
                             <div class="comment">
                                 <p>{{ item.text }}</p>
-                                <p class="author">
-                                    <span>{{ item.author }}</span>
-                                </p>
                             </div>
+                            <p class="author">
+                                <span>{{ item.author }}</span>
+                            </p>
                         </div>
                     </div>
                 </li>

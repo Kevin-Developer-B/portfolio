@@ -48,12 +48,19 @@ export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
       type: 'loop',
       focus: 'center',
       perPage: 2,
-      gap: '20px',
+      gap: '40px',
       arrows: false,
       pagination: false,
       breakpoints: {
-        1024: { perPage: 2 },
-        640: { perPage: 2 },
+        1024: { 
+          perPage: 2,
+          gap: '10px',
+         },
+        700: { 
+          perPage: 1, 
+          gap: '0.5px',
+          padding: '40px'
+        },
       },
     });
 

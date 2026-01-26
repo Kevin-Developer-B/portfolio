@@ -38,11 +38,11 @@
                     </div>
                     <div class="text-area-container">
                         <span class="line"></span>
-                        <label for="massage">{{ 'How_can_I_help_you' | translate }}
-                            <input [(ngModel)]="contactData.massage" type="text" id="massage" name="massage" required
-                                #massageField="ngModel"
-                                [placeholder]="(isInvalid ? errorMassagePlaceholder : normalMassagePlaceholder) | translate"
-                                [class.error-massage]="isInvalid && massageField.invalid">
+                        <label for="message">{{ 'How_can_I_help_you' | translate }}
+                            <input [(ngModel)]="contactData.message" type="text" id="message" name="message" required
+                                #messageField="ngModel"
+                                [placeholder]="(isInvalid ? errorMessagePlaceholder : normalMessagePlaceholder) | translate"
+                                [class.error-message]="isInvalid && messageField.invalid">
                         </label>
                         <span class="line"></span>
                     </div>
