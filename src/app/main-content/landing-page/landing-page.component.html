@@ -1,12 +1,5 @@
 <section class="landing-page-container">
-    <div class="landing-page">
-        <div class="arrow-container">
-            <div class="arrow-border">
-                <a class="arrow" [class.overlay-open]="isOverlayOpen$ | async" href="#">↓</a>
-            </div>
-            <span class="line"></span>
-        </div>
-        <div class="name-container">
+    <div class="name-container">
             <h3>{{ 'fontend_developer' | translate }}</h3>
             <h1>Lukas Müller</h1>
             <div class="check-contact-container">
@@ -22,7 +15,13 @@
                 </a>
             </div>
         </div>
-
+    <div class="landing-page">
+        <div class="arrow-container">
+            <div class="arrow-border">
+                <a class="arrow" [class.overlay-open]="isOverlayOpen$ | async" href="#">↓</a>
+            </div>
+            <span class="arrow-line"></span>
+        </div>
         <div class="git-linkin-container">
             <span class="vertical-email">Lukmull&#64;email.com</span>
             <div class="icon-container">
@@ -30,7 +29,7 @@
                 <a href="https://github.com" class="icon github"></a>
                 <a href="https://linkedin.com" class="icon linkedin"></a>
             </div>
-            <span class="line"></span>
+            <span class="git-linkin-line"></span>
         </div>
 
     </div>

@@ -54,11 +54,9 @@
         
         
 
-        "lets_work": "Let's work",
-        "together": "together",
+        "lets_work": "Let's work together",
         "problem_to_solve": "Got a problem to solve?",
-        "contact_text1": "Encourage people to contact you and describe what role you are interested in.",
-        "contact_text2": "Show that you will add value to their projects through your work.",
+        "contact_text1": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
         "contact_text3": "Need a Frontend developer?",
 
         "Whats_your_name": "What's your name?",
@@ -73,7 +71,7 @@
 
         "Ive_read_the": "I've read the",
         "privacy_policy": "privacy policy",
-        "processing_of_my_data": "and agree to the processing of my data asoutlined.",
+        "processing_of_my_data": "and agree to the processing of my data as outlined.",
 
         "Please_accept_the_privacy_policy.": "Please accept the privacy policy.",
 

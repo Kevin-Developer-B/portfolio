@@ -18,7 +18,7 @@ export class ContactFormComponent implements OnInit {
   isChecked = false;
   policyError = false;
   isInvalid = false;
-  mailTest = true;
+  popUpOpen = false;
   normalNamePlaceholder = 'Your_name_goes_here';
   errorNamePlaceholder = 'error_name_message';
   normalEmailPlaceholder = 'youremail@email.com';
@@ -45,7 +45,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://kevin-breiter.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -56,8 +56,6 @@ export class ContactFormComponent implements OnInit {
   };
 
   onSubmit(ngForm: NgForm) {
-    console.log(this.contactData);
-    
     this.isInvalid =
       ngForm.controls['name']?.invalid ||
       ngForm.controls['email']?.invalid ||
@@ -71,22 +69,17 @@ export class ContactFormComponent implements OnInit {
       return;
     }
 
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
+    if (ngForm.valid && this.isChecked) {
+      this.http.post(this.post.endPoint, this.contactData).subscribe({
+        next: res => {
+          ngForm.resetForm();
+        },
+        error: err => console.error('Fehler:', err)
+      });
     }
+    
+    this.checkBoxOut()
+    this.PopUp()
   }
 
   showPolicyError() {
@@ -98,5 +91,23 @@ export class ContactFormComponent implements OnInit {
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
     this.policyError = false;
+  }
+
+  checkBoxOut() {
+    setTimeout(() => {
+      this.isChecked = !this.isChecked;
+    }, 1000)
+  }
+
+  PopUp() {
+    this.popUpOpen = true;
+    document.documentElement.classList.add('no-scroll');
+
+    if (this.popUpOpen) {
+      setTimeout(() => {
+        this.popUpOpen = false
+        document.documentElement.classList.remove('no-scroll');
+      }, 2000)
+    }
   }
 }

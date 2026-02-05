@@ -221,7 +221,9 @@ a.active {
 }
 
 .mobile-overlay {
-    position: fixed;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
     inset: 0;
     z-index: 1;
     background: rgba($color: #000000, $alpha: 0.5);
@@ -266,6 +268,12 @@ a.active {
             }
         }
     }
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    touch-action: none;
 }
 
 @media(max-width: 1000px) {

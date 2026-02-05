@@ -1,5 +1,5 @@
 .landing-page-container {
-    height: 100vh;
+    height: 900px;
     width: 100vw;
     max-width: 1440px;
     background-image: url('./../../../assets/img/Background.png');
@@ -14,39 +14,33 @@
     overflow: hidden;
 }
 
-.landing-page {
-    width: 100%;
+.name-container {
+    position: absolute;
+    top: 316px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 96px;
-    gap: 12px;
+    flex-direction: column;
 
-    .name-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    h1 {
+        font-size: 128px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+    }
 
-        h1 {
-            font-size: 128px;
-            font-weight: 700;
-            padding: 0;
-            margin: 0;
-        }
-
-        h3 {
-            font-size: 40px;
-            font-weight: 400;
-            padding: 0;
-            margin: 0;
-            font-family: "Fira Code";
-        }
+    h3 {
+        font-size: 40px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        font-family: "Fira Code";
     }
 }
 
 .check-contact-container {
     display: flex;
     gap: 48px;
+    margin-top: 40px;
 
     .hover-slide {
         border: 1px solid white;
@@ -92,6 +86,15 @@
     }
 }
 
+.landing-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 96px;
+    gap: 12px;
+}
+
 .arrow-container {
     height: 312px;
     width: 30px;
@@ -134,11 +137,17 @@
             transform: translateY(8px);
         }
     }
+
+    .arrow-line {
+        width: 0;
+        height: 240px;
+        border: solid 1px #3DCFB6
+    }
 }
 
 .git-linkin-container {
     height: 480px;
-    width: 80px;
+    width: 32px;
     margin-top: 420px;
     display: flex;
     flex-direction: column;
@@ -146,6 +155,11 @@
     gap: 24px;
 
     .vertical-email {
+        width: 22px;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         writing-mode: vertical-rl;
         text-orientation: sideways;
         transform: rotate(180deg);
@@ -162,7 +176,7 @@
         align-items: start;
         width: 32px;
         height: 76px;
-        gap: 14px;
+        gap: 12px;
 
         .icon {
             display: inline-block;
@@ -198,12 +212,12 @@
     .linkedin:hover {
         background-image: url("./../../../assets/img/Linkedin\ Hovevr.svg");
     }
-}
 
-.line {
-    width: 0;
-    height: 240px;
-    border: solid 1px #3DCFB6
+    .git-linkin-line {
+        width: 0;
+        height: 186px;
+        border: solid 1px #FFFFFF;
+    }
 }
 
 .slider {
@@ -261,21 +275,13 @@
     }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1100px) {
+    .landing-page-container {
+        height: 844px;
+    }
 
     .landing-page {
         margin: 0 16px;
-
-        .name-container {
-            h1 {
-                font-size: 62px;
-                margin-bottom: 32px;
-            }
-
-            h3 {
-                font-size: 24px;
-            }
-        }
     }
 
     .check-contact-container {
@@ -307,6 +313,59 @@
                     display: flex;
                 }
             }
+        }
+    }
+
+    .slider {
+        top: 758px;
+    }
+}
+
+@media(max-width: 820px) {
+    .name-container {
+        top: 333px;
+
+        h1 {
+            font-size: 62px;
+            letter-spacing: -2px;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 100%;
+        }
+    }
+
+    .check-contact-container {
+        margin-top: 32px;
+        gap: 24px;
+
+        .hover-slide {
+            width: 153px;
+        }
+    }
+
+    .arrow-container {
+        height: 296px;
+        width: 30px;
+        margin-top: 548px;
+    }
+}
+
+@media(max-width: 410px) {
+    .name-container {
+        h1 {
+            font-size: 50px;
+            letter-spacing: -2px;
+        }
+    }
+
+    .check-contact-container {
+        margin-top: 32px;
+        gap: 10px;
+
+        .hover-slide {
+            width: 130px;
         }
     }
 }

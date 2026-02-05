@@ -13,61 +13,80 @@
 .contact-me-container {
   display: flex;
   justify-content: space-between;
+}
 
-  .work-text-container {
-    height: 337px;
-    width: 568px;
+.work-text-container {
+  height: 337px;
+  width: 568px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
-    h3 {
-      font-size: var(--font-size-24);
-      font-weight: var(--font-weight-500);
-      margin: var(--margin-0);
-      letter-spacing: 1.5px;
-      font-family: "Fira Code";
-    }
+.lets-work {
+  width: 100%;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    h1 {
-      font-size: var(--font-size-64);
-      font-weight: var(--font-weight-700);
-      margin: var(--margin-0);
-      margin: 0;
-      letter-spacing: 6px;
-      font-family: "Fira Code";
-    }
+  h3 {
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-500);
+    margin: var(--margin-0);
+    line-height: 100%;
+    letter-spacing: 1.5px;
+    font-family: "Karla";
+    color: #3DCFB6;
+  }
 
-    h2 {
-      letter-spacing: 4.5px;
-      font-family: "Fira Code";
-    }
+  h1 {
+    font-size: var(--font-size-64);
+    font-weight: var(--font-weight-700);
+    margin: var(--margin-0);
+    line-height: 100%;
+    letter-spacing: -3px;
+    font-family: "Fira Code";
+    color: #3DCFB6;
+  }
+}
 
-    p {
-      font-size: var(--font-size-16);
-      font-weight: var(--font-weight-400);
-    }
+.work-text {
+  width: 100%;
+  height: 121px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-    .font-size64 {
-      font-size: 64px;
-      font-weight: 700;
-      margin-top: -20px;
-      margin-bottom: 20px;
-    }
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 120%;
+    letter-spacing: 0;
+    color: #3DCFB6;
+    font-family: "Fira Code";
+    margin: 0;
+  }
 
-    span {
-      font-weight: var(--font-weight-700);
-      cursor: default;
-    }
+  p {
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-400);
+    line-height: 120%;
+    letter-spacing: 0;
+  }
 
-    .special {
-      letter-spacing: 1.5px;
-      font-weight: var(--font-weight-700);
-      margin-bottom: 16px;
-    }
+  span {
+    font-weight: var(--font-weight-700);
+    font-style: bold;
+    line-height: 120%;
+    letter-spacing: 0;
+    cursor: default;
+  }
 
-    .developer-container {
-      display: flex;
-      gap: 5px;
-      margin-top: 16px;
-    }
+  .developer-container {
+    display: flex;
+    gap: 5px;
   }
 }
 
@@ -92,7 +111,7 @@
       opacity: 0;
     }
 
-    .error-massage::placeholder {
+    .error-message::placeholder {
       color: #e64343;
     }
 
@@ -199,8 +218,18 @@ input[type=text]:focus {
     gap: 8px;
     background-color: transparent;
 
-    p {
+    .privacy-policy-text {
       width: 560px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
     }
 
     .checkbox {
@@ -249,16 +278,16 @@ input[type=text]:focus {
     .underline-effect {
       position: relative;
       font-family: "Fira Code";
+      cursor: pointer;
     }
 
     .underline-effect::after {
       content: "";
       position: absolute;
-      left: 52%;
+      left: 49%;
       bottom: -2px;
       transform: translateX(-50%);
       height: 0;
-
       background-color: #3DCFB6;
     }
 
@@ -292,7 +321,7 @@ input[type=text]:focus {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: inherit;
+    color: rgb(63, 63, 63);
     z-index: 1;
   }
 }
@@ -332,7 +361,27 @@ input[type=text]:focus {
   }
 }
 
-@media(max-width: 1090px) {
+.popUp-Overlay {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  .popUp {
+    height: 200px;
+    width: 500px;
+    background-image: linear-gradient(180deg, #3DCFB6, #FFFFFF);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1135px) {
   .contact-me-box {
     .padding {
       padding: 20px 16px;
@@ -340,9 +389,11 @@ input[type=text]:focus {
   }
 }
 
-@media(max-width: 960px) {
+@media(max-width: 980px) {
   .contact-me-box {
     height: 942px;
+    display: flex;
+    justify-content: center;
   }
 
   .contact-me-container {
@@ -350,61 +401,115 @@ input[type=text]:focus {
     flex-direction: column;
     justify-content: space-between;
     gap: 64px;
+  }
+}
 
+@media(max-width: 650px) {
+  .contact-me-box {
+    width: 100%;
+    justify-content: center;
+    margin: 80px 0 220px 0;
+  }
+
+  .contact-me-container {
     .work-text-container {
-      height: 337px;
-      width: 568px;
+      height: 316px;
+      width: 360px;
+      gap: 32px;
+    }
+
+    .lets-work {
+      width: 100%;
+      height: 149px;
+      gap: 16px;
 
       h3 {
-        font-size: var(--font-size-24);
-        font-weight: var(--font-weight-500);
-        margin: var(--margin-0);
-        letter-spacing: 1.5px;
-        font-family: "Fira Code";
+        font-size: 18px;
+        letter-spacing: 0px;
       }
 
       h1 {
-        font-size: var(--font-size-64);
-        font-weight: var(--font-weight-700);
-        margin: var(--margin-0);
-        margin: 0;
-        letter-spacing: 6px;
-        font-family: "Fira Code";
-      }
-
-      h2 {
-        letter-spacing: 4.5px;
-        font-family: "Fira Code";
-      }
-
-      p {
-        font-size: var(--font-size-16);
-        font-weight: var(--font-weight-400);
-      }
-
-      .font-size64 {
-        font-size: 64px;
-        font-weight: 700;
-        margin-top: -20px;
-        margin-bottom: 20px;
-      }
-
-      span {
-        font-weight: var(--font-weight-700);
-        cursor: default;
-      }
-
-      .special {
-        letter-spacing: 1.5px;
-        font-weight: var(--font-weight-700);
-        margin-bottom: 16px;
-      }
-
-      .developer-container {
-        display: flex;
-        gap: 5px;
-        margin-top: 16px;
+        font-size: 56px;
+        font-style: bold;
       }
     }
+
+    .work-text {
+      width: 358px;
+      height: 135px;
+      gap: 12px;
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .form-container {
+    height: 562px;
+    width: 358px;
+  }
+
+  .check-container {
+    .privacy-policy-container {
+      height: 89px;
+      line-height: 120%;
+      margin-bottom: 25px;
+
+      .privacy-policy-text {
+        width: 326px;
+        height: 64px;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-evenly;
+      }
+
+      .procress-text {
+        margin-top: 20px;
+        color: #FFFFFF;
+      }
+
+      .underline-effect::after {
+        left: 50%;
+      }
+    }
+
+    .submit-wrapper {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media(max-width: 395px) {
+  .contact-me-box {
+    margin: 80px 0 150px 0;
+  }
+
+  .contact-me-container {
+    .work-text-container {
+      width: 288px;
+    }
+
+    .lets-work {
+      h1 {
+        font-size: 48px;
+      }
+    }
+
+    .work-text {
+      width: 288px;
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .form-container {
+    width: 288px;
+  }
+
+  label {
+    font-size: 16px;
   }
 }

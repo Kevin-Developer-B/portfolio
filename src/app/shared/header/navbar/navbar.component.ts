@@ -60,13 +60,13 @@ export class NavbarComponent implements OnInit {
   openMenu() {
     this.isMenuOpen = true;
     this.menuState.open();
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
   }
 
   closeMenu() {
     this.isMenuOpen = false;
     this.menuState.close();
-    document.body.style.overflow = '';
+    document.body.classList.remove('no-scroll');
   }
 
 }

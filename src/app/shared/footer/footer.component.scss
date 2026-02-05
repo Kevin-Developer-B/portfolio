@@ -1,12 +1,12 @@
 .footer-box {
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 96px;
-    max-width: 1440px;
-    
 
     .footer-container {
+        position: relative;
         height: 126px;
         width: 100%;
         display: flex;
@@ -45,7 +45,7 @@
     }
 }
 
-.box2 {
+.box3 {
     height: 126px;
     display: flex;
     flex-direction: column;
@@ -83,4 +83,29 @@
 .point-effect:hover::after {
     width: 5px;
     height: 5px;
+}
+
+@media(max-width: 670px) {
+    .footer-box {
+        padding: 16px;
+    }
+}
+
+@media(max-width: 570px) {
+    .footer-box {
+        .footer-container {
+            height: 180px;
+            align-items: start;
+        }
+    }
+
+    .box2 {
+        margin-top: 20px;
+        height: 22px;
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
 }

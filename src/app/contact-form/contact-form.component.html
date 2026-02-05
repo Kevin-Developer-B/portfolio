@@ -1,16 +1,24 @@
 <section class="contact-me-box">
+    <div class="popUp-Overlay" *ngIf="popUpOpen">
+        <div class="popUp">
+            <span>{{ 'popUp-text' | translate }}</span>
+        </div>
+    </div>
     <div class="padding">
         <div class="contact-me-container">
             <div class="work-text-container">
-                <h3 class="turquoise">{{ 'contact_me' | translate }}</h3>
-                <h1 class="turquoise">{{ 'lets_work' | translate }}</h1>
-                <h2 class="turquoise font-size64">{{ 'together' | translate }}</h2>
-                <h3 class="turquoise special">{{ 'problem_to_solve' | translate }}</h3>
-                <p>{{ 'contact_text1' | translate }}</p>
-                <p>{{ 'contact_text2' | translate }}</p>
-                <span class="developer-container">
-                    <p>{{ 'contact_text3' | translate }}</p><span class="turquoise">{{ 'about' | translate }}!</span>
-                </span>
+                <div class="lets-work">
+                    <h3>{{ 'contact_me' | translate }}</h3>
+                    <h1>{{ 'lets_work' | translate }}</h1>
+                </div>
+                <div class="work-text">
+                    <h3>{{ 'problem_to_solve' | translate }}</h3>
+                    <p>{{ 'contact_text1' | translate }}</p>
+                    <span class="developer-container">
+                        <p>{{ 'contact_text3' | translate }}</p>
+                        <span class="turquoise">{{ 'about' | translate }}!</span>
+                    </span>
+                </div>
             </div>
 
             <div class="form-container">
@@ -21,7 +29,7 @@
                             <input [(ngModel)]="contactData.name" type="text" id="name" name="name" required
                                 #nameField="ngModel"
                                 [placeholder]="(isInvalid ? errorNamePlaceholder : normalNamePlaceholder) | translate"
-                                [class.error-massage]="isInvalid && nameField.invalid">
+                                [class.error-message]="isInvalid && nameField.invalid">
                         </label>
                         <span class="line"></span>
                     </div>
@@ -32,7 +40,7 @@
                                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
                                 #emailField="ngModel"
                                 [placeholder]="(isInvalid ? errorEmailPlaceholder : normalEmailPlaceholder) | translate"
-                                [class.error-massage]="isInvalid && emailField.invalid">
+                                [class.error-message]="isInvalid && emailField.invalid">
                         </label>
                         <span class="line"></span>
                     </div>
@@ -48,10 +56,17 @@
                     </div>
                     <div class="check-container">
                         <div class="privacy-policy-container">
-                            <button class="checkbox" [class.checked]="isChecked" (click)="toggleCheckbox()"
-                                type="button"></button>
-                            <p>{{ 'Ive_read_the' | translate }}<span class="underline-effect"> {{ 'privacy_policy' |
-                                    translate }}</span> {{ 'processing_of_my_data' | translate }}</p>
+                            <div>
+                                <button class="checkbox" [class.checked]="isChecked" (click)="toggleCheckbox()"
+                                    type="button"></button>
+                            </div>
+                            <div class="privacy-policy-text">
+                                <div>
+                                    <p>{{ 'Ive_read_the' | translate }}</p>
+                                    <span class="underline-effect"> {{ 'privacy_policy' | translate }} </span>
+                                </div>
+                                <p>{{ 'processing_of_my_data' | translate }}</p>
+                            </div>
                         </div>
                         <div class="policy-error-massage" *ngIf="policyError">
                             <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
