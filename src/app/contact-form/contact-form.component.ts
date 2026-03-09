@@ -18,7 +18,8 @@ export class ContactFormComponent implements OnInit {
   isChecked = false;
   policyError = false;
   isInvalid = false;
-  popUpOpen = false;
+  popUpVisible = false;
+  popUpClosing = false;
   normalNamePlaceholder = 'Your_name_goes_here';
   errorNamePlaceholder = 'error_name_message';
   normalEmailPlaceholder = 'youremail@email.com';
@@ -77,9 +78,8 @@ export class ContactFormComponent implements OnInit {
         error: err => console.error('Fehler:', err)
       });
     }
-    
+    this.openPopUp()
     this.checkBoxOut()
-    this.PopUp()
   }
 
   showPolicyError() {
@@ -99,15 +99,21 @@ export class ContactFormComponent implements OnInit {
     }, 1000)
   }
 
-  PopUp() {
-    this.popUpOpen = true;
-    document.documentElement.classList.add('no-scroll');
+  openPopUp() {
+    this.popUpVisible = true;
+    this.popUpClosing = false;
 
-    if (this.popUpOpen) {
-      setTimeout(() => {
-        this.popUpOpen = false
-        document.documentElement.classList.remove('no-scroll');
-      }, 2000)
-    }
+    setTimeout(() => {
+      this.closePopUp();
+    }, 2000);
+  }
+
+  closePopUp() {
+    this.popUpClosing = true;
+
+    setTimeout(() => {
+      this.popUpVisible = false;
+      this.popUpClosing = false;
+    }, 300);
   }
 }

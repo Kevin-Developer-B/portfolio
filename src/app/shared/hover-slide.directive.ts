@@ -36,13 +36,11 @@ export class HoverSlideDirective implements AfterViewInit, OnDestroy {
 
             if (this.isMobile && mobileSlider) {
                 if (this.menuOpen) {
-                    // Menü offen → Animation stoppen
                     this.renderer.setStyle(mobileSlider, 'opacity', '0');
                     this.renderer.setStyle(mobileSlider, 'display', 'flex');
                     this.renderer.setStyle(mainText, 'opacity', '0');
                     this.renderer.setStyle(slideText, 'opacity', '0');
                 } else {
-                    // Menü geschlossen → Animation starten
                     this.setupMobile(button, mainText, slideText, mobileSlider);
                 }
             } else {

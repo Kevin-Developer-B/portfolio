@@ -1,7 +1,7 @@
 <section class="contact-me-box">
-    <div class="popUp-Overlay" *ngIf="popUpOpen">
+    <div class="popUp-Overlay" *ngIf="popUpVisible" [class.closing]="popUpClosing">
         <div class="popUp">
-            <span>{{ 'popUp-text' | translate }}</span>
+            <span>{{ 'popUp-thanks-text' | translate }}</span>
         </div>
     </div>
     <div class="padding">

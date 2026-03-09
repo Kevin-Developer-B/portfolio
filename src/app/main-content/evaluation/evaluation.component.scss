@@ -229,12 +229,20 @@ h1 {
     }
 
     .card {
-        height: 380px;
+        height: 340px;
 
         .comment {
             p {
                 font-size: 12px;
             }
+        }
+    }
+}
+
+@media(max-width: 390px) {
+    .author {
+        span {
+            font-size: 12px;
         }
     }
 }

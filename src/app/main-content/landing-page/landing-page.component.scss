@@ -1,6 +1,6 @@
 .landing-page-container {
     height: 900px;
-    width: 100vw;
+    width: 100%;
     max-width: 1440px;
     background-image: url('./../../../assets/img/Background.png');
     background-repeat: no-repeat;
@@ -223,7 +223,7 @@
 .slider {
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    width: 1480px;
     height: 62px;
     display: flex;
     position: absolute;
