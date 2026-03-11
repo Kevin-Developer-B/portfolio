@@ -32,10 +32,10 @@ export class LandingPageComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      if (this.trackEl && this.trackEl.nativeElement) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         this.renderer.addClass(this.trackEl.nativeElement, 'scrolling');
-      }
+      });
     });
   }
 

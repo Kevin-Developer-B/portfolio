@@ -235,8 +235,10 @@
 
 .track {
     display: inline-flex;
-    animation: none;
-    animation: scroll 8s linear infinite;
+}
+
+.track.scrolling {
+  animation: scroll 8s linear infinite;
 }
 
 .track.Overlay-open {
