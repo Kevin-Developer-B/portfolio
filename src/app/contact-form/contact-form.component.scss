@@ -26,7 +26,7 @@
 
 .lets-work {
   width: 100%;
-  height: 176px;
+  height: 195px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -49,6 +49,7 @@
     letter-spacing: -3px;
     font-family: "Fira Code";
     color: #3DCFB6;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -220,7 +221,7 @@ input[type=text]:focus {
     background-color: transparent;
 
     .privacy-policy-text {
-      width: 560px;
+      width: 592px;
       height: 28px;
       display: flex;
       align-items: center;
@@ -273,6 +274,14 @@ input[type=text]:focus {
 
       &:hover {
         color: white;
+      }
+    }
+
+    .policy-text {
+      color: #3DCFB6;
+
+      &:hover {
+        color: #FFFFFF;
       }
     }
 

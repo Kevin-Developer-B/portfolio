@@ -64,10 +64,11 @@
                             <div class="privacy-policy-text">
                                 <div>
                                     <p>{{ 'Ive_read_the' | translate }}
-                                        <span class="underline-effect"> {{ 'privacy_policy' | translate }} </span>
+                                        <a href="privacy-policy" class="underline-effect policy-text">{{ 'privacy_policy' | translate }}</a>
+                                        
+                                        {{ 'processing_of_my_data' | translate }}
                                     </p>
                                 </div>
-                                <p>{{ 'processing_of_my_data' | translate }}</p>
                             </div>
                         </div>
                         <div class="policy-error-massage" *ngIf="policyError">

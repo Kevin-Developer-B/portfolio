@@ -1,14 +1,15 @@
 .footer-box {
     max-width: 1440px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 96px;
 
     .footer-container {
         position: relative;
         height: 126px;
         width: 100%;
+        padding: 96px;
         display: flex;
         align-items: center;
         justify-content: space-between;

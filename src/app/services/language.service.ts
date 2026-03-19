@@ -7,10 +7,14 @@ export type Lang = 'en' | 'de';
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private readonly STORAGE_KEY = 'language';
-  
   private langSubject = new BehaviorSubject<Lang>('en');
   lang$ = this.langSubject.asObservable();
 
+  /**
+  * Initializes the translation service, adds supported languages,
+  * sets the default language, and applies a previously saved language if available.
+  * @param translate The translation service instance.
+  */
   constructor(private translate: TranslateService) {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
@@ -18,6 +22,12 @@ export class LanguageService {
     this.setLanguage(saved || 'en');
   }
 
+  /**
+  * Sets the application's language.
+  * Saves it in localStorage, updates the translation service,
+  * notifies subscribers, and updates the HTML document's language.
+  * @param lang The language to set.
+  */
   setLanguage(lang: Lang) {
     localStorage.setItem(this.STORAGE_KEY, lang);
     this.translate.use(lang);
@@ -25,6 +35,10 @@ export class LanguageService {
     document.documentElement.lang = lang.toLowerCase();
   }
 
+  /**
+  * Gets the current application language.
+  * Falls back to 'en' if none is saved.
+  */
   get currentLang(): Lang {
     return (localStorage.getItem(this.STORAGE_KEY) as Lang) || 'en';
   }

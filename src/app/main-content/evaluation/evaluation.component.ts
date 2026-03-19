@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageService, Lang } from '../../language.service';
+import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import Splide from '@splidejs/splide';
 import en from './../../../assets/i18n/en.json';
@@ -23,26 +23,29 @@ export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
   private splide!: Splide;
   activeIndex = 0;
 
+  /**
+  * Creates the component and injects the LanguageService.
+  */
   constructor(private languageService: LanguageService) { }
 
+  /**
+  * Initializes the current language and subscribes to language changes.
+  */
   ngOnInit() {
     this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
       this.testimonials = lang === 'en'
         ? en.comments
         : de.comments;
-
-      // wichtig für Splide nach DOM-Update
       setTimeout(() => this.splide?.refresh());
     });
   }
 
-  // testimonials = [
-  //   { text: 'comments.comment1.text', author: 'Author 1' },
-  //   { text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error minus saepe accusamus repellat itaque cupiditate ad debitis maiores, nam magni tenetur accusantium excepturi quaerat aliquid vero sunt eaque ipsum commodi.', author: 'Author 2' },
-  //   { text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error minus saepe accusamus repellat itaque cupiditate ad debitis maiores, nam magni tenetur accusantium excepturi quaerat aliquid vero sunt eaque ipsum commodi.', author: 'Author 3' },
-  // ];
-
+  /**
+  * Initializes the Splide slider after the view has been fully initialized.
+  * Sets slider options, registers movement event listener,
+  * and mounts the slider instance.
+  */
   ngAfterViewInit() {
     this.splide = new Splide(this.splideRoot.nativeElement, {
       type: 'loop',
@@ -63,22 +66,30 @@ export class EvaluationComponent implements AfterViewInit, OnInit, OnDestroy {
         },
       },
     });
-
     this.splide.on('moved', (index) => {
       this.activeIndex = index;
     });
-
     this.splide.mount();
   }
 
+  /**
+  * Navigates the slider to the previous slide.
+  */
   goPrev() {
     this.splide.go('<');
   }
 
+  /**
+  * Navigates the slider to the next slide.
+  */
   goNext() {
     this.splide.go('>');
   }
 
+  /**
+  * Cleans up the Splide instance when the component is destroyed
+  * to prevent memory leaks.
+  */
   ngOnDestroy() {
     this.splide?.destroy();
   }

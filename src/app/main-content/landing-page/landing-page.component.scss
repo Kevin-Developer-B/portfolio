@@ -235,10 +235,7 @@
 
 .track {
     display: inline-flex;
-}
-
-.track.scrolling {
-  animation: scroll 8s linear infinite;
+    animation: scroll 8s linear infinite;
 }
 
 .track.Overlay-open {
@@ -273,7 +270,7 @@
     }
 
     to {
-        transform: translateX(-33.5%);
+        transform: translateX(-33.33333%);
     }
 }
 

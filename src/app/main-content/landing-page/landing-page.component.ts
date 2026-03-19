@@ -1,9 +1,9 @@
-import { Component, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { HoverSlideDirective } from '../../shared/hover-slide.directive';
-import { LanguageService, Lang } from '../../language.service';
+import { HoverSlideDirective } from '../../services/hover-slide.directive';
+import { LanguageService, Lang } from '../../services/language.service';
 import { NavbarComponent } from '../../shared/header/navbar/navbar.component';
 import { MenuStateService } from '../../services/menu-state-service';
 
@@ -15,15 +15,22 @@ import { MenuStateService } from '../../services/menu-state-service';
   styleUrl: './landing-page.component.scss'
 })
 
-export class LandingPageComponent implements AfterViewInit {
-  @ViewChild('trackEl', { static: false }) trackEl!: ElementRef;
+export class LandingPageComponent {
   currentLang: Lang = 'en';
   slides = ['remote', 'fontend_developer', 'based', 'work'];
   isOverlayOpen$ = this.menuState.state$();
 
-  constructor(
-    private languageService: LanguageService, private renderer: Renderer2, private menuState: MenuStateService) { }
+  /**
+  * Creates the component instance and injects required services.
+  * @param languageService Service used to manage and observe the current language.
+  * @param menuState Service used to control the menu state.
+  */
+  constructor(private languageService: LanguageService, private menuState: MenuStateService) { }
 
+  /**
+  * Initializes the component.
+  * Sets the current language and subscribes to language changes.
+  */
   ngOnInit(): void {
     this.currentLang = this.languageService.currentLang;
     this.languageService.lang$.subscribe((lang: Lang) => {
@@ -31,14 +38,9 @@ export class LandingPageComponent implements AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        this.renderer.addClass(this.trackEl.nativeElement, 'scrolling');
-      });
-    });
-  }
-
+  /**
+  * Opens the menu by triggering the menu state service.
+  */
   stopArrow() {
     this.menuState.open();
   }

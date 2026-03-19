@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService, Lang } from '../../language.service';
+import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { HoverSlideDirective } from '../../shared/hover-slide.directive';
+import { HoverSlideDirective } from '../../services/hover-slide.directive';
 
 @Component({
   selector: 'app-skill-set',
@@ -13,11 +13,17 @@ import { HoverSlideDirective } from '../../shared/hover-slide.directive';
 })
 export class SkillSetComponent implements OnInit {
   showInterrest = false;
-
   currentLang: Lang = 'en';
 
+  /**
+  * Creates an instance of the component and injects the LanguageService.
+  * @param languageService Service used to get and observe the current language.
+  */
   constructor(private languageService: LanguageService) { }
 
+  /**
+  * Initializes the component and subscribes to language changes.
+  */
   ngOnInit(): void {
     this.currentLang = this.languageService.currentLang;
 
@@ -26,10 +32,16 @@ export class SkillSetComponent implements OnInit {
     });
   }
 
+  /**
+  * Shows the interest indicator when the mouse enters the element.
+  */
   onMouseEnter() {
     this.showInterrest = true;
   }
 
+  /**
+  * Hides the interest indicator when the mouse leaves the element.
+  */
   onMouseLeave() {
     this.showInterrest = false;
   }

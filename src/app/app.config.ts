@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { routes } from './app.routes';
-import { MyHttpLoader } from './htpLoader';
+import { MyHttpLoader } from './services/htpLoader';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new MyHttpLoader(http, './assets/i18n/', '.json');

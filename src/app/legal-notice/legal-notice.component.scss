@@ -1,11 +1,12 @@
-box {
+* {
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
 .legal-notice-box {
-    padding: 149px 96px 0;
+    max-width: 1440px;
+    padding: 149px 0;
     background-image: url('../../assets/img/Background.png');
     background-size: 100% 100%;
 
