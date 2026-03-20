@@ -61,6 +61,7 @@ li {
 
 a {
     color: rgba(255, 255, 255, 0.301);
+    overflow-wrap: break-word;
 
     &:hover {
         color: #FFFFFF;
@@ -70,5 +71,13 @@ a {
 @media(max-width: 1000px) {
     .box {
         padding: 149px 16px 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 19px;
     }
 }

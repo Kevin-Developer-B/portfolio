@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 
     .footer-container {
         position: relative;
@@ -88,7 +89,9 @@
 
 @media(max-width: 670px) {
     .footer-box {
-        padding: 16px;
+        .footer-container {
+            padding: 16px;
+        }
     }
 }
 
