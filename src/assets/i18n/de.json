@@ -55,6 +55,7 @@
         "Whats_your_email": "Wie lautet Ihre E-Mail?",
         "youremail@email.com": "Ihreemail@email.com",
         "error_email_message": "Hoppla! Ihre E-Mail-Adresse wird benötigt.",
+        "warning_email": "Bitte geben Sie eine E-Mail ein",
         "How_can_I_help_you": "Wie kann ich Ihnen helfen?",
         "error_message_message": "Was benötigen Sie als Entwickler?",
         "Hello_Lukas,_I_am_interested_in...": "Hallo Lukas, ich interessiere mich für...",

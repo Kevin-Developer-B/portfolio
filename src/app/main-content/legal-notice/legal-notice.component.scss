@@ -5,10 +5,10 @@
 }
 
 .legal-notice-box {
-    max-width: 1440px;
-    padding: 149px 0;
-    background-image: url('../../assets/img/Background.png');
+    background-image: url('../../../assets/img/Background.png');
     background-size: 100% 100%;
+    padding: 150px 96px;
+    padding-bottom: 250px;
 
     h1 {
         font-size: 64px;
@@ -32,14 +32,12 @@
         font-size: 16px;
         font-weight: 400;
         color: #3DCFB6;
-        font-family: 'Karla';
         font-style: bold;
         line-height: 120%;
         letter-spacing: 0%;
     }
 
     .legal-notice-container {
-        padding: 0 120px;
         font-size: 16px;
         font-weight: 400;
         display: flex;
@@ -61,6 +59,7 @@
 @media(max-width: 1000px) {
     .legal-notice-box {
         padding: 149px 16px 0;
+        padding-bottom: 250px;
 
         h1 {
             font-size: 32px;

@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LanguageService, Lang } from '../../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuStateService } from '../../../services/menu-state-service';
+import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
@@ -20,7 +22,7 @@ export class NavbarComponent implements OnInit {
   * Creates an instance of the component and injects the LanguageService.
   * @param languageService Service used to get and observe the current language.
   */
-  constructor(private languageService: LanguageService, private menuState: MenuStateService) { }
+  constructor(private languageService: LanguageService, private menuState: MenuStateService, private router: Router) { }
 
   /**
   * Initializes component and subscribes to language changes.
@@ -101,5 +103,20 @@ export class NavbarComponent implements OnInit {
     this.isMenuOpen = false;
     this.menuState.close();
     document.body.classList.remove('no-scroll');
+  }
+
+  /**
+  * Navigates to the root route and then smoothly scrolls to a section
+  * after a short delay.
+  *
+  * @param section - The ID of the target section to scroll into view.
+  */
+  scrollTo(section: string) {
+    this.router.navigate(['/']);
+
+    setTimeout(() => {
+      document.getElementById(section)
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
   }
 }

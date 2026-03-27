@@ -1,5 +1,5 @@
 <div class="nav-container">
-    <a href="#landingPage" class="mobile-logo"></a>
+    <a [routerLink]="['/']" class="mobile-logo"></a>
     <div class="nav-selection">
         <div class="language-container">
             <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"
@@ -14,25 +14,25 @@
             </span>
         </div>
         <div class="links" id="navLinks">
-            <a class="point-effect" href="#About-me" [class.active]="activeIndex === 1" (click)="currentActive(1)">{{
+            <a class="point-effect" (click)="scrollTo('About')" [class.active]="activeIndex === 1" (click)="currentActive(1)">{{
                 'about' | translate }}</a>
-            <a class="point-effect" href="#Skills" [class.active]="activeIndex === 2" (click)="currentActive(2)">{{
+            <a class="point-effect" (click)="scrollTo('Skills')" [class.active]="activeIndex === 2" (click)="currentActive(2)">{{
                 'skills' | translate }}</a>
-            <a class="point-effect" href="#Projects" [class.active]="activeIndex === 3" (click)="currentActive(3)">{{
+            <a class="point-effect" (click)="scrollTo('Projects')" [class.active]="activeIndex === 3" (click)="currentActive(3)">{{
                 'projects' | translate }}</a>
         </div>
     </div>
-    <a href="#landingPage" class="logo"></a>
+    <a [routerLink]="['/']" class="logo"></a>
     <button class="burger-menu" (click)="openMenu()"></button>
     <div class="mobile-overlay" [class.open]="isMenuOpen" (click)="closeMenu()">
         <div class="mobile-nav-links-container" (click)="$event.stopPropagation()">
             <div class="mobile-links-container" id="navLinks">
-                <a class="point-effect" href="#About-me" [class.active]="activeIndex === 1"
+                <a class="point-effect" (click)="scrollTo('About')" [class.active]="activeIndex === 1"
                     (click)="onNavClick($event, 'About-me', 1)">{{ 'about' | translate }}</a>
-                <a class="point-effect" href="#Skills" [class.active]="activeIndex === 2"
+                <a class="point-effect" (click)="scrollTo('Skills')" [class.active]="activeIndex === 2"
                     (click)="onNavClick($event, 'Skills', 2)">{{
                     'skills' | translate }}</a>
-                <a class="point-effect" href="#Projects" [class.active]="activeIndex === 3"
+                <a class="point-effect" (click)="scrollTo('Projects')" [class.active]="activeIndex === 3"
                     (click)="onNavClick($event, 'Projects', 3)">{{ 'projects' | translate }}</a>
                 <div class="language-container">
                     <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox"

@@ -37,12 +37,15 @@
                     <div class="text-area-container">
                         <span class="line"></span>
                         <label for="email">{{ 'Whats_your_email' | translate }}
-                            <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
                                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
                                 #emailField="ngModel"
                                 [placeholder]="(isInvalid ? errorEmailPlaceholder : normalEmailPlaceholder) | translate"
                                 [class.error-message]="isInvalid && emailField.invalid">
                         </label>
+                        @if (!email.valid && email.touched) {
+                            <span class="warning-notice-email">{{ 'warning_email' | translate }}</span>
+                        }
                         <span class="line"></span>
                     </div>
                     <div class="text-area-container">

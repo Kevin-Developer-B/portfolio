@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService, Lang } from '../services/language.service';
+import { LanguageService, Lang } from '../../services/language.service';
 
 @Component({
-  selector: 'app-legal-notice',
+  selector: 'app-privacy-policy',
   standalone: true,
   imports: [CommonModule, TranslateModule],
-  templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+  templateUrl: './privacy-policy.component.html',
+  styleUrl: './privacy-policy.component.scss'
 })
-export class LegalNoticeComponent implements OnInit {
+export class PrivacyPolicyComponent implements OnInit {
   currentLang: Lang = 'en';
 
   /**

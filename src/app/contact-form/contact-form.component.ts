@@ -74,9 +74,8 @@ export class ContactFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.setInvalidState(form);
     if (this.shouldStopSubmit(form)) return;
-
-    this.sendForm(form);
     this.afterSubmit();
+    this.sendForm(form);
   }
 
   /**

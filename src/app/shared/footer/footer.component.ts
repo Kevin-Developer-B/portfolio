@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService, Lang } from '../../services/language.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -27,5 +28,21 @@ export class FooterComponent implements OnInit {
     this.languageService.lang$.subscribe((lang: Lang) => {
       this.currentLang = lang;
     });
+  }
+
+  /**
+  * Smoothly scrolls the page to the element with the given ID.
+  *
+  * @param id - The ID of the target element to scroll into view.
+  */
+  scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /**
+  * Smoothly scrolls the page to the top.
+  */
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

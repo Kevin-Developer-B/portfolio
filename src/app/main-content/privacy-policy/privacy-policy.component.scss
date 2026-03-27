@@ -5,9 +5,9 @@
 }
 
 .box {
-    max-width: 1440px;
     padding: 149px 120px;
-    background-image: url('../../assets/img/Background.png');
+    padding-bottom: 250px;
+    background-image: url('../../../assets/img/Background.png');
     background-size: 100% 100%;
 
     >div {
@@ -71,6 +71,7 @@ a {
 @media(max-width: 1000px) {
     .box {
         padding: 149px 16px 0;
+        padding-bottom: 250px;
     }
 
     h1 {

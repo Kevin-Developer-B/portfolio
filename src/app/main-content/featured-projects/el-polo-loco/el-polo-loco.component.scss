@@ -236,7 +236,7 @@
 
         h2 {
             height: 45px;
-            font-size: 42px;
+            font-size: 38px;
             line-height: 80%;
         }
     }
@@ -320,5 +320,10 @@
         .explain-text {
             margin-top: 30px;
         }
+    }
+
+    .applications {
+        width: 100%;
+        grid-template-columns: 35% 25% 25%;
     }
 }

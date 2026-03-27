@@ -64,6 +64,7 @@
         "Your_name_goes_here": "Your name goes here",
         "error_name_message": "Oops! it seens your name is missing",
         "Whats_your_email": "What's your email?",
+        "warning_email": "Please enter a email",
         "youremail@email.com": "youremail@email.com",
         "error_email_message": "Hoppla! your email is required",
         "How_can_I_help_you": "How can I help you?",

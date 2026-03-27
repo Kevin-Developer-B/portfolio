@@ -6,6 +6,8 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-main-content',
@@ -17,11 +19,13 @@ import { ContactFormComponent } from '../contact-form/contact-form.component';
     SkillSetComponent,
     FeaturedProjectsComponent,
     EvaluationComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    LegalNoticeComponent,
+    PrivacyPolicyComponent
   ],
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
 })
-export class MainContentComponent {
+export class MainContentComponent  {
 
 }
