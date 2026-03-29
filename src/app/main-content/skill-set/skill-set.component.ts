@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { HoverSlideDirective } from '../../services/hover-slide.directive';
+import { ScrollAnimation } from '../../services/scrollAnimation';
 
 @Component({
   selector: 'app-skill-set',
@@ -11,7 +12,7 @@ import { HoverSlideDirective } from '../../services/hover-slide.directive';
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
-export class SkillSetComponent implements OnInit {
+export class SkillSetComponent implements OnInit, AfterViewInit {
   showInterrest = false;
   currentLang: Lang = 'en';
 
@@ -19,7 +20,15 @@ export class SkillSetComponent implements OnInit {
   * Creates an instance of the component and injects the LanguageService.
   * @param languageService Service used to get and observe the current language.
   */
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private animation: ScrollAnimation) { }
+
+  /**
+  * Angular lifecycle hook that is called after the component's view has been fully initialized.
+  * Triggers a slide-in animation for the featured projects section.
+  */
+  ngAfterViewInit() {
+    this.animation.slideInFromBottom('.skill-set-box');
+  }
 
   /**
   * Initializes the component and subscribes to language changes.

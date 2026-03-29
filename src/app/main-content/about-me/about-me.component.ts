@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollAnimation } from '../../services/scrollAnimation';
 
 @Component({
   selector: 'app-about-me',
@@ -10,13 +11,21 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
-export class AboutMeComponent implements OnInit {
+export class AboutMeComponent implements OnInit, AfterViewInit {
   currentLang: Lang = 'en';
 
   /**
   * Creates the component and injects the LanguageService.
   */
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private animation: ScrollAnimation) { }
+
+  /**
+  * Angular lifecycle hook that is called after the component's view has been fully initialized.
+  * Triggers a slide-in animation for the featured projects section.
+  */
+  ngAfterViewInit() {
+    this.animation.splitReveal('.left','.right');
+  }
 
   /**
   * Initializes the current language and subscribes to language changes.

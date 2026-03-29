@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="padding">
-        <div class="contact-me-container">
+        <div class="contact-me-container leftAnimation">
             <div class="work-text-container">
                 <div class="lets-work">
                     <h3>{{ 'contact_me' | translate }}</h3>
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="form-container">
+            <div class="form-container rightAnimation">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
                     <div class="text-area-container">
                         <span class="normel-line"></span>
@@ -78,10 +78,10 @@
                             <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
                         </div>
                         <div class="submit-wrapper">
-                            <button type="button" class="fake-submit" *ngIf="!isChecked" (click)="showPolicyError()">
+                            <button type="button" class="fake-submit" *ngIf="!contactForm.valid || !isChecked" (click)="showPolicyError(contactForm)">
                                 <span>{{ 'say_hello' | translate }}</span>
                             </button>
-                            <button class="hover-slide" hoverSlide type="submit" [disabled]="!isChecked">
+                            <button class="hover-slide" hoverSlide type="submit" [disabled]="!contactForm.valid || !isChecked">
                                 <span class="main-text">{{ 'say_hello' | translate }}</span>
                                 <span class="slide-text">{{ 'say_hello' | translate }}</span>
                             </button>

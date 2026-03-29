@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, AfterViewInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService, Lang } from '../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { HoverSlideDirective } from '../services/hover-slide.directive';
 import { HttpClient } from '@angular/common/http';
+import { ScrollAnimation } from '../services/scrollAnimation';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent implements OnInit, AfterViewInit {
   currentLang: Lang = 'en';
   isChecked = false;
   policyError = false;
@@ -31,7 +32,15 @@ export class ContactFormComponent implements OnInit {
   /**
   * Creates the component and injects the LanguageService.
   */
-  constructor(private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService, private animation: ScrollAnimation) { }
+
+  /**
+  * Angular lifecycle hook that is called after the component's view has been fully initialized.
+  * Triggers a slide-in animation for the featured projects section.
+  */
+  ngAfterViewInit() {
+    this.animation.splitReveal('.leftAnimation', '.rightAnimation');
+  }
 
   /**
   * Initializes the current language and subscribes to language changes.
@@ -118,7 +127,18 @@ export class ContactFormComponent implements OnInit {
   /**
   * Shows a policy error message if the checkbox is not selected.
   */
-  showPolicyError() {
+  showPolicyError(form?: NgForm) {
+    // Placeholder / Fehler aktivieren
+    this.isInvalid = true;
+
+    // Felder als touched markieren (für Validierungsanzeigen)
+    if (form) {
+      Object.values(form.controls).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+
+    // Checkbox Fehler wie bisher
     if (!this.isChecked) {
       this.policyError = true;
     }
