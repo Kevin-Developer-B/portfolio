@@ -1,10 +1,12 @@
+section {
+    width: 100vw;
+}
+
 .about-me-container {
     display: flex;
     justify-content: space-between;
     height: 708px;
-    margin-top: 112px;
-    margin-bottom: 112px;
-    padding: 0 72px;
+    margin: 112px 0;
     box-sizing: border-box;
 }
 
@@ -144,8 +146,11 @@ h2 {
 
 
 @media(max-width: 1410px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .about-me-container {
-        margin: 112px 16px;
         padding: 0;
     }
 }
@@ -263,7 +268,7 @@ h2 {
     }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 430px) {
 
     .me-img-container {
 
@@ -316,5 +321,11 @@ h2 {
         width: 100%;
         font-size: 14px;
         letter-spacing: 0.6px;
+    }
+}
+
+@media(max-height: 860px) {
+    .about-me-container {
+        margin-top: 300px;
     }
 }

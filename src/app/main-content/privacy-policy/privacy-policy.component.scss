@@ -1,20 +1,23 @@
 * {
-    margin: 0;
+    margin-top: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-.box {
-    padding: 149px 120px;
-    padding-bottom: 250px;
+.background {
+    height: 100%;
+    width: 100%;
     background-image: url('../../../assets/img/Background.png');
-    background-size: 100% 100%;
+    background-size: cover;
+}
 
-    >div {
-        display: flex;
-        flex-direction: column;
-        margin: 20px 0;
-    }
+.box {
+    height: 100%;
+    width: 100vw;
+}
+
+.pravicy-container {
+    padding: 250px 0;
 }
 
 h1 {
@@ -69,9 +72,13 @@ a {
 }
 
 @media(max-width: 1000px) {
-    .box {
-        padding: 149px 16px 0;
+    .pravicy-container {
+        padding: 150px 0;
         padding-bottom: 250px;
+    }
+
+    .container {
+        padding: 0 16px;
     }
 
     h1 {

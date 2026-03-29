@@ -1,11 +1,11 @@
 .skill-set-box {
     height: 695px;
+    width: 100vw;
     background-image: url('./../../../assets/img/Skill\ set\ Background.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left, bottom;
     box-sizing: border-box;
-    padding: 0 96px;
     margin-bottom: 30px;
 }
 
@@ -244,7 +244,7 @@ h2 {
 }
 
 @media(max-width: 1350px) {
-    .skill-set-box {
+    .container {
         padding: 0 16px;
     }
 }
@@ -266,6 +266,7 @@ h2 {
     .justify-content {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         flex-direction: column;
         gap: 40px;
     }

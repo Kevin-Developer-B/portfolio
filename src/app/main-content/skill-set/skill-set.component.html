@@ -1,80 +1,81 @@
 <section class="skill-set-box">
-    <div class="justify-content">
-        <div class="tech-box">
-            <h2>{{ 'technologies' | translate }}</h2>
-            <div class="tech-container">
-                <h1>{{ 'skill_set' | translate }}</h1>
-                <div class="capability-texte">
-                    <div class="capability-first-text">
-                        <span>
-                            {{ 'technologies_text1' | translate }}
-                        </span>
-                    </div>
-                    <div class="capability-second-text">
-                        <div class="second-text">
-                            <p>{{ 'technologies_text2' | translate }} <span style="color: #3DCFB6;">{{ 'technologies_text2.1' | translate }}</span></p>
+    <div class="container">
+        <div class="justify-content">
+            <div class="tech-box">
+                <h2>{{ 'technologies' | translate }}</h2>
+                <div class="tech-container">
+                    <h1>{{ 'skill_set' | translate }}</h1>
+                    <div class="capability-texte">
+                        <div class="capability-first-text">
+                            <span>
+                                {{ 'technologies_text1' | translate }}
+                            </span>
                         </div>
-                        <p>{{ 'technologies_text3' | translate }}</p>
+                        <div class="capability-second-text">
+                            <div class="second-text">
+                                <p>{{ 'technologies_text2' | translate }} <span style="color: #3DCFB6;">{{
+                                        'technologies_text2.1' | translate }}</span></p>
+                            </div>
+                            <p>{{ 'technologies_text3' | translate }}</p>
+                        </div>
+                    </div>
+                    <a [routerLink]="['/Contact']" (click)="scrollTo('Contact')" class="hover-slide" hoverSlide>
+                        <span class="main-text">{{ 'lets_talk' | translate }}</span>
+                        <span class="slide-text">{{ 'lets_talk' | translate }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="skill-images-container">
+                <div>
+                    <img src="./../../../assets/img/Property HTML.svg" alt="">
+                    <p>HTML</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property CSS.svg" alt="">
+                    <p>CSS</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property JavaScript.svg" alt="">
+                    <p>JavaScript</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Material Design.svg" alt="">
+                    <p>Material <br> Design</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property TypeScript.svg" alt="">
+                    <p>TypeScript</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Angular.svg" alt="">
+                    <p>Angular</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Firebase.svg" alt="">
+                    <p>Firebase</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Git.svg" alt="">
+                    <p>GIT</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Rest-Api.svg" alt="">
+                    <p>REST-API</p>
+                </div>
+                <div>
+                    <img src="./../../../assets/img/Property Scrum.svg" alt="">
+                    <p>Scrum</p>
+                </div>
+                <div class="special-hover" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+                    <img src="./../../../assets/img/Property GrowthMindset.svg" alt="">
+                    <p>{{ 'growth' | translate }}</p>
+                    <p>{{ 'mindset' | translate }}</p>
+
+                    <div class="interrest-group-container" [class.show]="showInterrest">
+                        <img class="interrest-group-img" src="./../../../assets/img/interrest-group.svg" alt="">
                     </div>
                 </div>
-                <a [routerLink]="['/Contact']" (click)="scrollTo('Contact')" class="hover-slide" hoverSlide>
-                    <span class="main-text">{{ 'lets_talk' | translate }}</span>
-                    <span class="slide-text">{{ 'lets_talk' | translate }}</span>
-                </a>
             </div>
         </div>
-
-        <div class="skill-images-container">
-            <div>
-                <img src="./../../../assets/img/Property HTML.svg" alt="">
-                <p>HTML</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property CSS.svg" alt="">
-                <p>CSS</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property JavaScript.svg" alt="">
-                <p>JavaScript</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Material Design.svg" alt="">
-                <p>Material <br> Design</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property TypeScript.svg" alt="">
-                <p>TypeScript</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Angular.svg" alt="">
-                <p>Angular</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Firebase.svg" alt="">
-                <p>Firebase</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Git.svg" alt="">
-                <p>GIT</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Rest-Api.svg" alt="">
-                <p>REST-API</p>
-            </div>
-            <div>
-                <img src="./../../../assets/img/Property Scrum.svg" alt="">
-                <p>Scrum</p>
-            </div>
-            <div class="special-hover" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-                <img src="./../../../assets/img/Property GrowthMindset.svg" alt="">
-                <p>{{ 'growth' | translate }}</p>
-                <p>{{ 'mindset' | translate }}</p>
-
-                <div class="interrest-group-container" [class.show]="showInterrest">
-                    <img class="interrest-group-img" src="./../../../assets/img/interrest-group.svg" alt="">
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>

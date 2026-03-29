@@ -1,13 +1,8 @@
 .contact-me-box {
   position: relative;
   height: 845px;
-  width: 100%;
+  width: 100vw;
   margin-top: 80px;
-
-  .padding {
-    height: 100%;
-    padding: 20px 96px;
-  }
 }
 
 .contact-me-container {
@@ -438,7 +433,7 @@ input[type=text]:focus {
 
 @media(max-width: 1135px) {
   .contact-me-box {
-    .padding {
+    .container {
       padding: 20px 16px;
     }
   }
@@ -447,14 +442,13 @@ input[type=text]:focus {
 @media(max-width: 980px) {
   .contact-me-box {
     height: 1230px;
-    display: flex;
-    justify-content: center;
   }
 
   .contact-me-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     gap: 95px;
   }
 }

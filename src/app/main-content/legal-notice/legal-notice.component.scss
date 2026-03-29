@@ -1,14 +1,24 @@
 * {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-.legal-notice-box {
+.background {
+    height: 100%;
+    width: 100%;
     background-image: url('../../../assets/img/Background.png');
     background-size: 100% 100%;
-    padding: 150px 96px;
-    padding-bottom: 250px;
+}
+
+.legal-box {
+    padding: 200px 0;
+}
+
+.legal-notice-box {
+    height: 100%;
+    width: 100vw;
 
     h1 {
         font-size: 64px;
@@ -57,10 +67,15 @@
 }
 
 @media(max-width: 1000px) {
-    .legal-notice-box {
-        padding: 149px 16px 0;
-        padding-bottom: 250px;
+    .container {
+        padding: 0 16px;
+    }
 
+    .legal-box {
+        padding: 150px 0 250px 0;
+    }
+
+    .legal-notice-box {
         h1 {
             font-size: 32px;
             text-align: start;

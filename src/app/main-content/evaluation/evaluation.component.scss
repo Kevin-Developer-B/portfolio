@@ -1,10 +1,27 @@
 section {
     position: relative;
     height: 472px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 150px;
+    
+}
+
+.container {
+    padding: 0;
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
 }
 
 h1 {
@@ -16,10 +33,10 @@ h1 {
 
 .quote {
     position: absolute;
-    right: calc(100% - 29%);
-    top: 80px;
+    top: 1px;
+    left: 0;
     z-index: 1;
-    height: 64px;
+    height: 40px;
 }
 
 .card {
@@ -167,18 +184,8 @@ h1 {
     }
 }
 
-@media(max-width: 1175px) {
-    .quote {
-        right: calc(100% - 30%);
-    }
-}
 
 @media(max-width: 960px) {
-    .quote {
-        top: 44px;
-        height: 48px;
-    }
-
     .card {
         height: 360px;
 
@@ -189,10 +196,6 @@ h1 {
 }
 
 @media(max-width: 700px) {
-    .quote {
-        right: calc(100% - 16%);
-    }
-
     .shadow-slider::before {
         background: transparent;
     }
@@ -205,20 +208,6 @@ h1 {
 @media(max-width: 600px) {
     section {
         height: 500px;
-    }
-}
-
-@media(max-width: 595px) {
-    .quote {
-        top: 80px;
-        right: calc(100% - 19%);
-    }
-}
-
-@media(max-width: 475px) {
-    .quote {
-        top: 80px;
-        right: calc(100% - 25%);
     }
 }
 
@@ -260,11 +249,6 @@ h1 {
 @media(max-width: 345px) {
     h1 {
         font-size: 28px;
-    }
-
-    .quote {
-        top: 70px;
-        right: calc(100% - 30%);
     }
 }
 

@@ -41,18 +41,24 @@
 
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
     max-width: 1440px;
     scroll-behavior: smooth;
     background-color: var(--primar-bg-color);
     color: white;
     overflow-x: hidden;
-    position: relative;
 
     &::-webkit-scrollbar {
         width: 0;
     }
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 96px;
+    box-sizing: border-box;
+    pointer-events: auto;
 }
 
 .blur-effect {
@@ -62,12 +68,12 @@ body {
     &::before {
         content: '';
         position: absolute;
-        inset: -30px;
+        inset: 0px;
         border-radius: inherit;
-        border: 45px solid #1C1C1C;
-        filter: blur(8px);
+        border: 5px solid #ffffff00;
+        filter: blur(5px);
         pointer-events: none;
-        z-index: 1;
+        z-index: 1000;
     }
 }
 
@@ -82,7 +88,7 @@ body.no-scroll,
 html.no-scroll {
     overflow: hidden;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
 
 a {

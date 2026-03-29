@@ -1,31 +1,33 @@
 <section>
-    <h1>{{ 'colleagues' | translate }}</h1>
-    <img class="quote" src="./../../../assets/img/quotes.svg" alt="">
-    <div #splideRoot class="splide shadow-slider">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide" *ngFor="let item of testimonials">
-                    <div class="card-wrapper">
-                        <div class="card">
-                            <div class="comment">
-                                <p>{{ item.text }}</p>
+    <div class="container">
+        <h1>{{ 'colleagues' | translate }}</h1>
+        <div #splideRoot class="splide shadow-slider">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide" *ngFor="let item of testimonials">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <img class="quote" src="./../../../assets/img/quotes.svg" alt="">
+                                <div class="comment">
+                                    <p>{{ item.text }}</p>
+                                </div>
+                                <p class="author">
+                                    <span>{{ item.author }}</span>
+                                </p>
                             </div>
-                            <p class="author">
-                                <span>{{ item.author }}</span>
-                            </p>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <div class="btn-container">
-        <div class="btn-box">
-            <button class="btn left" (click)="goPrev()"></button>
-            <span *ngFor="let item of testimonials; let i = index" class="dot"
-                [class.active]="i === activeIndex"></span>
-            <button class="btn right" (click)="goNext()"></button>
+        <div class="btn-container">
+            <div class="btn-box">
+                <button class="btn left" (click)="goPrev()"></button>
+                <span *ngFor="let item of testimonials; let i = index" class="dot"
+                    [class.active]="i === activeIndex"></span>
+                <button class="btn right" (click)="goNext()"></button>
+            </div>
         </div>
     </div>
 </section>

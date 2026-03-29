@@ -1,10 +1,10 @@
 <section class="contact-me-box">
-    <div class="popUp-Overlay" *ngIf="popUpVisible" [class.closing]="popUpClosing">
-        <div class="popUp">
-            <span>{{ 'popUp-thanks-text' | translate }}</span>
+    <div class="container">
+        <div class="popUp-Overlay" *ngIf="popUpVisible" [class.closing]="popUpClosing">
+            <div class="popUp">
+                <span>{{ 'popUp-thanks-text' | translate }}</span>
+            </div>
         </div>
-    </div>
-    <div class="padding">
         <div class="contact-me-container leftAnimation">
             <div class="work-text-container">
                 <div class="lets-work">
@@ -21,7 +21,6 @@
                     </span>
                 </div>
             </div>
-
             <div class="form-container rightAnimation">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
                     <div class="text-area-container">
@@ -44,7 +43,7 @@
                                 [class.error-message]="isInvalid && emailField.invalid">
                         </label>
                         @if (!email.valid && email.touched) {
-                            <span class="warning-notice-email">{{ 'warning_email' | translate }}</span>
+                        <span class="warning-notice-email">{{ 'warning_email' | translate }}</span>
                         }
                         <span class="line"></span>
                     </div>
@@ -67,8 +66,9 @@
                             <div class="privacy-policy-text">
                                 <div>
                                     <p>{{ 'Ive_read_the' | translate }}
-                                        <a href="privacy-policy" class="underline-effect policy-text">{{ 'privacy_policy' | translate }}</a>
-                                        
+                                        <a href="privacy-policy" class="underline-effect policy-text">{{
+                                            'privacy_policy' | translate }}</a>
+
                                         {{ 'processing_of_my_data' | translate }}
                                     </p>
                                 </div>
@@ -78,10 +78,12 @@
                             <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
                         </div>
                         <div class="submit-wrapper">
-                            <button type="button" class="fake-submit" *ngIf="!contactForm.valid || !isChecked" (click)="showPolicyError(contactForm)">
+                            <button type="button" class="fake-submit" *ngIf="!contactForm.valid || !isChecked"
+                                (click)="showPolicyError(contactForm)">
                                 <span>{{ 'say_hello' | translate }}</span>
                             </button>
-                            <button class="hover-slide" hoverSlide type="submit" [disabled]="!contactForm.valid || !isChecked">
+                            <button class="hover-slide" hoverSlide type="submit"
+                                [disabled]="!contactForm.valid || !isChecked">
                                 <span class="main-text">{{ 'say_hello' | translate }}</span>
                                 <span class="slide-text">{{ 'say_hello' | translate }}</span>
                             </button>
@@ -89,7 +91,6 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </section>
