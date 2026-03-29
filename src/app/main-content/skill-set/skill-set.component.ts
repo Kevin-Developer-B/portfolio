@@ -3,12 +3,13 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { HoverSlideDirective } from '../../services/hover-slide.directive';
+import { RouterLink, Router } from '@angular/router';
 import { ScrollAnimation } from '../../services/scrollAnimation';
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [CommonModule, TranslateModule, HoverSlideDirective],
+  imports: [CommonModule, TranslateModule, HoverSlideDirective, RouterLink],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
@@ -20,7 +21,7 @@ export class SkillSetComponent implements OnInit, AfterViewInit {
   * Creates an instance of the component and injects the LanguageService.
   * @param languageService Service used to get and observe the current language.
   */
-  constructor(private languageService: LanguageService, private animation: ScrollAnimation) { }
+  constructor(private languageService: LanguageService, private router: Router, private animation: ScrollAnimation) { }
 
   /**
   * Angular lifecycle hook that is called after the component's view has been fully initialized.
@@ -55,4 +56,18 @@ export class SkillSetComponent implements OnInit, AfterViewInit {
     this.showInterrest = false;
   }
 
+  /**
+  * Navigates to the root route and then smoothly scrolls to a section
+  * after a short delay.
+  *
+  * @param section - The ID of the target section to scroll into view.
+  */
+  scrollTo(section: string) {
+    this.router.navigate(['/']);
+
+    setTimeout(() => {
+      document.getElementById(section)
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  }
 }

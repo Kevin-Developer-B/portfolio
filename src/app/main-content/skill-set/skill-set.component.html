@@ -17,7 +17,7 @@
                         <p>{{ 'technologies_text3' | translate }}</p>
                     </div>
                 </div>
-                <a href="#contact-form" class="hover-slide" hoverSlide>
+                <a [routerLink]="['/Contact']" (click)="scrollTo('Contact')" class="hover-slide" hoverSlide>
                     <span class="main-text">{{ 'lets_talk' | translate }}</span>
                     <span class="slide-text">{{ 'lets_talk' | translate }}</span>
                 </a>

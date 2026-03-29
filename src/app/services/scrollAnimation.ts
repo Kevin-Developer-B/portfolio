@@ -60,8 +60,8 @@ export class ScrollAnimation {
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: elementLeft,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
+                    start: 'top 140%',
+                    end: 'bottom 80%',
                     scrub: true,
                     toggleActions: 'play reverse play reverse'
                 }
@@ -70,7 +70,7 @@ export class ScrollAnimation {
 
         gsap.fromTo(elementRight,
             {
-                x: 150,
+                x: 50,
                 opacity: 0
             },
             {
@@ -81,7 +81,7 @@ export class ScrollAnimation {
                 scrollTrigger: {
                     trigger: elementRight,
                     start: 'top 80%',
-                    end: 'bottom 20%',
+                    end: 'bottom 80%',
                     scrub: true,
                     toggleActions: 'play reverse play reverse'
                 }
@@ -103,7 +103,7 @@ export class ScrollAnimation {
                 ease: 'power3.out',
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 90%',
+                    start: 'top 100%',
                     scrub: true,
                     toggleActions: 'play none none none'
                 }

@@ -3,22 +3,22 @@
         "skills": "Fähigkeiten",
         "projects": "Projekte",
         "fontend_developer": "Fontend-Entwickler",
-        "check_my_work": "Übersicht meine Arbeit",
-        "contact_me": "Kontaktiere Mich",
+        "check_my_work": "Meine Arbeiten",
+        "contact_me": "Kontaktieren",
         "remote": "Verfügbar für Remote-Arbeit",
-        "based": "Sitz in München",
+        "based": "Sitz in Plauen",
         "work": "Offen für die Arbeit",
         "Who": "Wer ich bin",
-        "about_me_section_text1": "Hallo. Ich bin Lukas! Schreib uns doch ein paar Informationen über dich, die mit IT zu tun haben. Warum programmierst du so leidenschaftlich gern? Was inspiriert dich, deine Programmierkenntnisse zu verbessern?",
-        "about_me_section_text2": "Wo sind Sie ansässig? Wären Sie bereit, von zu Hause aus zu arbeiten oder möglicherweise umzuziehen?",
-        "about_me_section_text3": "Zeigen Sie Aufgeschlossenheit. Sie begeistern sich für das Erlernen neuer Technologien und die kontinuierliche Weiterbildung Ihrer Fähigkeiten?",
-        "about_me_section_text4": "Beschreiben Sie kurz Ihren Lösungsansatz. Lernen Sie aus jeder Herausforderung, während Sie nach der effizientesten oder elegantesten Lösung suchen? Sie können einige Schlüsselwörter wie analytisches Denken, Kreativität, Ausdauer und Zusammenarbeit einbeziehen.",
+        "about_me_section_text1": "Hallo. Ich bin Kevin! Programmieren ist mehr als nur ein Hobby für mich – es ist meine Leidenschaft. Mit jedem Projekt wächst meine Neugier, neue Ideen umzusetzen und kreative Lösungen für komplexe Herausforderungen zu finden.",
+        "about_me_section_text2": "Ich lebe in Plauen im Vogtland und arbeite flexibel – remote oder im Team. Besonders wichtig ist mir ein offener Austausch, denn gute Ideen entstehen selten allein.",
+        "about_me_section_text3": "Neue Technologien zu entdecken und meine Skills kontinuierlich zu verbessern, treibt mich an. Ich bin neugierig, experimentierfreudig und immer bereit, mich weiterzuentwickeln.",
+        "about_me_section_text4": "Ich gehe Herausforderungen strukturiert und lösungsorientiert an. Dabei versuche ich zunächst, das Problem genau zu verstehen und es in kleinere, überschaubare Schritte zu zerlegen. Anschließend entwickle ich verschiedene Ansätze und wähle die effizienteste oder sinnvollste Lösung aus.",
         "technologies": "Technologien",
         "skill_set": "Fähigkeiten",
-        "technologies_text1": "Stellen Sie Ihre Fähigkeiten kurz vor. Heben Sie Ihre Erfahrung im Umgang mit verschiedenen Front-End-Technologien hervor und betonen Sie Ihre Bereitschaft, neue Technologien zu erlernen und sich anzupassen. Zeigen Sie, wie wichtig es für Sie ist, mit den rasanten Veränderungen in der Webentwicklung Schritt zu halten.",
+        "technologies_text1": "Ich bin ein leidenschaftlicher Front-End-Entwickler mit Fokus auf moderne Webtechnologien und benutzerzentriertes Design. Die ständige Weiterentwicklung der Webwelt motiviert mich, neue Technologien zu lernen und intuitive, ansprechende digitale Erlebnisse zu schaffen.",
         "technologies_text2": "Sie benötigen eine",
         "technologies_text2.1": "andere Fähigkeit?",
-        "technologies_text3": "Nehmen Sie gerne Kontakt mit mir auf. Ich freue mich darauf, meine bisherigen Kenntnisse zu erweitern.",
+        "technologies_text3": "Neue Technologien, neue Ideen, neue Wege – ich liebe es, über den Tellerrand hinauszudenken und mich in unbekannte Bereiche einzuarbeiten.",
         "lets_talk": "Lass uns reden",
         "growth": "Wachstumsdenken",
         "mindset": "",
@@ -32,22 +32,23 @@
         "colleagues": "Was meine Kollegen über mich sagen",
         "comments": [
                 {
-                        "text": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
-                        "author": "H.Janisch - Team Partner"
+                        "text": "Kevin war ein wertvoller Teil unseres Teams. Seine offene Art, sein Engagement und seine technischen Fähigkeiten haben die Zusammenarbeit besonders angenehm und erfolgreich gemacht.",
+                        "author": "Nico Reckert - Team Partner Join"
                 },
                 {
-                        "text": "Ich hatte das Glück, mit Lukas in einem Gruppenprojekt der Developer Akademie zusammenzuarbeiten, das viel Aufwand erforderte. Er blieb stets ruhig, gelassen und konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist sehr kompetent, die Zusammenarbeit mit ihm ist unkompliziert und ich würde gerne wieder mit ihm zusammenarbeiten, wenn ich die Chance dazu hätte.",
-                        "author": "A.Fischer - Team Partner"
+                        "text": "Die Zusammenarbeit mit Kevin war ein wesentlicher Erfolgsfaktor für das Gelingen des Join-Projekts. Er arbeitete stets effizient und lösungsorientiert, brachte eigene Ideen ein und konnte diese überzeugend vertreten. Gleichzeitig war er offen für Vorschläge aus dem Team und hat aktiv zu einer konstruktiven Zusammenarbeit beigetragen.",
+                        "author": "Dominik Trödle - Team Partner Join"
                 },
                 {
-                        "text": "Unser Projekt hat enorm von Simons effizienter Arbeitsweise profitiert.",
-                        "author": "T.Schulz - Frontend-Entwickler"
+                        "text": "Herr Breiter überzeugt durch effiziente Arbeitsweise, Eigeninitiative und die Fähigkeit, sich schnell in neue Themen einzuarbeiten.",
+                        "author": "Herr Lingner - Vorgesetzter bei Gealan"
                 }
         ],
         "lets_work": "Lasst uns zusammenarbeiten",
         "problem_to_solve": "Müssen Sie ein Problem lösen?",
-        "contact_text1": "Ermutigen Sie die Leute, mit Ihnen Kontakt aufzunehmen und zu beschreiben, an welcher Rolle Sie interessiert sind. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen.",
+        "contact_text1": "Die in meinem Portfolio gezeigten Projekte sind praxisorientiert aufgebaut und spiegeln meine Erfahrungen mit modernen Frontend-Technologien wie Angular wider. Ich freue mich über spannende Möglichkeiten, mein Wissen in realen Projekten einzubringen und mich als Entwickler weiterzuentwickeln. Gerne können Sie mit mir Kontakt aufnehmen, wenn Sie einen motivierten Junior Frontend-Entwickler für Ihr Team suchen.",
         "contact_text3": "Benötigen Sie einen Frontend-Entwickler?",
+        "contact_me_please": "Kontaktieren Sie mich!",
         "popUp-thanks-text": "Vielen Dank für Ihre Nachricht!",
         "Whats_your_name": "Wie heißen Sie?",
         "Your_name_goes_here": "Hier steht Ihr Name",
@@ -87,7 +88,7 @@
         "date": "Datum: 26. Juli 2025",
 
         "Web_Developer": "Webentwickler",
-        "Munich_Germany": "München Deutschland",
+        "Germany": "Plauen Deutschland",
         "Legal_Notice": "Haftungsausschluss",
 
         "Responsible_person":"Verantwortlicher",

@@ -151,15 +151,16 @@
     .logo {
         height: 48px;
         width: 132px;
-        background-image: url('../../../../assets/img/Name_Logo_Default.svg');
-        object-fit: cover;
+        background-image: url('../../../../assets/img/NamensLogo.svg');
+        object-fit: contain;
         background-position: center;
+        background-size: cover;
         transition: 125ms ease-in-out;
 
         &:hover {
             height: 48px;
             width: 132px;
-            background-image: url('../../../../assets/img/Name_Logo_Hover.svg');
+            background-image: url('../../../../assets/img/NamensLogo_hover.svg');
             object-fit: cover;
             background-position: center;
             cursor: pointer;
@@ -202,14 +203,15 @@ a.active {
 // Handy
 .mobile-logo {
     display: none;
-    background-image: url('../../../../assets/img/img_phone/Logo_normal.svg');
+    background-image: url('../../../../assets/img/img_phone/KB.svg');
+    background-size: cover;
     height: 48px;
-    width: 35px;
+    width: 65px;
 
     &:hover {
-        background-image: url('../../../../assets/img/img_phone/Logo_hover.svg');
+        background-image: url('../../../../assets/img/img_phone/KB_hover.svg');
         height: 48px;
-        width: 35px;
+        width: 65px;
     }
 }
 
