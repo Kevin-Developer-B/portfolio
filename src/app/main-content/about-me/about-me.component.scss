@@ -1,5 +1,6 @@
 section {
     width: 100vw;
+    overflow: hidden;
 }
 
 .about-me-container {
@@ -65,7 +66,7 @@ h2 {
     padding: 32px;
     gap: 40px;
 
-    h1 {
+    h3 {
         font-size: 64px;
         font-weight: 700;
         color: #3DCFB6;
@@ -139,19 +140,15 @@ h2 {
     }
 }
 
-
-
-
-
-
-
 @media(max-width: 1410px) {
-    .container {
-        padding: 0 16px;
-    }
-
     .about-me-container {
         padding: 0;
+    }
+}
+
+@media(max-width: 1380px) {
+    .container {
+        padding: 0 16px;
     }
 }
 
@@ -184,7 +181,7 @@ h2 {
         padding: 27px 32px;
         gap: 32px;
 
-        h1 {
+        h3 {
             font-size: 56px;
             line-height: 80%;
             letter-spacing: -3px;
@@ -287,7 +284,7 @@ h2 {
     .about-me-questions-box {
 
         span {
-            font-size: 12px;
+            font-size: 16px;
         }
     }
 
@@ -296,7 +293,7 @@ h2 {
         padding: 16px 24px;
         gap: 16px;
 
-        h1 {
+        h3 {
             font-size: 48px;
         }
 
@@ -307,7 +304,7 @@ h2 {
 
         >span {
             line-height: 100%;
-            letter-spacing: 0;
+            letter-spacing: -1px;
         }
     }
 
@@ -319,8 +316,8 @@ h2 {
     .answer-text {
         gap: 16px;
         width: 100%;
-        font-size: 14px;
-        letter-spacing: 0.6px;
+        font-size: 16px;
+        letter-spacing: -1px;
     }
 }
 

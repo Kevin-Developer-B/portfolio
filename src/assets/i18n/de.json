@@ -32,12 +32,12 @@
         "colleagues": "Was meine Kollegen über mich sagen",
         "comments": [
                 {
-                        "text": "Kevin war ein wertvoller Teil unseres Teams. Seine offene Art, sein Engagement und seine technischen Fähigkeiten haben die Zusammenarbeit besonders angenehm und erfolgreich gemacht.",
-                        "author": "Nico Reckert - Team Partner Join"
-                },
-                {
                         "text": "Die Zusammenarbeit mit Kevin war ein wesentlicher Erfolgsfaktor für das Gelingen des Join-Projekts. Er arbeitete stets effizient und lösungsorientiert, brachte eigene Ideen ein und konnte diese überzeugend vertreten. Gleichzeitig war er offen für Vorschläge aus dem Team und hat aktiv zu einer konstruktiven Zusammenarbeit beigetragen.",
                         "author": "Dominik Trödle - Team Partner Join"
+                },
+                {
+                        "text": "Kevin war ein wertvoller Teil unseres Teams. Seine offene Art, sein Engagement und seine technischen Fähigkeiten haben die Zusammenarbeit besonders angenehm und erfolgreich gemacht.",
+                        "author": "Nico Reckert - Team Partner Join"
                 },
                 {
                         "text": "Herr Breiter überzeugt durch effiziente Arbeitsweise, Eigeninitiative und die Fähigkeit, sich schnell in neue Themen einzuarbeiten.",
@@ -53,13 +53,15 @@
         "Whats_your_name": "Wie heißen Sie?",
         "Your_name_goes_here": "Hier steht Ihr Name",
         "error_name_message": "Hoppla! Ihr Name fehlt.",
+        "warning_name": "Bitte geben Sie min. 3 Zeichen ein",
         "Whats_your_email": "Wie lautet Ihre E-Mail?",
         "youremail@email.com": "Ihreemail@email.com",
         "error_email_message": "Hoppla! Ihre E-Mail-Adresse wird benötigt.",
         "warning_email": "Bitte geben Sie eine E-Mail ein",
         "How_can_I_help_you": "Wie kann ich Ihnen helfen?",
         "error_message_message": "Was benötigen Sie als Entwickler?",
-        "Hello_Lukas,_I_am_interested_in...": "Hallo Lukas, ich interessiere mich für...",
+        "Hello,_I_am_interested_in...": "Hallo Kevin, ich interessiere mich für...",
+        "warning_message": "Bitte geben Sie min. 20 Zeichen ein",
         "Ive_read_the": "Ich habe die",
         "privacy_policy": "Datenschutzhinweise",
         "processing_of_my_data": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",

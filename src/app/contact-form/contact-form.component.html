@@ -5,11 +5,11 @@
                 <span>{{ 'popUp-thanks-text' | translate }}</span>
             </div>
         </div>
-        <div class="contact-me-container leftAnimation">
-            <div class="work-text-container">
+        <div class="contact-me-container ">
+            <div class="work-text-container leftAnimation">
                 <div class="lets-work">
                     <h3>{{ 'contact_me' | translate }}</h3>
-                    <h1>{{ 'lets_work' | translate }}</h1>
+                    <h2>{{ 'lets_work' | translate }}</h2>
                 </div>
                 <div class="work-text">
                     <h3>{{ 'problem_to_solve' | translate }}</h3>
@@ -21,72 +21,80 @@
                     </span>
                 </div>
             </div>
-            <div class="form-container rightAnimation">
+            <div class="form-container">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
-                    <div class="text-area-container">
-                        <span class="normel-line"></span>
-                        <label for="name">{{ 'Whats_your_name' | translate }}
-                            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" required
-                                #nameField="ngModel"
-                                [placeholder]="(isInvalid ? errorNamePlaceholder : normalNamePlaceholder) | translate"
-                                [class.error-message]="isInvalid && nameField.invalid">
-                        </label>
-                        <span class="line"></span>
-                    </div>
-                    <div class="text-area-container">
-                        <span class="line"></span>
-                        <label for="email">{{ 'Whats_your_email' | translate }}
-                            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
-                                #emailField="ngModel"
-                                [placeholder]="(isInvalid ? errorEmailPlaceholder : normalEmailPlaceholder) | translate"
-                                [class.error-message]="isInvalid && emailField.invalid">
-                        </label>
-                        @if (!email.valid && email.touched) {
-                        <span class="warning-notice-email">{{ 'warning_email' | translate }}</span>
-                        }
-                        <span class="line"></span>
-                    </div>
-                    <div class="text-area-container">
-                        <span class="line"></span>
-                        <label for="message">{{ 'How_can_I_help_you' | translate }}
-                            <input [(ngModel)]="contactData.message" type="text" id="message" name="message" required
-                                #messageField="ngModel"
-                                [placeholder]="(isInvalid ? errorMessagePlaceholder : normalMessagePlaceholder) | translate"
-                                [class.error-message]="isInvalid && messageField.invalid">
-                        </label>
-                        <span class="line"></span>
-                    </div>
-                    <div class="check-container">
-                        <div class="privacy-policy-container">
-                            <div>
-                                <button class="checkbox" [class.checked]="isChecked" (click)="toggleCheckbox()"
-                                    type="button"></button>
-                            </div>
-                            <div class="privacy-policy-text">
+                    <div class="rightAnimation">
+                        <div class="text-area-container">
+                            <span class="normel-line"></span>
+                            <label for="name">{{ 'Whats_your_name' | translate }}
+                                <input #name="ngModel" [(ngModel)]="contactData.name" type="text" id="name" name="name"
+                                    pattern="^[^\s].*" required minlength="3" #nameField="ngModel"
+                                    [placeholder]="(isInvalid ? errorNamePlaceholder : normalNamePlaceholder) | translate"
+                                    [class.error-message]="isInvalid && nameField.invalid">
+                            </label>
+                            @if (!name.valid && name.touched) {
+                            <span class="warning-notice-email">{{ 'warning_name' | translate }}</span>
+                            }
+                            <span class="line"></span>
+                        </div>
+                        <div class="text-area-container">
+                            <span class="line"></span>
+                            <label for="email">{{ 'Whats_your_email' | translate }}
+                                <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email"
+                                    name="email" pattern="^(?!.*\.\.)[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" required
+                                    #emailField="ngModel"
+                                    [placeholder]="(isInvalid ? errorEmailPlaceholder : normalEmailPlaceholder) | translate"
+                                    [class.error-message]="isInvalid && emailField.invalid">
+                            </label>
+                            @if (!email.valid && email.touched) {
+                            <span class="warning-notice-email">{{ 'warning_email' | translate }}</span>
+                            }
+                            <span class="line"></span>
+                        </div>
+                        <div class="text-area-container">
+                            <span class="line"></span>
+                            <label for="message">{{ 'How_can_I_help_you' | translate }}
+                                <input #message="ngModel" [(ngModel)]="contactData.message" type="text" id="message"
+                                    name="message" pattern="^[^\s].*" required minlength="20" #messageField="ngModel"
+                                    [placeholder]="(isInvalid ? errorMessagePlaceholder : normalMessagePlaceholder) | translate"
+                                    [class.error-message]="isInvalid && messageField.invalid">
+                            </label>
+                            @if (!message.valid && message.touched) {
+                            <span class="warning-notice-email">{{ 'warning_message' | translate }}</span>
+                            }
+                            <span class="line"></span>
+                        </div>
+                        <div class="check-container">
+                            <div class="privacy-policy-container">
                                 <div>
-                                    <p>{{ 'Ive_read_the' | translate }}
-                                        <a href="privacy-policy" class="underline-effect policy-text">{{
-                                            'privacy_policy' | translate }}</a>
+                                    <button class="checkbox" [class.checked]="isChecked" (click)="toggleCheckbox()"
+                                        type="button"></button>
+                                </div>
+                                <div class="privacy-policy-text">
+                                    <div>
+                                        <p>{{ 'Ive_read_the' | translate }}
+                                            <a href="privacy-policy" class="underline-effect policy-text">{{
+                                                'privacy_policy' | translate }}</a>
 
-                                        {{ 'processing_of_my_data' | translate }}
-                                    </p>
+                                            {{ 'processing_of_my_data' | translate }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="policy-error-massage" *ngIf="policyError">
-                            <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
-                        </div>
-                        <div class="submit-wrapper">
-                            <button type="button" class="fake-submit" *ngIf="!contactForm.valid || !isChecked"
-                                (click)="showPolicyError(contactForm)">
-                                <span>{{ 'say_hello' | translate }}</span>
-                            </button>
-                            <button class="hover-slide" hoverSlide type="submit"
-                                [disabled]="!contactForm.valid || !isChecked">
-                                <span class="main-text">{{ 'say_hello' | translate }}</span>
-                                <span class="slide-text">{{ 'say_hello' | translate }}</span>
-                            </button>
+                            <div class="policy-error-massage" *ngIf="policyError">
+                                <span>{{ 'Please_accept_the_privacy_policy.' | translate }}</span>
+                            </div>
+                            <div class="submit-wrapper">
+                                <button type="button" class="fake-submit" *ngIf="!contactForm.valid || !isChecked"
+                                    (click)="showPolicyError(contactForm)">
+                                    <span>{{ 'say_hello' | translate }}</span>
+                                </button>
+                                <button class="hover-slide" hoverSlide type="submit"
+                                    [disabled]="!contactForm.valid || !isChecked">
+                                    <span class="main-text">{{ 'say_hello' | translate }}</span>
+                                    <span class="slide-text">{{ 'say_hello' | translate }}</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>

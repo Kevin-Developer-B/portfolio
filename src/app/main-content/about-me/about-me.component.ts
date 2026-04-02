@@ -24,7 +24,8 @@ export class AboutMeComponent implements OnInit, AfterViewInit {
   * Triggers a slide-in animation for the featured projects section.
   */
   ngAfterViewInit() {
-    this.animation.splitReveal('.left','.right');
+    this.animation.slideInFromBottom('.bottom');
+    this.animation.slideRight('.right');
   }
 
   /**

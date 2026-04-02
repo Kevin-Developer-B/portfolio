@@ -6,7 +6,7 @@ section {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 150px;
-    
+
 }
 
 .container {
@@ -24,11 +24,17 @@ section {
             transparent 100%);
 }
 
-h1 {
+h2 {
     color: #3DCFB6;
     font-family: 'Fira Code';
     margin: 0;
+    margin-bottom: 20px;
+    padding: 0 30px;
     text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0;
 }
 
 .quote {
@@ -50,14 +56,13 @@ h1 {
     .comment {
         height: 100%;
         display: flex;
-        flex-direction: column;
         justify-content: start;
 
         p {
             color: #FFFFFF;
             font-size: 16px;
             font-family: 'Fira Code';
-            letter-spacing: 0.8px;
+            letter-spacing: 0;
         }
     }
 
@@ -175,10 +180,7 @@ h1 {
     .card {
         .comment {
             p {
-                color: #FFFFFF;
-                font-size: 14px;
-                font-family: 'Fira Code';
-                letter-spacing: 0.8px;
+                letter-spacing: -1px;
             }
         }
     }
@@ -216,38 +218,48 @@ h1 {
         height: 500px;
     }
 
+    .quote {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        z-index: 1;
+        height: 32px;
+    }
+
     .card {
         height: 340px;
-
-        .comment {
-            p {
-                font-size: 12px;
-            }
-        }
+        padding: 40px 12px 40px 12px;
     }
 }
 
 @media(max-width: 390px) {
     .author {
         span {
-            font-size: 12px;
+            font-size: 16px;
         }
     }
 }
 
 @media(max-width: 375px) {
     .card {
+        height: 400px;
+
         .comment {
             p {
-                font-size: 11px;
-                letter-spacing: 0;
+                letter-spacing: -1.7px;
+            }
+        }
+
+        .author {
+            span {
+                letter-spacing: -1.5px;
             }
         }
     }
 }
 
 @media(max-width: 345px) {
-    h1 {
+    h2 {
         font-size: 28px;
     }
 }

@@ -29,6 +29,7 @@ export class SkillSetComponent implements OnInit, AfterViewInit {
   */
   ngAfterViewInit() {
     this.animation.slideInFromBottom('.skill-set-box');
+    this.animation.slideInFromBottom('.skill-images-container');
   }
 
   /**

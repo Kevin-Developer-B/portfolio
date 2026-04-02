@@ -46,28 +46,7 @@ export class ScrollAnimation {
         });
     }
 
-    splitReveal(elementLeft: string, elementRight: string) {
-
-        gsap.fromTo(elementLeft,
-            {
-                x: -150,
-                opacity: 0
-            },
-            {
-                x: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: elementLeft,
-                    start: 'top 140%',
-                    end: 'bottom 80%',
-                    scrub: true,
-                    toggleActions: 'play reverse play reverse'
-                }
-            }
-        );
-
+    slideRight( elementRight: string) {
         gsap.fromTo(elementRight,
             {
                 x: 50,
@@ -80,9 +59,31 @@ export class ScrollAnimation {
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: elementRight,
-                    start: 'top 80%',
-                    end: 'bottom 80%',
-                    scrub: true,
+                    start: 'top 85%',
+                    end: 'bottom 60%',
+                    scrub: 0.2,
+                    toggleActions: 'play reverse play reverse'
+                }
+            }
+        );
+    }
+
+    slideLeft( elementLeft: string) {
+        gsap.fromTo(elementLeft,
+            {
+                x: -50,
+                opacity: 0
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: elementLeft,
+                    start: 'top 85%',
+                    end: 'bottom 60%',
+                    scrub: 0.2,
                     toggleActions: 'play reverse play reverse'
                 }
             }

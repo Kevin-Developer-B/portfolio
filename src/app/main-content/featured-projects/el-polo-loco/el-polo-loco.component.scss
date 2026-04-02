@@ -31,7 +31,7 @@
     flex-direction: column;
     gap: 24px;
 
-    h1 {
+    h4 {
         height: 100px;
         font-size: 126px;
         font-weight: 700;
@@ -226,7 +226,7 @@
     .number-name-container {
         gap: 8px;
 
-        h1 {
+        h4 {
             height: 70px;
             font-size: 72px;
             letter-spacing: -2px;
@@ -272,6 +272,7 @@
         h3 {
             height: 24px;
             font-size: 20px;
+            letter-spacing: -2px;
         }
 
         .explain-text {
@@ -311,12 +312,21 @@
 
 @media(max-width: 400px) {
     .close-image-container {
+        margin-top: 55px;
+        height: 230px;
+
         .image {
             width: 280px;
         }
     }
 
     .explain-container {
+        h3 {
+            height: 24px;
+            font-size: 18px;
+            letter-spacing: -3px;
+        }
+
         .explain-text {
             margin-top: 30px;
         }

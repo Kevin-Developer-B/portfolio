@@ -25,7 +25,7 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
   errorNamePlaceholder = 'error_name_message';
   normalEmailPlaceholder = 'youremail@email.com';
   errorEmailPlaceholder = 'error_email_message';
-  normalMessagePlaceholder = 'Hello_Lukas,_I_am_interested_in...';
+  normalMessagePlaceholder = 'Hello,_I_am_interested_in...';
   errorMessagePlaceholder = 'error_message_message';
   http = inject(HttpClient)
 
@@ -39,7 +39,8 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
   * Triggers a slide-in animation for the featured projects section.
   */
   ngAfterViewInit() {
-    this.animation.splitReveal('.leftAnimation', '.rightAnimation');
+    this.animation.slideRight('.rightAnimation');
+    this.animation.slideLeft('.leftAnimation');
   }
 
   /**
@@ -128,10 +129,8 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
   * Shows a policy error message if the checkbox is not selected.
   */
   showPolicyError(form?: NgForm) {
-    // Placeholder / Fehler aktivieren
     this.isInvalid = true;
 
-    // Felder als touched markieren (für Validierungsanzeigen)
     if (form) {
       Object.values(form.controls).forEach(control => {
         control.markAsTouched();
