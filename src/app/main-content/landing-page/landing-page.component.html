@@ -12,17 +12,22 @@
                     <h3>{{ 'fontend_developer' | translate }}</h3>
                     <h1>Kevin Breiter</h1>
                     <div class="check-contact-container">
-                        <a [routerLink]="['/Projects']" (click)="scrollTo('Projects')" class="hover-slide" hoverSlide>
-                            <span class="main-text">{{ 'check_my_work' | translate }}</span>
-                            <span class="slide-text">{{ 'check_my_work' | translate }}</span>
-                            <span class="mobile-slider">{{ 'check_my_work' | translate }}</span>
-                        </a>
-                        <a [routerLink]="['/Contact']" (click)="scrollTo('Contact')" style="width: 143px;"
-                            class="hover-slide" hoverSlide>
-                            <span class="main-text">{{ 'contact_me' | translate }}</span>
-                            <span class="slide-text">{{ 'contact_me' | translate }}</span>
-                            <span class="mobile-slider">{{ 'contact_me' | translate }}</span>
-                        </a>
+                        <div class="pulse-wrapper">
+                            <a [routerLink]="['/Projects']" (click)="scrollTo('Projects')" class="hover-slide"
+                                hoverSlide>
+                                <span class="main-text">{{ 'check_my_work' | translate }}</span>
+                                <span class="slide-text">{{ 'check_my_work' | translate }}</span>
+                                <span class="mobile-slider">{{ 'check_my_work' | translate }}</span>
+                            </a>
+                        </div>
+                        <div class="pulse-wrapper">
+                            <a [routerLink]="['/Contact']" (click)="scrollTo('Contact')" style="width: 143px;"
+                                class="hover-slide" hoverSlide>
+                                <span class="main-text">{{ 'contact_me' | translate }}</span>
+                                <span class="slide-text">{{ 'contact_me' | translate }}</span>
+                                <span class="mobile-slider">{{ 'contact_me' | translate }}</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="slider-box">

@@ -189,7 +189,44 @@ h2 {
     animation-delay: 1.5s;
 }
 
+.pulse-wrapper {
+        position: relative;
+        display: inline-block;
 
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border: 1px solid #0ff;
+            border-radius: 100px;
+            animation: pulseOut 3s ease-out infinite;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &:hover::before,
+        &:hover::after {
+            animation: none;
+            opacity: 0;
+        }
+
+        &::after {
+            animation-delay: 1s;
+        }
+    }
+
+    @keyframes pulseOut {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
 
 .hover-slide {
     border: 1px solid white;
