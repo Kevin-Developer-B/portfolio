@@ -19,7 +19,7 @@ export class LanguageService {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
     const saved = localStorage.getItem(this.STORAGE_KEY) as Lang;
-    this.setLanguage(saved || 'en');
+    this.setLanguage(saved || 'de');
   }
 
   /**
@@ -40,6 +40,6 @@ export class LanguageService {
   * Falls back to 'en' if none is saved.
   */
   get currentLang(): Lang {
-    return (localStorage.getItem(this.STORAGE_KEY) as Lang) || 'en';
+    return (localStorage.getItem(this.STORAGE_KEY) as Lang) || 'de';
   }
 }
