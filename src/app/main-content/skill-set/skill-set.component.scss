@@ -132,7 +132,8 @@ h2 {
 
         .interrest-group-container {
             position: absolute;
-            left: -13px;
+            left: 50%;
+            transform: translate(-25%);
             bottom: 100px;
             pointer-events: none;
             opacity: 0;
@@ -375,11 +376,6 @@ h2 {
         }
 
         .special-hover {
-            .interrest-group-container {
-                left: 0px;
-                bottom: 85px;
-            }
-
             .interrest-group-img {
                 animation: none;
             }
