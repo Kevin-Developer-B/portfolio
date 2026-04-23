@@ -4,16 +4,15 @@ import { LanguageService, Lang } from '../../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-project-dabubble',
+  selector: 'app-memory',
   standalone: true,
   imports: [
     CommonModule,
-    TranslateModule
-  ],
-  templateUrl: './dabubble.component.html',
-  styleUrls: ['./dabubble.component.scss']
+    TranslateModule],
+  templateUrl: './memory.component.html',
+  styleUrl: './memory.component.scss'
 })
-export class DABubbleComponent implements OnInit {
+export class MemoryComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
   /** Emits when the next action is triggered. */
   @Output() next = new EventEmitter<void>();

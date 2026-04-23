@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DABubbleComponent } from './dabubble.component';
+import { MemoryComponent } from './memory.component';
 
-describe('DABubbleComponent', () => {
-  let component: DABubbleComponent;
-  let fixture: ComponentFixture<DABubbleComponent>;
+describe('MemoryComponent', () => {
+  let component: MemoryComponent;
+  let fixture: ComponentFixture<MemoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DABubbleComponent]
+      imports: [MemoryComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DABubbleComponent);
+    fixture = TestBed.createComponent(MemoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

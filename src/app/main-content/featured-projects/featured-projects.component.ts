@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JoinComponent } from './join/join.component';
 import { CommonModule } from '@angular/common';
 import { ElPoloLocoComponent } from './el-polo-loco/el-polo-loco.component';
-import { DABubbleComponent } from './dabubble/dabubble.component';
+import { MemoryComponent } from './memory/memory.component';
 import { LanguageService, Lang } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,7 +10,11 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-featured-projects',
   standalone: true,
   imports: [
-    CommonModule, TranslateModule, JoinComponent, ElPoloLocoComponent, DABubbleComponent
+    CommonModule, 
+    TranslateModule, 
+    JoinComponent, 
+    ElPoloLocoComponent, 
+    MemoryComponent
   ],
   templateUrl: './featured-projects.component.html',
   styleUrls: ['./featured-projects.component.scss']
@@ -19,7 +23,7 @@ export class FeaturedProjectsComponent implements OnInit {
   overlayVisible = false;
   activeProject: string | null = null;
   currentLang: Lang = 'en';
-  projects = ['join', 'elpolloloco'];
+  projects = ['join', 'elpolloloco', 'memory'];
 
   /**
   * Creates the component and injects the language service.
